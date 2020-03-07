@@ -87,6 +87,8 @@ return [
 
         Revolution\DiscordManager\Providers\DiscordManagerServiceProvider::class,
 
+        GrahamCampbell\GitHub\GitHubServiceProvider::class,
+
         App\Providers\AppServiceProvider::class,
     ],
 ];
