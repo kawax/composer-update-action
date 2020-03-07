@@ -7,6 +7,8 @@
 Create `.github/workflows/update.yml`
 
 ```yaml
+name: composer update
+
 on:
   schedule:
     - cron:  '0 0 * * *' #UTC
