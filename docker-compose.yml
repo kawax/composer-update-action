@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  arty:
+    image: chilio/laravel-dusk-ci:stable
+    volumes:
+      - .:/app:cached
+#      - ~/.composer/config.json:/usr/local/share/composer/config.json:cached
+#      - ~/.composer/cache:/usr/local/share/composer/cache:cached
+#      - ~/.composer/vendor:/usr/local/share/composer/vendor:cached
+    working_dir: /app
+    entrypoint: php arty

@@ -1,0 +1,52 @@
+{
+  "name": "revolution/arty",
+  "description": "artisan only application",
+  "keywords": [
+    "arty"
+  ],
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "kawax",
+      "email": "kawaxbiz@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.2",
+    "illuminate/notifications": "^6.0",
+    "illuminate/view": "^6.0",
+    "laravel-zero/framework": "^6.0",
+    "ramsey/uuid": "^3.8",
+    "revolution/discord-manager": "^1.0"
+  },
+  "require-dev": {
+    "mockery/mockery": "^1.2",
+    "phpunit/phpunit": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "bin": [
+    "arty"
+  ]
+}

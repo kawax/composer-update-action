@@ -1,0 +1,26 @@
+sudo: false
+language: php
+
+php:
+  - 7.4
+
+before_script:
+  - travis_retry composer install --no-interaction --prefer-dist --no-progress --no-suggest
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+    - vendor
+
+script:
+  - vendor/bin/phpunit
+  - 'if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then php arty discord:test --body="test@Travis"; fi'
+
+after_script:
+  - ./cc-test-reporter after-build -t clover --exit-code $TRAVIS_TEST_RESULT
