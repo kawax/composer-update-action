@@ -1,0 +1,25 @@
+# GitHub Action for Laravel
+name: Testing Laravel
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  laravel:
+    name: Laravel
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@master #https://github.com/shivammathur/setup-php
+        with:
+          php-version: '7.4'
+          extensions: mbstring, bcmath
+          coverage: xdebug #optional
+      - name: Install Composer dependencies
+        run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader -d ./update
+      - name: Test with phpunit
+        run: update/vendor/bin/phpunit
