@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: composer update action step
-        uses: kawax/composer-update-action@v1
+        uses: kawax/composer-update-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -31,7 +31,7 @@ jobs:
 
 ```yaml
       - name: composer update action step
-        uses: kawax/composer-update-action@v1
+        uses: kawax/composer-update-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMPOSER_PATH: /subdir
