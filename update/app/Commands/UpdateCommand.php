@@ -4,12 +4,12 @@ namespace App\Commands;
 
 use Cz\Git\GitException;
 use Cz\Git\GitRepository;
-use Symfony\Component\Process\Process;
 use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Console\Scheduling\Schedule;
-use LaravelZero\Framework\Commands\Command;
 use Illuminate\Support\Str;
+use LaravelZero\Framework\Commands\Command;
 use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
 
 class UpdateCommand extends Command
 {
@@ -192,8 +192,8 @@ class UpdateCommand extends Command
         $output = explode(PHP_EOL, $output);
 
         $this->out = collect($output)
-                ->filter(fn($item) => Str::contains($item, ' - '))
-                ->map(fn($item) => trim($item))
+                ->filter(fn ($item) => Str::contains($item, ' - '))
+                ->map(fn ($item) => trim($item))
                 ->implode(PHP_EOL).PHP_EOL;
     }
 
