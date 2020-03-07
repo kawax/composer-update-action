@@ -1,5 +1,5 @@
 # GitHub Action for Laravel
-name: Testing Laravel
+name: test
 on:
   push:
     branches:
@@ -7,8 +7,8 @@ on:
   pull_request:
 
 jobs:
-  laravel:
-    name: Laravel
+  test:
+    name: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,4 +22,4 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader -d ./update
       - name: Test with phpunit
-        run: update/vendor/bin/phpunit
+        run: update/vendor/bin/phpunit -c update/
