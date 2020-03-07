@@ -1,5 +1,5 @@
-# GitHub Action for Laravel
 name: test
+
 on:
   push:
     branches:
