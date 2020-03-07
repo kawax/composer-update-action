@@ -1,7 +1,4 @@
 on:
-  push:
-    branches:
-      - master
   schedule:
     - cron:  '0 0 * * *' #UTC
 
@@ -13,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: composer update action step
-        uses: ./
+        uses: kawax/composer-update-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMPOSER_PATH: /update
