@@ -2,6 +2,11 @@
 
 `composer update` and create pull request.
 
+## Version
+|ver|PHP|
+|---|---|
+|v1|PHP7.4|
+
 ## Usage
 
 Create `.github/workflows/update.yml`
@@ -11,7 +16,7 @@ name: composer update
 
 on:
   schedule:
-    - cron:  '0 0 * * *' #UTC
+    - cron: '0 0 * * *' #UTC
 
 jobs:
   composer_update_job:
@@ -21,7 +26,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: composer update action step
-        uses: kawax/composer-update-action@master
+        uses: kawax/composer-update-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -33,7 +38,7 @@ jobs:
 
 ```yaml
       - name: composer update action step
-        uses: kawax/composer-update-action@master
+        uses: kawax/composer-update-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMPOSER_PATH: /subdir
