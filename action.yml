@@ -1,6 +1,10 @@
 # action.yml
 name: 'composer update action'
 description: 'composer update and create pull request'
+author: 'kawax'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+branding:
+  icon: 'git-pull-request'
+  color: 'gray-dark'
