@@ -91,6 +91,10 @@ class UpdateCommand extends Command
     {
         $this->init();
 
+        if (! $this->exists()) {
+            return;
+        }
+
         $this->process('install');
 
         $output = $this->process('update');
@@ -149,6 +153,24 @@ class UpdateCommand extends Command
     }
 
     /**
+     * @return bool
+     */
+    protected function exists(): bool
+    {
+        $path = $this->base_path.$this->composer_path;
+
+        if (! file_exists($path.'/composer.json')) {
+            return false;
+        }
+
+        if (! file_exists($path.'/composer.lock')) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
      * @param  string  $command
      *
      * @return string
@@ -192,8 +214,8 @@ class UpdateCommand extends Command
         $output = explode(PHP_EOL, $output);
 
         $this->out = collect($output)
-                ->filter(fn ($item) => Str::contains($item, ' - '))
-                ->map(fn ($item) => trim($item))
+                ->filter(fn($item) => Str::contains($item, ' - '))
+                ->map(fn($item) => trim($item))
                 ->implode(PHP_EOL).PHP_EOL;
     }
 
