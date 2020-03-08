@@ -9,6 +9,7 @@
 |ver|PHP|
 |---|---|
 |v1 |7.4|
+|master|7.4|
 
 ## Usage
 
