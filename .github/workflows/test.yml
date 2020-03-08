@@ -2,6 +2,9 @@ name: test
 
 on:
   push:
+    branches:
+      - master
+      - v*
   pull_request:
 
 jobs:
