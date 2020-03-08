@@ -8,7 +8,7 @@
 ## Version
 |ver|PHP|
 |---|---|
-|v1|PHP7.4|
+|v1 |7.4|
 
 ## Usage
 
