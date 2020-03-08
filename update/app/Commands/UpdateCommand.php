@@ -214,8 +214,8 @@ class UpdateCommand extends Command
         $output = explode(PHP_EOL, $output);
 
         $this->out = collect($output)
-                ->filter(fn($item) => Str::contains($item, ' - '))
-                ->map(fn($item) => trim($item))
+                ->filter(fn ($item) => Str::contains($item, ' - '))
+                ->map(fn ($item) => trim($item))
                 ->implode(PHP_EOL).PHP_EOL;
     }
 
