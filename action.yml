@@ -1,6 +1,6 @@
 # action.yml
-name: 'composer update'
-description: 'composer update and pull request'
+name: 'composer update action'
+description: 'composer update and create pull request'
 runs:
   using: 'docker'
   image: 'Dockerfile'

@@ -1,5 +1,8 @@
 # composer update action
 
+![update](https://github.com/kawax/composer-update-action/workflows/composer%20update/badge.svg)
+![test](https://github.com/kawax/composer-update-action/workflows/test/badge.svg)
+
 `composer update` and create pull request.
 
 ## Version
