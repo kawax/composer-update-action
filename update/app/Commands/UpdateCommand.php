@@ -6,6 +6,7 @@ use Cz\Git\GitException;
 use Cz\Git\GitRepository;
 use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Console\Scheduling\Schedule;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use LaravelZero\Framework\Commands\Command;
 use Symfony\Component\Process\Exception\ProcessFailedException;
@@ -84,6 +85,12 @@ class UpdateCommand extends Command
      */
     public function handle()
     {
+        if (! env('GITHUB_ACTIONS')) {
+            $this->info('Only on GitHub Actions');
+
+            return;
+        }
+
         $this->init();
 
         if (! $this->exists()) {
@@ -130,7 +137,7 @@ class UpdateCommand extends Command
         $this->target_branch = Str::afterLast(env('GITHUB_REF'), '/');
 
         try {
-            $this->git = new GitRepository($this->base_path);
+            $this->git = app(GitRepository::class, ['repository' => $this->base_path]);
 
             $this->git->setRemoteUrl(
                 'origin',
@@ -153,11 +160,11 @@ class UpdateCommand extends Command
     {
         $path = $this->base_path.$this->composer_path;
 
-        if (! file_exists($path.'/composer.json')) {
+        if (! File::exists($path.'/composer.json')) {
             return false;
         }
 
-        if (! file_exists($path.'/composer.lock')) {
+        if (! File::exists($path.'/composer.lock')) {
             return false;
         }
 
