@@ -50,5 +50,24 @@ jobs:
           GIT_EMAIL: cu@composer-update
 ```
 
+## Troubleshooting
+
+### Missing PHP extension
+
+```
+foo/bar 1.0.0 requires ext-XXX * -> the requested PHP extension XXX is missing from your system.
+```
+
+Configure `platform` in your composer.json.
+
+```json
+  "config": {
+    "platform": {
+      "php": "7.2.0", 
+      "ext-XXX": "1.0.0"
+     }
+  },
+```
+
 ## LICENCE
 MIT
