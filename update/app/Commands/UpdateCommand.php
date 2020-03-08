@@ -55,11 +55,6 @@ class UpdateCommand extends Command
     /**
      * @var string
      */
-    protected $random;
-
-    /**
-     * @var string
-     */
     protected $base_path;
 
     /**
@@ -130,8 +125,7 @@ class UpdateCommand extends Command
         $this->base_path = env('GITHUB_WORKSPACE');
         $this->composer_path = env('COMPOSER_PATH', '');
 
-        $this->random = Str::random(8);
-        $this->branch = 'cu/'.$this->random;
+        $this->branch = 'cu/'.Str::random(8);
 
         $this->target_branch = Str::afterLast(env('GITHUB_REF'), '/');
 
@@ -140,7 +134,7 @@ class UpdateCommand extends Command
 
             $this->git->setRemoteUrl(
                 'origin',
-                'https://'.env('GITHUB_ACTOR').':'.$this->token.'@github.com/'.$this->repo.'.git'
+                'https://'.$this->token.'@github.com/'.$this->repo.'.git'
             );
 
             $this->git->execute(['config', '--local', 'user.name', env('GIT_NAME', 'cu')]);
