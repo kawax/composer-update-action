@@ -19,7 +19,7 @@
     "czproject/git-php": "^3.17",
     "graham-campbell/github": "^9.0",
     "laravel-zero/framework": "^6.0",
-    "php-http/guzzle6-adapter": "^1.1",
+    "php-http/guzzle6-adapter": "^2.0",
     "ramsey/uuid": "^3.8",
     "revolution/discord-manager": "^1.0"
   },
