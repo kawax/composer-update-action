@@ -20,7 +20,7 @@ class UpdateCommandTest extends TestCase
         Git::shouldReceive('execute')->twice();
         Git::shouldReceive('createBranch')->once();
 
-        File::shouldReceive('exists')->twice()->andReturnTrue();
+        //File::shouldReceive('exists')->twice()->andReturnTrue();
 
         $this->artisan('update')
              ->expectsOutput('Only on GitHub Actions')

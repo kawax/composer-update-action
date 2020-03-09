@@ -79,13 +79,13 @@ class UpdateCommand extends Command
     {
         $this->init();
 
-        if (! $this->exists()) {
-            return;
-        }
-
         if (! env('GITHUB_ACTIONS')) {
             $this->info('Only on GitHub Actions');
 
+            return;
+        }
+
+        if (! $this->exists()) {
             return;
         }
 
