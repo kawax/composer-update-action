@@ -79,14 +79,6 @@ return [
     */
 
     'providers' => [
-        Illuminate\Bus\BusServiceProvider::class,
-        Illuminate\Notifications\NotificationServiceProvider::class,
-        Illuminate\View\ViewServiceProvider::class,
-
-        NotificationChannels\Discord\DiscordServiceProvider::class,
-
-        Revolution\DiscordManager\Providers\DiscordManagerServiceProvider::class,
-
         GrahamCampbell\GitHub\GitHubServiceProvider::class,
 
         App\Providers\AppServiceProvider::class,
