@@ -79,12 +79,6 @@ class UpdateCommand extends Command
     {
         $this->init();
 
-        if (! env('GITHUB_ACTIONS')) {
-            $this->info('Only on GitHub Actions');
-
-            return;
-        }
-
         if (! $this->exists()) {
             return;
         }
@@ -167,17 +161,10 @@ class UpdateCommand extends Command
     {
         $this->info($command);
 
-        $exec = [
-            'composer',
-            $command,
-            '--no-interaction',
-            '--no-progress',
-            '--no-suggest',
-            '--no-autoloader',
-            '--no-scripts',
-        ];
-
-        $process = app(Process::class, ['command' => $exec])
+        /**
+         * @var Process $process
+         */
+        $process = app('process.'.$command)
             ->setWorkingDirectory($this->base_path.$this->composer_path)
             ->setTimeout(600)
             ->mustRun();
