@@ -3,10 +3,9 @@
 namespace Tests\Feature;
 
 use App\Facades\Git;
+use GrahamCampbell\GitHub\Facades\GitHub;
 use Tests\TestCase;
 use Illuminate\Support\Facades\File;
-use Symfony\Component\Process\Process;
-use GrahamCampbell\GitHub\Facades\GitHub;
 
 class UpdateCommandTest extends TestCase
 {

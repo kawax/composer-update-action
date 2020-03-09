@@ -2,8 +2,8 @@
 
 namespace App\Facades;
 
-use Illuminate\Support\Facades\Facade;
 use Cz\Git\IGit;
+use Illuminate\Support\Facades\Facade;
 
 class Git extends Facade
 {

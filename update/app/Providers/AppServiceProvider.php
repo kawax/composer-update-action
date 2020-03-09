@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use Cz\Git\IGit;
 use Cz\Git\GitRepository;
+use Cz\Git\IGit;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
