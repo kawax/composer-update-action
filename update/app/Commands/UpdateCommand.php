@@ -8,7 +8,6 @@ use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use LaravelZero\Framework\Commands\Command;
-use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
 class UpdateCommand extends Command
@@ -45,7 +44,7 @@ class UpdateCommand extends Command
     /**
      * @var string
      */
-    protected string $branch;
+    protected string $new_branch;
 
     /**
      * @var string
@@ -82,8 +81,10 @@ class UpdateCommand extends Command
 
     /**
      * init.
+     *
+     * @return void
      */
-    protected function init()
+    protected function init(): void
     {
         $this->info('init');
 
@@ -92,7 +93,7 @@ class UpdateCommand extends Command
         $this->base_path = env('GITHUB_WORKSPACE', '');
         $this->composer_path = env('COMPOSER_PATH', '');
 
-        $this->branch = 'cu/'.Str::random(8);
+        $this->new_branch = 'cu/'.Str::random(8);
 
         $token = env('GITHUB_TOKEN');
 
@@ -106,7 +107,7 @@ class UpdateCommand extends Command
         Git::execute(['config', '--local', 'user.name', env('GIT_NAME', 'cu')]);
         Git::execute(['config', '--local', 'user.email', env('GIT_EMAIL', 'cu@composer-update')]);
 
-        Git::createBranch($this->branch, true);
+        Git::createBranch($this->new_branch, true);
     }
 
     /**
@@ -131,7 +132,6 @@ class UpdateCommand extends Command
      * @param  string  $command
      *
      * @return string
-     * @throws ProcessFailedException
      */
     protected function process(string $command): string
     {
@@ -155,8 +155,10 @@ class UpdateCommand extends Command
 
     /**
      * @param  string|null  $output
+     *
+     * @return void
      */
-    protected function output(?string $output)
+    protected function output(?string $output): void
     {
         $output = explode(PHP_EOL, $output);
 
@@ -168,26 +170,30 @@ class UpdateCommand extends Command
 
     /**
      * Commit and Push.
+     *
+     * @return void
      */
-    protected function commitPush()
+    protected function commitPush(): void
     {
         $this->info('commit');
 
         Git::addAllChanges()
            ->commit('composer update '.today()->toDateString().PHP_EOL.PHP_EOL.$this->out)
-           ->push('origin', [$this->branch]);
+           ->push('origin', [$this->new_branch]);
     }
 
     /**
      * Create Pull Request.
+     *
+     * @return void
      */
-    protected function createPullRequest()
+    protected function createPullRequest(): void
     {
         $this->info('Pull Request');
 
         $pullData = [
             'base'  => Str::afterLast(env('GITHUB_REF'), '/'),
-            'head'  => $this->branch,
+            'head'  => $this->new_branch,
             'title' => 'composer update '.today()->toDateString(),
             'body'  => $this->out,
         ];

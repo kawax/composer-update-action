@@ -28,23 +28,17 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton(
             IGit::class,
-            function ($app) {
-                return new GitRepository(env('GITHUB_WORKSPACE'));
-            }
+            fn ($app) => new GitRepository(env('GITHUB_WORKSPACE'))
         );
 
         $this->app->bind(
             'process.install',
-            function ($app) {
-                return new Process($this->command('install'));
-            }
+            fn ($app) => new Process($this->command('install'))
         );
 
         $this->app->bind(
             'process.update',
-            function ($app) {
-                return new Process($this->command('update'));
-            }
+            fn ($app) => new Process($this->command('update'))
         );
     }
 
