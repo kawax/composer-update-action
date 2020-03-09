@@ -30,47 +30,27 @@ class UpdateCommand extends Command
     /**
      * @var string
      */
-    protected $token;
+    protected string $repo;
 
     /**
      * @var string
      */
-    protected $repo;
+    protected string $base_path;
 
     /**
      * @var string
      */
-    protected $repo_owner;
+    protected string $composer_path;
 
     /**
      * @var string
      */
-    protected $repo_name;
+    protected string $branch;
 
     /**
      * @var string
      */
-    protected $base_path;
-
-    /**
-     * @var string
-     */
-    protected $composer_path;
-
-    /**
-     * @var string
-     */
-    protected $branch;
-
-    /**
-     * @var string
-     */
-    protected $target_branch;
-
-    /**
-     * @var string
-     */
-    protected $out;
+    protected string $out;
 
     /**
      * Execute the console command.
@@ -107,24 +87,20 @@ class UpdateCommand extends Command
     {
         $this->info('init');
 
-        $this->token = env('GITHUB_TOKEN');
-        GitHub::authenticate($this->token, 'http_token');
-
-        $this->repo = env('GITHUB_REPOSITORY');
-
-        $this->repo_owner = Str::before($this->repo, '/');
-        $this->repo_name = Str::afterLast($this->repo, '/');
+        $this->repo = env('GITHUB_REPOSITORY', '');
 
         $this->base_path = env('GITHUB_WORKSPACE', '');
         $this->composer_path = env('COMPOSER_PATH', '');
 
         $this->branch = 'cu/'.Str::random(8);
 
-        $this->target_branch = Str::afterLast(env('GITHUB_REF'), '/');
+        $token = env('GITHUB_TOKEN');
+
+        GitHub::authenticate($token, 'http_token');
 
         Git::setRemoteUrl(
             'origin',
-            'https://'.$this->token.'@github.com/'.$this->repo.'.git'
+            'https://'.$token.'@github.com/'.$this->repo.'.git'
         );
 
         Git::execute(['config', '--local', 'user.name', env('GIT_NAME', 'cu')]);
@@ -157,7 +133,7 @@ class UpdateCommand extends Command
      * @return string
      * @throws ProcessFailedException
      */
-    protected function process(string $command)
+    protected function process(string $command): string
     {
         $this->info($command);
 
@@ -174,7 +150,7 @@ class UpdateCommand extends Command
             $output = $process->getErrorOutput();
         }
 
-        return $output;
+        return $output ?? '';
     }
 
     /**
@@ -210,15 +186,15 @@ class UpdateCommand extends Command
         $this->info('Pull Request');
 
         $pullData = [
-            'base'  => $this->target_branch,
+            'base'  => Str::afterLast(env('GITHUB_REF'), '/'),
             'head'  => $this->branch,
             'title' => 'composer update '.today()->toDateString(),
             'body'  => $this->out,
         ];
 
         GitHub::pullRequest()->create(
-            $this->repo_owner,
-            $this->repo_name,
+            Str::before($this->repo, '/'),
+            Str::afterLast($this->repo, '/'),
             $pullData
         );
     }
