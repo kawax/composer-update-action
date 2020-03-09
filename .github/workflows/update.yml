@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - v1
   schedule:
     - cron: '0 0 * * *' #UTC
 
