@@ -3,11 +3,11 @@
 namespace Tests\Feature;
 
 use App\Facades\Git;
-use Symfony\Component\Process\Process;
 use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Support\Facades\File;
-use Tests\TestCase;
 use Mockery as m;
+use Symfony\Component\Process\Process;
+use Tests\TestCase;
 
 class UpdateCommandTest extends TestCase
 {

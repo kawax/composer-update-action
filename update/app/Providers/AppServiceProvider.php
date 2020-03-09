@@ -4,8 +4,8 @@ namespace App\Providers;
 
 use Cz\Git\GitRepository;
 use Cz\Git\IGit;
-use Symfony\Component\Process\Process;
 use Illuminate\Support\ServiceProvider;
+use Symfony\Component\Process\Process;
 
 class AppServiceProvider extends ServiceProvider
 {
