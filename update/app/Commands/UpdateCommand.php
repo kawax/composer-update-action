@@ -135,6 +135,7 @@ class UpdateCommand extends Command
         $this->branch = 'cu/'.Str::random(8);
 
         $this->target_branch = Str::afterLast(env('GITHUB_REF'), '/');
+        $this->info($this->target_branch);
 
         try {
             $this->git = app(GitRepository::class, ['repository' => $this->base_path]);
