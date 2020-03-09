@@ -2,8 +2,7 @@
 
 namespace App\Commands;
 
-use Cz\Git\GitException;
-use Cz\Git\GitRepository;
+use App\Facades\Git;
 use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Facades\File;
@@ -27,11 +26,6 @@ class UpdateCommand extends Command
      * @var string
      */
     protected $description = 'composer update';
-
-    /**
-     * @var GitRepository
-     */
-    protected $git;
 
     /**
      * @var string
@@ -80,20 +74,18 @@ class UpdateCommand extends Command
 
     /**
      * Execute the console command.
-     *
-     * @throws GitException
      */
     public function handle()
     {
-        if (! env('GITHUB_ACTIONS')) {
-            $this->info('Only on GitHub Actions');
-
-            return;
-        }
-
         $this->init();
 
         if (! $this->exists()) {
+            return;
+        }
+
+        if (! env('GITHUB_ACTIONS')) {
+            $this->info('Only on GitHub Actions');
+
             return;
         }
 
@@ -103,7 +95,7 @@ class UpdateCommand extends Command
 
         $this->output($output);
 
-        if (! $this->git->hasChanges()) {
+        if (! Git::hasChanges()) {
             $this->info('no changes');
 
             return;
@@ -129,28 +121,22 @@ class UpdateCommand extends Command
         $this->repo_owner = Str::before($this->repo, '/');
         $this->repo_name = Str::afterLast($this->repo, '/');
 
-        $this->base_path = env('GITHUB_WORKSPACE');
+        $this->base_path = env('GITHUB_WORKSPACE', '');
         $this->composer_path = env('COMPOSER_PATH', '');
 
         $this->branch = 'cu/'.Str::random(8);
 
         $this->target_branch = Str::afterLast(env('GITHUB_REF'), '/');
 
-        try {
-            $this->git = app(GitRepository::class, ['repository' => $this->base_path]);
+        Git::setRemoteUrl(
+            'origin',
+            'https://'.$this->token.'@github.com/'.$this->repo.'.git'
+        );
 
-            $this->git->setRemoteUrl(
-                'origin',
-                'https://'.$this->token.'@github.com/'.$this->repo.'.git'
-            );
+        Git::execute(['config', '--local', 'user.name', env('GIT_NAME', 'cu')]);
+        Git::execute(['config', '--local', 'user.email', env('GIT_EMAIL', 'cu@composer-update')]);
 
-            $this->git->execute(['config', '--local', 'user.name', env('GIT_NAME', 'cu')]);
-            $this->git->execute(['config', '--local', 'user.email', env('GIT_EMAIL', 'cu@composer-update')]);
-
-            $this->git->createBranch($this->branch, true);
-        } catch (GitException $e) {
-            $this->error($e->getMessage());
-        }
+        Git::createBranch($this->branch, true);
     }
 
     /**
@@ -219,16 +205,14 @@ class UpdateCommand extends Command
 
     /**
      * Commit and Push.
-     *
-     * @throws GitException
      */
     protected function commitPush()
     {
         $this->info('commit');
 
-        $this->git->addAllChanges()
-                  ->commit('composer update '.today()->toDateString().PHP_EOL.PHP_EOL.$this->out)
-                  ->push('origin', [$this->branch]);
+        Git::addAllChanges()
+           ->commit('composer update '.today()->toDateString().PHP_EOL.PHP_EOL.$this->out)
+           ->push('origin', [$this->branch]);
     }
 
     /**
