@@ -181,23 +181,20 @@ class UpdateCommand extends Command
     {
         $this->info($command);
 
-        $exec = implode(
-            ' ',
-            [
-                'composer',
-                $command,
-                '--no-interaction',
-                '--no-progress',
-                '--no-suggest',
-                '--no-autoloader',
-                '--no-scripts',
-            ]
-        );
+        $exec = [
+            'composer',
+            $command,
+            '--no-interaction',
+            '--no-progress',
+            '--no-suggest',
+            '--no-autoloader',
+            '--no-scripts',
+        ];
 
-        $process = Process::fromShellCommandline($exec)
-                          ->setWorkingDirectory($this->base_path.$this->composer_path)
-                          ->setTimeout(600)
-                          ->mustRun();
+        $process = app(Process::class, ['command' => $exec])
+            ->setWorkingDirectory($this->base_path.$this->composer_path)
+            ->setTimeout(600)
+            ->mustRun();
 
         $output = $process->getOutput();
         if (blank($output)) {
