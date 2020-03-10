@@ -80,8 +80,6 @@ class UpdateCommand extends Command
     }
 
     /**
-     * init.
-     *
      * @return void
      */
     protected function init(): void
@@ -169,8 +167,6 @@ class UpdateCommand extends Command
     }
 
     /**
-     * Commit and Push.
-     *
      * @return void
      */
     protected function commitPush(): void
@@ -183,8 +179,6 @@ class UpdateCommand extends Command
     }
 
     /**
-     * Create Pull Request.
-     *
      * @return void
      */
     protected function createPullRequest(): void
