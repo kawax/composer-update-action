@@ -2,6 +2,7 @@
 
 ![update](https://github.com/kawax/composer-update-action/workflows/composer%20update/badge.svg)
 ![test](https://github.com/kawax/composer-update-action/workflows/test/badge.svg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7a806f8e8f06017b9caf/maintainability)](https://codeclimate.com/github/kawax/composer-update-action/maintainability)
 
 `composer update` and create pull request.
 
