@@ -1,7 +1,5 @@
 FROM php:7.4-cli
 
-ENV DEBIAN_FRONTEND noninteractive
-
 # php
 RUN apt-get update \
     && apt-get install -yq \
