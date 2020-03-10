@@ -80,8 +80,6 @@ class UpdateCommand extends Command
     }
 
     /**
-     * init.
-     *
      * @return void
      */
     protected function init(): void
@@ -100,7 +98,7 @@ class UpdateCommand extends Command
         GitHub::authenticate($token, 'http_token');
 
         Git::setRemoteUrl(
-            'origin',
+            'update',
             'https://'.$token.'@github.com/'.$this->repo.'.git'
         );
 
@@ -169,8 +167,6 @@ class UpdateCommand extends Command
     }
 
     /**
-     * Commit and Push.
-     *
      * @return void
      */
     protected function commitPush(): void
@@ -179,12 +175,10 @@ class UpdateCommand extends Command
 
         Git::addAllChanges()
            ->commit('composer update '.today()->toDateString().PHP_EOL.PHP_EOL.$this->out)
-           ->push('origin', [$this->new_branch]);
+           ->push('update', [$this->new_branch]);
     }
 
     /**
-     * Create Pull Request.
-     *
      * @return void
      */
     protected function createPullRequest(): void
