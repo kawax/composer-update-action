@@ -99,7 +99,7 @@ class UpdateCommand extends Command
 
         Git::setRemoteUrl(
             'origin',
-            'https://'.$token.'@github.com/'.$this->repo.'.git'
+            "https://{$token}@github.com/{$this->repo}.git"
         );
 
         Git::execute(['config', '--local', 'user.name', env('GIT_NAME', 'cu')]);
@@ -152,11 +152,11 @@ class UpdateCommand extends Command
     }
 
     /**
-     * @param  string|null  $output
+     * @param  string  $output
      *
      * @return void
      */
-    protected function output(?string $output): void
+    protected function output(string $output): void
     {
         $output = explode(PHP_EOL, $output);
 
