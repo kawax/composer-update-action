@@ -107,15 +107,8 @@ class UpdateCommand extends Command
      */
     protected function exists(): bool
     {
-        if (! File::exists($this->base_path.'/composer.json')) {
-            return false;
-        }
-
-        if (! File::exists($this->base_path.'/composer.lock')) {
-            return false;
-        }
-
-        return true;
+        return File::exists($this->base_path.'/composer.json')
+            && File::exists($this->base_path.'/composer.lock');
     }
 
     /**
