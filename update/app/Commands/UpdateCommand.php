@@ -150,9 +150,7 @@ class UpdateCommand extends Command
      */
     protected function output(string $output): void
     {
-        $output = explode(PHP_EOL, $output);
-
-        $this->out = collect($output)
+        $this->out = collect(explode(PHP_EOL, $output))
                 ->filter(fn ($item) => Str::contains($item, ' - '))
                 ->map(fn ($item) => trim($item))
                 ->implode(PHP_EOL).PHP_EOL;
