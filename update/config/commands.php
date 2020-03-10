@@ -41,8 +41,6 @@ return [
 
     'add' => [
         // ..
-
-        Illuminate\Foundation\Console\NotificationMakeCommand::class,
     ],
 
     /*
