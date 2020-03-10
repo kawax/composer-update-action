@@ -1,4 +1,0 @@
-* text=auto
-.travis.yml export-ignore
-.styleci.yml export-ignore
-.update.yml export-ignore

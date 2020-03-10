@@ -98,7 +98,7 @@ class UpdateCommand extends Command
         GitHub::authenticate($token, 'http_token');
 
         Git::setRemoteUrl(
-            'update',
+            'origin',
             'https://'.$token.'@github.com/'.$this->repo.'.git'
         );
 
@@ -175,7 +175,7 @@ class UpdateCommand extends Command
 
         Git::addAllChanges()
            ->commit('composer update '.today()->toDateString().PHP_EOL.PHP_EOL.$this->out)
-           ->push('update', [$this->new_branch]);
+           ->push('origin', [$this->new_branch]);
     }
 
     /**
