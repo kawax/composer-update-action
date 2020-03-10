@@ -39,11 +39,6 @@ class UpdateCommand extends Command
     /**
      * @var string
      */
-    protected string $composer_path;
-
-    /**
-     * @var string
-     */
     protected string $new_branch;
 
     /**
@@ -88,8 +83,7 @@ class UpdateCommand extends Command
 
         $this->repo = env('GITHUB_REPOSITORY', '');
 
-        $this->base_path = env('GITHUB_WORKSPACE', '');
-        $this->composer_path = env('COMPOSER_PATH', '');
+        $this->base_path = env('GITHUB_WORKSPACE', '').env('COMPOSER_PATH', '');
 
         $this->new_branch = 'cu/'.Str::random(8);
 
@@ -113,13 +107,11 @@ class UpdateCommand extends Command
      */
     protected function exists(): bool
     {
-        $path = $this->base_path.$this->composer_path;
-
-        if (! File::exists($path.'/composer.json')) {
+        if (! File::exists($this->base_path.'/composer.json')) {
             return false;
         }
 
-        if (! File::exists($path.'/composer.lock')) {
+        if (! File::exists($this->base_path.'/composer.lock')) {
             return false;
         }
 
@@ -139,7 +131,7 @@ class UpdateCommand extends Command
          * @var Process $process
          */
         $process = app('process.'.$command)
-            ->setWorkingDirectory($this->base_path.$this->composer_path)
+            ->setWorkingDirectory($this->base_path)
             ->setTimeout(600)
             ->mustRun();
 
