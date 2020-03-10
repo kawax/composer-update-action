@@ -26,7 +26,7 @@ RUN composer global require hirak/prestissimo --no-progress
 WORKDIR /root
 COPY ./update /root
 
-RUN composer install  --no-dev --no-interaction --prefer-dist --no-progress --no-suggest --optimize-autoloader
+RUN composer install --no-dev --no-interaction --prefer-dist --no-progress --no-suggest --optimize-autoloader
 
 COPY entrypoint.sh /entrypoint.sh
 
