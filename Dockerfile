@@ -18,7 +18,6 @@ RUN apt-get update \
 
 # composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-ENV COMPOSER_ALLOW_SUPERUSER 1
 
 #RUN composer config -g repos.packagist composer https://packagist.kawax.biz/
 RUN composer global require hirak/prestissimo --no-progress
