@@ -32,7 +32,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: composer update action step
+      - name: composer update action
         uses: kawax/composer-update-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -44,7 +44,7 @@ jobs:
 - GIT_EMAIL : git email
 
 ```yaml
-      - name: composer update action step
+      - name: composer update action
         uses: kawax/composer-update-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
