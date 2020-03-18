@@ -4,7 +4,6 @@ namespace App\Commands;
 
 use App\Facades\Git;
 use GrahamCampbell\GitHub\Facades\GitHub;
-use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use LaravelZero\Framework\Commands\Command;
@@ -145,7 +144,7 @@ class UpdateCommand extends Command
     {
         $this->out = collect(explode(PHP_EOL, $output))
                 ->filter(fn ($item) => Str::contains($item, ' - '))
-                ->map(fn ($item) => trim(Str::beforeLast($item, ':')))
+                ->map(fn ($item) => Str::of($item)->beforeLast(':')->trim())
                 ->implode(PHP_EOL).PHP_EOL;
     }
 
@@ -180,17 +179,5 @@ class UpdateCommand extends Command
             Str::afterLast($this->repo, '/'),
             $pullData
         );
-    }
-
-    /**
-     * Define the command's schedule.
-     *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
-     *
-     * @return void
-     */
-    public function schedule(Schedule $schedule): void
-    {
-        // $schedule->command(static::class)->everyMinute();
     }
 }
