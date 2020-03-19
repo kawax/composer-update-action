@@ -61,7 +61,7 @@ class UpdateCommandTest extends TestCase
 
     public function testFluentStrings()
     {
-        $str = (string)Str::of(' - Updating laravel/framework (v7.0.0 => v7.1.0): Loading from cache')->beforeLast(':')->trim();
+        $str = (string) Str::of(' - Updating laravel/framework (v7.0.0 => v7.1.0): Loading from cache')->beforeLast(':')->trim();
 
         $this->assertEquals('- Updating laravel/framework (v7.0.0 => v7.1.0)', $str);
     }
