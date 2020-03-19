@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Facades\Git;
 use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use Mockery as m;
 use Symfony\Component\Process\Process;
 use Tests\TestCase;
@@ -56,5 +57,12 @@ class UpdateCommandTest extends TestCase
         $this->artisan('update')
              ->expectsOutput('init')
              ->assertExitCode(0);
+    }
+
+    public function testFluentStrings()
+    {
+        $str = (string)Str::of(' - Updating laravel/framework (v7.0.0 => v7.1.0): Loading from cache')->beforeLast(':')->trim();
+
+        $this->assertEquals('- Updating laravel/framework (v7.0.0 => v7.1.0)', $str);
     }
 }
