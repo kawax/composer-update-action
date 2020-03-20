@@ -145,7 +145,7 @@ class UpdateCommand extends Command
         $this->out = Str::of($output)
                         ->explode(PHP_EOL)
                         ->filter(fn ($item) => Str::contains($item, ' - '))
-                        ->map(fn ($item) => (string)Str::of($item)->beforeLast(':')->trim())
+                        ->map(fn ($item) => (string) Str::of($item)->beforeLast(':')->trim())
                         ->implode(PHP_EOL).PHP_EOL;
 
         $this->line($this->out);
