@@ -142,10 +142,11 @@ class UpdateCommand extends Command
      */
     protected function output(string $output): void
     {
-        $this->out = collect(explode(PHP_EOL, $output))
-                ->filter(fn ($item) => Str::contains($item, ' - '))
-                ->map(fn ($item) => (string) Str::of($item)->beforeLast(':')->trim())
-                ->implode(PHP_EOL).PHP_EOL;
+        $this->out = Str::of($output)
+                        ->explode(PHP_EOL)
+                        ->filter(fn ($item) => Str::contains($item, ' - '))
+                        ->map(fn ($item) => (string)Str::of($item)->beforeLast(':')->trim())
+                        ->implode(PHP_EOL).PHP_EOL;
 
         $this->line($this->out);
     }
