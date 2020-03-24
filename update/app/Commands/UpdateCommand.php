@@ -104,7 +104,7 @@ class UpdateCommand extends Command
     }
 
     /**
-     * Set GitHub token for composer
+     * Set GitHub token for composer.
      *
      * @return void
      */
