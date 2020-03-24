@@ -49,6 +49,16 @@ class UpdateCommandTest extends TestCase
             )
         );
 
+        $this->instance(
+            'process.token',
+            m::mock(
+                Process::class,
+                function ($mock) {
+                    $mock->shouldReceive('setWorkingDirectory->setTimeout->mustRun')->once()->andReturnSelf();
+                }
+            )
+        );
+
         Git::shouldReceive('hasChanges')->andReturnTrue();
         Git::shouldReceive('addAllChanges->commit->push')->once();
 
@@ -61,7 +71,9 @@ class UpdateCommandTest extends TestCase
 
     public function testFluentStrings()
     {
-        $str = (string) Str::of(' - Updating laravel/framework (v7.0.0 => v7.1.0): Loading from cache')->beforeLast(':')->trim();
+        $str = (string) Str::of(' - Updating laravel/framework (v7.0.0 => v7.1.0): Loading from cache')->beforeLast(
+            ':'
+        )->trim();
 
         $this->assertEquals('- Updating laravel/framework (v7.0.0 => v7.1.0)', $str);
     }

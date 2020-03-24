@@ -99,6 +99,24 @@ class UpdateCommand extends Command
         Git::execute(['config', '--local', 'user.email', env('GIT_EMAIL', 'cu@composer-update')]);
 
         Git::createBranch($this->new_branch, true);
+
+        $this->token();
+    }
+
+    /**
+     * Set GitHub token for composer.
+     *
+     * @return void
+     */
+    protected function token(): void
+    {
+        /**
+         * @var Process $process
+         */
+        $process = app('process.token')
+            ->setWorkingDirectory($this->base_path)
+            ->setTimeout(60)
+            ->mustRun();
     }
 
     /**
