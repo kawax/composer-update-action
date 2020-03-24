@@ -40,6 +40,11 @@ class AppServiceProvider extends ServiceProvider
             'process.update',
             fn ($app) => new Process($this->command('update'))
         );
+
+        $this->app->bind(
+            'process.token',
+            fn ($app) => new Process($this->token())
+        );
     }
 
     /**
@@ -57,6 +62,20 @@ class AppServiceProvider extends ServiceProvider
             '--no-suggest',
             '--no-autoloader',
             '--no-scripts',
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    private function token(): array
+    {
+        return [
+            'composer',
+            'config',
+            '-g',
+            'github-oauth.github.com',
+            env('GITHUB_TOKEN'),
         ];
     }
 }
