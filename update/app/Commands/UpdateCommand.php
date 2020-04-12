@@ -113,10 +113,16 @@ class UpdateCommand extends Command
         /**
          * @var Process $process
          */
-        $process = app('process.token')
-            ->setWorkingDirectory($this->base_path)
-            ->setTimeout(60)
-            ->mustRun();
+        $process = app('process.token');
+
+        $process->setWorkingDirectory($this->base_path)
+                ->setTimeout(60)
+                ->setEnv(
+                    [
+                        'COMPOSER_MEMORY_LIMIT' => '-1',
+                    ]
+                )
+                ->mustRun();
     }
 
     /**
