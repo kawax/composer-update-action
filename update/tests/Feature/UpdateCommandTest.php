@@ -30,7 +30,7 @@ class UpdateCommandTest extends TestCase
             m::mock(
                 Process::class,
                 function ($mock) {
-                    $mock->shouldReceive('setWorkingDirectory->setTimeout->mustRun->getOutput')->once()->andReturn(
+                    $mock->shouldReceive('setWorkingDirectory->setTimeout->setEnv->mustRun->getOutput')->once()->andReturn(
                         'test'
                     );
                 }
@@ -42,7 +42,7 @@ class UpdateCommandTest extends TestCase
             m::mock(
                 Process::class,
                 function ($mock) {
-                    $mock->shouldReceive('setWorkingDirectory->setTimeout->mustRun->getOutput')->once()->andReturn(
+                    $mock->shouldReceive('setWorkingDirectory->setTimeout->setEnv->mustRun->getOutput')->once()->andReturn(
                         'test'
                     );
                 }
