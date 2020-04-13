@@ -104,22 +104,6 @@ class UpdateCommand extends Command
     }
 
     /**
-     * Set GitHub token for composer.
-     *
-     * @return void
-     */
-    protected function token(): void
-    {
-        /**
-         * @var Process $process
-         */
-        $process = app('process.token')
-            ->setWorkingDirectory($this->base_path)
-            ->setTimeout(60)
-            ->mustRun();
-    }
-
-    /**
      * @return bool
      */
     protected function exists(): bool
@@ -156,6 +140,22 @@ class UpdateCommand extends Command
         }
 
         return $output ?? '';
+    }
+
+    /**
+     * Set GitHub token for composer.
+     *
+     * @return void
+     */
+    protected function token(): void
+    {
+        /**
+         * @var Process $process
+         */
+        $process = app('process.token')
+            ->setWorkingDirectory($this->base_path)
+            ->setTimeout(60)
+            ->mustRun();
     }
 
     /**
