@@ -385,16 +385,16 @@
         },
         {
             "name": "graham-campbell/github",
-            "version": "v9.1.1",
+            "version": "v9.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-GitHub.git",
-                "reference": "744769bda95eab0705577c74ead32a0bc8c16937"
+                "reference": "33443285744c9869d6cc9c80b04e946143c1cde6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-GitHub/zipball/744769bda95eab0705577c74ead32a0bc8c16937",
-                "reference": "744769bda95eab0705577c74ead32a0bc8c16937",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-GitHub/zipball/33443285744c9869d6cc9c80b04e946143c1cde6",
+                "reference": "33443285744c9869d6cc9c80b04e946143c1cde6",
                 "shasum": ""
             },
             "require": {
@@ -402,7 +402,7 @@
                 "graham-campbell/manager": "^4.5",
                 "illuminate/contracts": "^6.0|^7.0",
                 "illuminate/support": "^6.0|^7.0",
-                "knplabs/github-api": "2.13.*",
+                "knplabs/github-api": "2.14.*",
                 "php": "^7.2.5",
                 "php-http/cache-plugin": "^1.6",
                 "php-http/client-common": "^1.9|^2.0",
@@ -422,7 +422,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "9.1-dev"
+                    "dev-master": "9.2-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -459,20 +459,30 @@
                 "laravel",
                 "php-github-api"
             ],
-            "time": "2020-04-14T17:41:27+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/graham-campbell/github",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-04-26T09:27:54+00:00"
         },
         {
             "name": "graham-campbell/manager",
-            "version": "v4.5.2",
+            "version": "v4.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Manager.git",
-                "reference": "69ade143dc9629448f70a19bfbd43bedf51c6093"
+                "reference": "9584dcca30aeaebd04bed7f1a59ee52fe5b24b49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Manager/zipball/69ade143dc9629448f70a19bfbd43bedf51c6093",
-                "reference": "69ade143dc9629448f70a19bfbd43bedf51c6093",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Manager/zipball/9584dcca30aeaebd04bed7f1a59ee52fe5b24b49",
+                "reference": "9584dcca30aeaebd04bed7f1a59ee52fe5b24b49",
                 "shasum": ""
             },
             "require": {
@@ -519,7 +529,17 @@
                 "laravel",
                 "manager"
             ],
-            "time": "2020-04-14T12:03:27+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/graham-campbell/manager",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-04-26T09:40:56+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1217,16 +1237,16 @@
         },
         {
             "name": "knplabs/github-api",
-            "version": "2.13.0",
+            "version": "v2.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/php-github-api.git",
-                "reference": "d493c8f4aa84e04629b38d1487407e1c6c9d90d1"
+                "reference": "953c9b453d3258a97755ec3557d112f271176f74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/d493c8f4aa84e04629b38d1487407e1c6c9d90d1",
-                "reference": "d493c8f4aa84e04629b38d1487407e1c6c9d90d1",
+                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/953c9b453d3258a97755ec3557d112f271176f74",
+                "reference": "953c9b453d3258a97755ec3557d112f271176f74",
                 "shasum": ""
             },
             "require": {
@@ -1249,7 +1269,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.13.x-dev"
+                    "dev-master": "2.14.x-dev"
                 }
             },
             "autoload": {
@@ -1286,7 +1306,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-03-16T19:57:05+00:00"
+            "time": "2020-04-25T20:36:03+00:00"
         },
         {
             "name": "laravel-zero/foundation",
