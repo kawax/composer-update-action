@@ -756,7 +756,7 @@
         },
         {
             "name": "illuminate/cache",
-            "version": "v7.12.0",
+            "version": "v7.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/cache.git",
@@ -807,7 +807,7 @@
         },
         {
             "name": "illuminate/config",
-            "version": "v7.12.0",
+            "version": "v7.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
@@ -851,7 +851,7 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v7.12.0",
+            "version": "v7.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
@@ -905,7 +905,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v7.12.0",
+            "version": "v7.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -949,7 +949,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v7.12.0",
+            "version": "v7.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -993,7 +993,7 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v7.12.0",
+            "version": "v7.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -1038,7 +1038,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v7.12.0",
+            "version": "v7.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -1091,7 +1091,7 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v7.12.0",
+            "version": "v7.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
@@ -1153,16 +1153,16 @@
         },
         {
             "name": "illuminate/testing",
-            "version": "v7.12.0",
+            "version": "v7.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/testing.git",
-                "reference": "37b77199f9d7bf0ea46ab630bbafc257d6d4f68d"
+                "reference": "2498dc015d1e6b00eda6135739cbbb0856cb342e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/testing/zipball/37b77199f9d7bf0ea46ab630bbafc257d6d4f68d",
-                "reference": "37b77199f9d7bf0ea46ab630bbafc257d6d4f68d",
+                "url": "https://api.github.com/repos/illuminate/testing/zipball/2498dc015d1e6b00eda6135739cbbb0856cb342e",
+                "reference": "2498dc015d1e6b00eda6135739cbbb0856cb342e",
                 "shasum": ""
             },
             "require": {
@@ -1201,7 +1201,7 @@
             ],
             "description": "The Illuminate Testing package.",
             "homepage": "https://laravel.com",
-            "time": "2020-05-15T13:05:23+00:00"
+            "time": "2020-05-20T13:30:33+00:00"
         },
         {
             "name": "jolicode/jolinotif",
@@ -4203,16 +4203,16 @@
         },
         {
             "name": "voku/portable-ascii",
-            "version": "1.5.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/portable-ascii.git",
-                "reference": "2d302cf7dc474d5f7f18b29b03e0e77d408922a4"
+                "reference": "e7f9bd5deff09a57318f9b900ab33a05acfcf4d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/2d302cf7dc474d5f7f18b29b03e0e77d408922a4",
-                "reference": "2d302cf7dc474d5f7f18b29b03e0e77d408922a4",
+                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/e7f9bd5deff09a57318f9b900ab33a05acfcf4d3",
+                "reference": "e7f9bd5deff09a57318f9b900ab33a05acfcf4d3",
                 "shasum": ""
             },
             "require": {
@@ -4265,7 +4265,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-23T23:15:19+00:00"
+            "time": "2020-05-26T06:40:44+00:00"
         }
     ],
     "packages-dev": [
