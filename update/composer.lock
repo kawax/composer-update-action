@@ -102,16 +102,16 @@
         },
         {
             "name": "doctrine/inflector",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "3fc171224a316569faad2df6b18a1fd8cce5a56d"
+                "reference": "9cf661f4eb38f7c881cac67c75ea9b00bf97b210"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/3fc171224a316569faad2df6b18a1fd8cce5a56d",
-                "reference": "3fc171224a316569faad2df6b18a1fd8cce5a56d",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/9cf661f4eb38f7c881cac67c75ea9b00bf97b210",
+                "reference": "9cf661f4eb38f7c881cac67c75ea9b00bf97b210",
                 "shasum": ""
             },
             "require": {
@@ -189,7 +189,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-25T20:08:47+00:00"
+            "time": "2020-05-29T15:13:26+00:00"
         },
         {
             "name": "dragonmantank/cron-expression",
@@ -1335,16 +1335,16 @@
         },
         {
             "name": "laravel-zero/foundation",
-            "version": "v7.12.0",
+            "version": "v7.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-zero/foundation.git",
-                "reference": "751d4f5aa59744dd17790d4d2422e088ba3b229e"
+                "reference": "b8f110342a05fd635edc674534675310bbb4a49f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-zero/foundation/zipball/751d4f5aa59744dd17790d4d2422e088ba3b229e",
-                "reference": "751d4f5aa59744dd17790d4d2422e088ba3b229e",
+                "url": "https://api.github.com/repos/laravel-zero/foundation/zipball/b8f110342a05fd635edc674534675310bbb4a49f",
+                "reference": "b8f110342a05fd635edc674534675310bbb4a49f",
                 "shasum": ""
             },
             "require": {
@@ -1373,7 +1373,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-05-20T08:44:25+00:00"
+            "time": "2020-05-29T09:32:16+00:00"
         },
         {
             "name": "laravel-zero/framework",
