@@ -756,7 +756,7 @@
         },
         {
             "name": "illuminate/cache",
-            "version": "v7.13.0",
+            "version": "v7.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/cache.git",
@@ -807,7 +807,7 @@
         },
         {
             "name": "illuminate/config",
-            "version": "v7.13.0",
+            "version": "v7.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
@@ -851,16 +851,16 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v7.13.0",
+            "version": "v7.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "c95fc7f09c968ee346a0484cd82afc08f3d5499f"
+                "reference": "b6586e349d668c50b8fd3d1253067ca44785d1b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/c95fc7f09c968ee346a0484cd82afc08f3d5499f",
-                "reference": "c95fc7f09c968ee346a0484cd82afc08f3d5499f",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/b6586e349d668c50b8fd3d1253067ca44785d1b0",
+                "reference": "b6586e349d668c50b8fd3d1253067ca44785d1b0",
                 "shasum": ""
             },
             "require": {
@@ -873,10 +873,10 @@
             "suggest": {
                 "dragonmantank/cron-expression": "Required to use scheduler (^2.0).",
                 "guzzlehttp/guzzle": "Required to use the ping methods on schedules (^6.3.1|^7.0).",
-                "illuminate/bus": "Required to use the scheduled job dispatcher (^7.0)",
-                "illuminate/container": "Required to use the scheduler (^7.0)",
-                "illuminate/filesystem": "Required to use the generator command (^7.0)",
-                "illuminate/queue": "Required to use closures for scheduled jobs (^7.0)"
+                "illuminate/bus": "Required to use the scheduled job dispatcher (^7.0).",
+                "illuminate/container": "Required to use the scheduler (^7.0).",
+                "illuminate/filesystem": "Required to use the generator command (^7.0).",
+                "illuminate/queue": "Required to use closures for scheduled jobs (^7.0)."
             },
             "type": "library",
             "extra": {
@@ -901,26 +901,29 @@
             ],
             "description": "The Illuminate Console package.",
             "homepage": "https://laravel.com",
-            "time": "2020-05-13T14:36:59+00:00"
+            "time": "2020-06-02T22:33:52+00:00"
         },
         {
             "name": "illuminate/container",
-            "version": "v7.13.0",
+            "version": "v7.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "84ae2fba28994b1f6d0d01c0e646e9484f00d727"
+                "reference": "2929d14ab8cce9cfc12e03e0a9b53f99234a3897"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/84ae2fba28994b1f6d0d01c0e646e9484f00d727",
-                "reference": "84ae2fba28994b1f6d0d01c0e646e9484f00d727",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/2929d14ab8cce9cfc12e03e0a9b53f99234a3897",
+                "reference": "2929d14ab8cce9cfc12e03e0a9b53f99234a3897",
                 "shasum": ""
             },
             "require": {
                 "illuminate/contracts": "^7.0",
                 "php": "^7.2.5",
                 "psr/container": "^1.0"
+            },
+            "provide": {
+                "psr/container-implementation": "1.0"
             },
             "type": "library",
             "extra": {
@@ -945,11 +948,11 @@
             ],
             "description": "The Illuminate Container package.",
             "homepage": "https://laravel.com",
-            "time": "2020-05-13T14:09:17+00:00"
+            "time": "2020-06-01T14:59:52+00:00"
         },
         {
             "name": "illuminate/contracts",
-            "version": "v7.13.0",
+            "version": "v7.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -993,7 +996,7 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v7.13.0",
+            "version": "v7.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -1038,16 +1041,16 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v7.13.0",
+            "version": "v7.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
-                "reference": "43d0aafb620151b9c88331e13e1660564fc56244"
+                "reference": "651d25f115103613f6e613ed710a910e9f0b079e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/43d0aafb620151b9c88331e13e1660564fc56244",
-                "reference": "43d0aafb620151b9c88331e13e1660564fc56244",
+                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/651d25f115103613f6e613ed710a910e9f0b079e",
+                "reference": "651d25f115103613f6e613ed710a910e9f0b079e",
                 "shasum": ""
             },
             "require": {
@@ -1057,12 +1060,13 @@
                 "symfony/finder": "^5.0"
             },
             "suggest": {
-                "illuminate/http": "Required for handling uploaded files (^7.0)",
-                "league/flysystem": "Required to use the Flysystem local and FTP drivers (^1.0).",
+                "illuminate/http": "Required for handling uploaded files (^7.0).",
+                "league/flysystem": "Required to use the Flysystem local and FTP drivers (^1.0.34).",
                 "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (^1.0).",
                 "league/flysystem-cached-adapter": "Required to use the Flysystem cache (^1.0).",
                 "league/flysystem-sftp": "Required to use the Flysystem SFTP driver (^1.0).",
-                "psr/http-message": "Required to allow Storage::put to accept a StreamInterface (^1.0)"
+                "psr/http-message": "Required to allow Storage::put to accept a StreamInterface (^1.0).",
+                "symfony/mime": "Required to enable support for guessing extensions (^5.0)."
             },
             "type": "library",
             "extra": {
@@ -1087,20 +1091,20 @@
             ],
             "description": "The Illuminate Filesystem package.",
             "homepage": "https://laravel.com",
-            "time": "2020-03-26T19:53:03+00:00"
+            "time": "2020-06-02T22:33:52+00:00"
         },
         {
             "name": "illuminate/support",
-            "version": "v7.13.0",
+            "version": "v7.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "c06d87c1f2126e32337239163a6ae98b06635aeb"
+                "reference": "778698d5f2cc43fc0bceff796c71fb375bfa3351"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/c06d87c1f2126e32337239163a6ae98b06635aeb",
-                "reference": "c06d87c1f2126e32337239163a6ae98b06635aeb",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/778698d5f2cc43fc0bceff796c71fb375bfa3351",
+                "reference": "778698d5f2cc43fc0bceff796c71fb375bfa3351",
                 "shasum": ""
             },
             "require": {
@@ -1149,20 +1153,20 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2020-05-18T15:24:09+00:00"
+            "time": "2020-06-02T18:00:46+00:00"
         },
         {
             "name": "illuminate/testing",
-            "version": "v7.13.0",
+            "version": "v7.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/testing.git",
-                "reference": "2498dc015d1e6b00eda6135739cbbb0856cb342e"
+                "reference": "444fd70a3c56e5daeee1e3b4c8bf9bf8fa28b2c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/testing/zipball/2498dc015d1e6b00eda6135739cbbb0856cb342e",
-                "reference": "2498dc015d1e6b00eda6135739cbbb0856cb342e",
+                "url": "https://api.github.com/repos/illuminate/testing/zipball/444fd70a3c56e5daeee1e3b4c8bf9bf8fa28b2c5",
+                "reference": "444fd70a3c56e5daeee1e3b4c8bf9bf8fa28b2c5",
                 "shasum": ""
             },
             "require": {
@@ -1201,7 +1205,7 @@
             ],
             "description": "The Illuminate Testing package.",
             "homepage": "https://laravel.com",
-            "time": "2020-05-20T13:30:33+00:00"
+            "time": "2020-05-29T09:44:42+00:00"
         },
         {
             "name": "jolicode/jolinotif",
