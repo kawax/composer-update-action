@@ -6,7 +6,7 @@ on:
       - master
       - v*
   schedule:
-    - cron: '0 0 * * *' #UTC
+    - cron: '0 4 * * *' #UTC
 
 jobs:
   composer_update_job:
