@@ -409,16 +409,16 @@
         },
         {
             "name": "graham-campbell/github",
-            "version": "v9.2.0",
+            "version": "v9.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-GitHub.git",
-                "reference": "33443285744c9869d6cc9c80b04e946143c1cde6"
+                "reference": "3dc48e25697d630685c356272f8585ef5c4209e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-GitHub/zipball/33443285744c9869d6cc9c80b04e946143c1cde6",
-                "reference": "33443285744c9869d6cc9c80b04e946143c1cde6",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-GitHub/zipball/3dc48e25697d630685c356272f8585ef5c4209e2",
+                "reference": "3dc48e25697d630685c356272f8585ef5c4209e2",
                 "shasum": ""
             },
             "require": {
@@ -493,7 +493,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-04-26T09:27:54+00:00"
+            "time": "2020-06-25T09:46:44+00:00"
         },
         {
             "name": "graham-campbell/manager",
