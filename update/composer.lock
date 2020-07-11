@@ -756,16 +756,16 @@
         },
         {
             "name": "illuminate/cache",
-            "version": "v7.19.0",
+            "version": "v7.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/cache.git",
-                "reference": "be44a7f9c53b586407710ce900c791c94b749552"
+                "reference": "b28b43e1cd4f7a336a68b64d64ff4809838bade9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/cache/zipball/be44a7f9c53b586407710ce900c791c94b749552",
-                "reference": "be44a7f9c53b586407710ce900c791c94b749552",
+                "url": "https://api.github.com/repos/illuminate/cache/zipball/b28b43e1cd4f7a336a68b64d64ff4809838bade9",
+                "reference": "b28b43e1cd4f7a336a68b64d64ff4809838bade9",
                 "shasum": ""
             },
             "require": {
@@ -803,11 +803,11 @@
             ],
             "description": "The Illuminate Cache package.",
             "homepage": "https://laravel.com",
-            "time": "2020-07-02T19:01:00+00:00"
+            "time": "2020-07-07T15:44:46+00:00"
         },
         {
             "name": "illuminate/config",
-            "version": "v7.19.0",
+            "version": "v7.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
@@ -851,7 +851,7 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v7.19.0",
+            "version": "v7.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
@@ -905,7 +905,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v7.19.0",
+            "version": "v7.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -952,7 +952,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v7.19.0",
+            "version": "v7.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -996,7 +996,7 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v7.19.0",
+            "version": "v7.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -1041,7 +1041,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v7.19.0",
+            "version": "v7.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -1096,16 +1096,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v7.19.0",
+            "version": "v7.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "cea67c53207fd71231e4d0c1e096107c4059036e"
+                "reference": "6f95a9659e1ad33ce97db79b56faadb72f27e7ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/cea67c53207fd71231e4d0c1e096107c4059036e",
-                "reference": "cea67c53207fd71231e4d0c1e096107c4059036e",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/6f95a9659e1ad33ce97db79b56faadb72f27e7ed",
+                "reference": "6f95a9659e1ad33ce97db79b56faadb72f27e7ed",
                 "shasum": ""
             },
             "require": {
@@ -1154,11 +1154,11 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2020-07-07T13:48:08+00:00"
+            "time": "2020-07-10T16:41:39+00:00"
         },
         {
             "name": "illuminate/testing",
-            "version": "v7.19.0",
+            "version": "v7.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/testing.git",
