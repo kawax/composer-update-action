@@ -758,7 +758,7 @@
         },
         {
             "name": "illuminate/cache",
-            "version": "v7.24.0",
+            "version": "v7.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/cache.git",
@@ -809,7 +809,7 @@
         },
         {
             "name": "illuminate/config",
-            "version": "v7.24.0",
+            "version": "v7.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
@@ -853,7 +853,7 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v7.24.0",
+            "version": "v7.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
@@ -907,7 +907,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v7.24.0",
+            "version": "v7.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -954,7 +954,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v7.24.0",
+            "version": "v7.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -998,7 +998,7 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v7.24.0",
+            "version": "v7.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -1043,7 +1043,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v7.24.0",
+            "version": "v7.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -1098,16 +1098,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v7.24.0",
+            "version": "v7.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "a73fabea211d9b26b76c64a925db4b660d150a88"
+                "reference": "9b0c0af8d2dd1a729f6337d0ed5c81a241ea43ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/a73fabea211d9b26b76c64a925db4b660d150a88",
-                "reference": "a73fabea211d9b26b76c64a925db4b660d150a88",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/9b0c0af8d2dd1a729f6337d0ed5c81a241ea43ab",
+                "reference": "9b0c0af8d2dd1a729f6337d0ed5c81a241ea43ab",
                 "shasum": ""
             },
             "require": {
@@ -1156,11 +1156,11 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2020-08-06T13:54:33+00:00"
+            "time": "2020-08-10T13:58:23+00:00"
         },
         {
             "name": "illuminate/testing",
-            "version": "v7.24.0",
+            "version": "v7.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/testing.git",
@@ -5091,16 +5091,16 @@
         },
         {
             "name": "mockery/mockery",
-            "version": "1.4.1",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mockery/mockery.git",
-                "reference": "1404386ca3410b04fe58b9517e85d702ab33b2c6"
+                "reference": "20cab678faed06fac225193be281ea0fddb43b93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mockery/mockery/zipball/1404386ca3410b04fe58b9517e85d702ab33b2c6",
-                "reference": "1404386ca3410b04fe58b9517e85d702ab33b2c6",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/20cab678faed06fac225193be281ea0fddb43b93",
+                "reference": "20cab678faed06fac225193be281ea0fddb43b93",
                 "shasum": ""
             },
             "require": {
@@ -5112,7 +5112,7 @@
                 "phpunit/phpunit": "<8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^8.5 || ^9.0"
+                "phpunit/phpunit": "^8.5 || ^9.3"
             },
             "type": "library",
             "extra": {
@@ -5155,7 +5155,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2020-07-09T08:31:54+00:00"
+            "time": "2020-08-11T18:10:13+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -5875,16 +5875,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.3.5",
+            "version": "9.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "7115b00b23bcd4f62a73855c9615694d2f206e71"
+                "reference": "c638a0cac77347980352485912de48c99b42ad00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7115b00b23bcd4f62a73855c9615694d2f206e71",
-                "reference": "7115b00b23bcd4f62a73855c9615694d2f206e71",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c638a0cac77347980352485912de48c99b42ad00",
+                "reference": "c638a0cac77347980352485912de48c99b42ad00",
                 "shasum": ""
             },
             "require": {
@@ -5969,7 +5969,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-08-10T06:50:08+00:00"
+            "time": "2020-08-11T15:36:12+00:00"
         },
         {
             "name": "sebastian/code-unit",
