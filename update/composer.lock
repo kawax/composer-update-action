@@ -419,23 +419,23 @@
         },
         {
             "name": "graham-campbell/github",
-            "version": "v9.3.1",
+            "version": "v9.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-GitHub.git",
-                "reference": "1fb2aa191be31ca7fa14212d802bf1544fa730c3"
+                "reference": "18f42d1e4e727e7034facb2bc37ce5f949c182f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-GitHub/zipball/1fb2aa191be31ca7fa14212d802bf1544fa730c3",
-                "reference": "1fb2aa191be31ca7fa14212d802bf1544fa730c3",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-GitHub/zipball/18f42d1e4e727e7034facb2bc37ce5f949c182f7",
+                "reference": "18f42d1e4e727e7034facb2bc37ce5f949c182f7",
                 "shasum": ""
             },
             "require": {
                 "graham-campbell/bounded-cache": "^1.0",
                 "graham-campbell/manager": "^4.5",
-                "illuminate/contracts": "^6.0 || ^7.0",
-                "illuminate/support": "^6.0 || ^7.0",
+                "illuminate/contracts": "^6.0 || ^7.0 || ^8.0",
+                "illuminate/support": "^6.0 || ^7.0 || ^8.0",
                 "knplabs/github-api": "2.15.*",
                 "php": "^7.2.5",
                 "php-http/cache-plugin": "^1.6",
@@ -500,7 +500,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-15T09:02:16+00:00"
+            "time": "2020-08-16T12:26:55+00:00"
         },
         {
             "name": "graham-campbell/manager",
