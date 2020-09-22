@@ -1664,16 +1664,16 @@
         },
         {
             "name": "laravel-zero/foundation",
-            "version": "v8.3.0",
+            "version": "v8.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-zero/foundation.git",
-                "reference": "0c5468d246c05cb05c05046ca1c880f1a66ee450"
+                "reference": "98e03a8a6aab7d82710c91d7889da1d8866a0678"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-zero/foundation/zipball/0c5468d246c05cb05c05046ca1c880f1a66ee450",
-                "reference": "0c5468d246c05cb05c05046ca1c880f1a66ee450",
+                "url": "https://api.github.com/repos/laravel-zero/foundation/zipball/98e03a8a6aab7d82710c91d7889da1d8866a0678",
+                "reference": "98e03a8a6aab7d82710c91d7889da1d8866a0678",
                 "shasum": ""
             },
             "require": {
@@ -1702,7 +1702,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-09-16T16:06:07+00:00"
+            "time": "2020-09-21T16:17:55+00:00"
         },
         {
             "name": "laravel-zero/framework",
@@ -1883,16 +1883,16 @@
         },
         {
             "name": "league/mime-type-detection",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/mime-type-detection.git",
-                "reference": "fda190b62b962d96a069fcc414d781db66d65b69"
+                "reference": "ea2fbfc988bade315acd5967e6d02274086d0f28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/fda190b62b962d96a069fcc414d781db66d65b69",
-                "reference": "fda190b62b962d96a069fcc414d781db66d65b69",
+                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/ea2fbfc988bade315acd5967e6d02274086d0f28",
+                "reference": "ea2fbfc988bade315acd5967e6d02274086d0f28",
                 "shasum": ""
             },
             "require": {
@@ -1930,7 +1930,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-08-09T10:34:01+00:00"
+            "time": "2020-09-21T18:10:53+00:00"
         },
         {
             "name": "nesbot/carbon",
