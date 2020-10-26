@@ -6,7 +6,7 @@ php:
 
 before_script:
   - cd ./update
-  - travis_retry composer install --no-interaction --prefer-dist --no-progress --no-suggest
+  - travis_retry composer install --no-interaction --prefer-dist --no-progress
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
