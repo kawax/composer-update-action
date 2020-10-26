@@ -59,7 +59,6 @@ class AppServiceProvider extends ServiceProvider
             $cmd,
             '--no-interaction',
             '--no-progress',
-            '--no-suggest',
             '--no-autoloader',
             '--no-scripts',
         ];
