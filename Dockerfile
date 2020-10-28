@@ -24,7 +24,7 @@ RUN composer self-update --2
 WORKDIR /root
 COPY ./update /root
 
-RUN composer install --no-dev --no-interaction --prefer-dist --no-progress --no-suggest --optimize-autoloader
+RUN composer install --no-dev --no-interaction --no-progress --optimize-autoloader
 
 COPY entrypoint.sh /entrypoint.sh
 

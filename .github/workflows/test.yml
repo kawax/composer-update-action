@@ -19,6 +19,6 @@ jobs:
           extensions: mbstring, bcmath
           coverage: none
       - name: Install Composer dependencies
-        run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader -d ./update
+        run: composer install --no-interaction --no-progress --prefer-dist --optimize-autoloader -d ./update
       - name: Test with phpunit
         run: update/vendor/bin/phpunit -c update/
