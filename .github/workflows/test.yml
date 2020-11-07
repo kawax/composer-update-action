@@ -28,3 +28,4 @@ jobs:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           workingDirectory: update/
+          coverageLocations: ${{github.workspace}}/build/logs/clover.xml:clover
