@@ -17,8 +17,14 @@ jobs:
         with:
           php-version: '7.4'
           extensions: mbstring, bcmath
-          coverage: none
+          coverage: xdebug
       - name: Install Composer dependencies
         run: composer install --no-interaction --no-progress --prefer-dist --optimize-autoloader -d ./update
-      - name: Test with phpunit
-        run: update/vendor/bin/phpunit -c update/
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v2.7.4
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          workingDirectory: update/
+          coverageCommand: vendor/bin/phpunit
+          coverageLocations: build/logs/clover.xml:clover
