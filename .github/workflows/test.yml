@@ -17,7 +17,7 @@ jobs:
         with:
           php-version: '7.4'
           extensions: mbstring, bcmath
-          coverage: none
+          coverage: xdebug
       - name: Install Composer dependencies
         run: composer install --no-interaction --no-progress --prefer-dist --optimize-autoloader -d ./update
       - name: Test & publish code coverage
