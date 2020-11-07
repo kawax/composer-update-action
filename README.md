@@ -4,7 +4,6 @@
 ![test](https://github.com/kawax/composer-update-action/workflows/test/badge.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/7a806f8e8f06017b9caf/maintainability)](https://codeclimate.com/github/kawax/composer-update-action/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/7a806f8e8f06017b9caf/test_coverage)](https://codeclimate.com/github/kawax/composer-update-action/test_coverage)
-[![Build Status](https://travis-ci.com/kawax/composer-update-action.svg?branch=master)](https://travis-ci.com/kawax/composer-update-action)
 
 `composer update` and create pull request.
 
