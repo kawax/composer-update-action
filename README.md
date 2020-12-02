@@ -11,7 +11,7 @@
 |ver|PHP|
 |---|---|
 |v1 |7.4|
-|master|latest|
+|master|7.4|
 
 ## Usage
 

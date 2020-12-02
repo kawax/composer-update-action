@@ -1,4 +1,4 @@
-FROM php:cli
+FROM php:7.4-cli
 
 # php
 RUN apt-get update \
@@ -24,7 +24,7 @@ RUN composer self-update --2
 WORKDIR /root
 COPY ./update /root
 
-RUN composer install --no-dev --no-interaction --no-progress --optimize-autoloader --ignore-platform-reqs
+RUN composer install --no-dev --no-interaction --no-progress --optimize-autoloader
 
 COPY entrypoint.sh /entrypoint.sh
 
