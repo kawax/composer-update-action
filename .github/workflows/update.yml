@@ -1,9 +1,9 @@
 name: composer update
 
 on:
-  #push:
-  #  branches:
-  #    - master
+  push:
+    branches:
+      - master
   #    - v*
   schedule:
     - cron: '0 4 * * *' #UTC
