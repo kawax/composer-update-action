@@ -11,7 +11,8 @@
 |ver|PHP|
 |---|---|
 |v1 |7.4|
-|master|7.4|
+|v2 |8.0|
+|master|8.0|
 
 ## Usage
 
@@ -32,7 +33,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: composer update action
-        uses: kawax/composer-update-action@v1
+        uses: kawax/composer-update-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -44,7 +45,7 @@ jobs:
 
 ```yaml
       - name: composer update action
-        uses: kawax/composer-update-action@v1
+        uses: kawax/composer-update-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMPOSER_PATH: /subdir
