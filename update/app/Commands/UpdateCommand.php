@@ -3,6 +3,7 @@
 namespace App\Commands;
 
 use App\Facades\Git;
+use Github\Client;
 use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -88,7 +89,7 @@ class UpdateCommand extends Command
 
         $token = env('GITHUB_TOKEN');
 
-        GitHub::authenticate($token, 'http_token');
+        GitHub::authenticate($token, Client::AUTH_ACCESS_TOKEN);
 
         Git::setRemoteUrl(
             'origin',
