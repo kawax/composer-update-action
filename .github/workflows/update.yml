@@ -1,7 +1,7 @@
 name: composer update
 
 on:
-#  push:
+  push:
 #    branches:
 #      - master
   #    - v*
