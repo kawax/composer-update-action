@@ -12,7 +12,7 @@
 |---|---|
 |v1 |7.4|
 |v2 |8.0|
-|master|8.0|
+|master|latest|
 
 ## Usage
 
