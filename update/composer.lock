@@ -516,16 +516,16 @@
         },
         {
             "name": "graham-campbell/github",
-            "version": "v10.0.0",
+            "version": "v10.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-GitHub.git",
-                "reference": "e890b8711d7f9cb5861112006245789584a4eb35"
+                "reference": "f114479818b3c979f1572cd4ce63c9716cf34e3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-GitHub/zipball/e890b8711d7f9cb5861112006245789584a4eb35",
-                "reference": "e890b8711d7f9cb5861112006245789584a4eb35",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-GitHub/zipball/f114479818b3c979f1572cd4ce63c9716cf34e3e",
+                "reference": "f114479818b3c979f1572cd4ce63c9716cf34e3e",
                 "shasum": ""
             },
             "require": {
@@ -588,7 +588,7 @@
             ],
             "support": {
                 "issues": "https://github.com/GrahamCampbell/Laravel-GitHub/issues",
-                "source": "https://github.com/GrahamCampbell/Laravel-GitHub/tree/v10.0.0"
+                "source": "https://github.com/GrahamCampbell/Laravel-GitHub/tree/v10.0.1"
             },
             "funding": [
                 {
@@ -600,7 +600,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-12-22T00:59:28+00:00"
+            "time": "2021-01-08T19:15:46+00:00"
         },
         {
             "name": "graham-campbell/manager",
