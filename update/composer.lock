@@ -1031,7 +1031,7 @@
         },
         {
             "name": "illuminate/bus",
-            "version": "v8.26.1",
+            "version": "v8.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/bus.git",
@@ -1084,7 +1084,7 @@
         },
         {
             "name": "illuminate/cache",
-            "version": "v8.26.1",
+            "version": "v8.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/cache.git",
@@ -1141,7 +1141,7 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v8.26.1",
+            "version": "v8.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
@@ -1195,7 +1195,7 @@
         },
         {
             "name": "illuminate/config",
-            "version": "v8.26.1",
+            "version": "v8.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
@@ -1243,7 +1243,7 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v8.26.1",
+            "version": "v8.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
@@ -1303,7 +1303,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v8.26.1",
+            "version": "v8.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -1354,7 +1354,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v8.26.1",
+            "version": "v8.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -1402,7 +1402,7 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v8.26.1",
+            "version": "v8.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -1457,7 +1457,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v8.26.1",
+            "version": "v8.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -1519,7 +1519,7 @@
         },
         {
             "name": "illuminate/macroable",
-            "version": "v8.26.1",
+            "version": "v8.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -1565,7 +1565,7 @@
         },
         {
             "name": "illuminate/pipeline",
-            "version": "v8.26.1",
+            "version": "v8.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/pipeline.git",
@@ -1613,16 +1613,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v8.26.1",
+            "version": "v8.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "26e0aa4ed8616f5e1366d1ef9d6f1434fccaf63e"
+                "reference": "6894f5ec754e875274e7628d4959ad69e6b7b27d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/26e0aa4ed8616f5e1366d1ef9d6f1434fccaf63e",
-                "reference": "26e0aa4ed8616f5e1366d1ef9d6f1434fccaf63e",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/6894f5ec754e875274e7628d4959ad69e6b7b27d",
+                "reference": "6894f5ec754e875274e7628d4959ad69e6b7b27d",
                 "shasum": ""
             },
             "require": {
@@ -1641,6 +1641,7 @@
             },
             "suggest": {
                 "illuminate/filesystem": "Required to use the composer class (^8.0).",
+                "league/commonmark": "Required to use Str::markdown() and Stringable::markdown() (^1.3).",
                 "ramsey/uuid": "Required to use Str::uuid() (^4.0).",
                 "symfony/process": "Required to use the composer class (^5.1.4).",
                 "symfony/var-dumper": "Required to use the dd function (^5.1.4).",
@@ -1676,20 +1677,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-02-02T13:46:31+00:00"
+            "time": "2021-02-08T14:49:31+00:00"
         },
         {
             "name": "illuminate/testing",
-            "version": "v8.26.1",
+            "version": "v8.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/testing.git",
-                "reference": "8ec494a9e4847c1f4c2c1d87231390627419e798"
+                "reference": "51032a8f4d693403779f6c12db9475b8a782ada2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/testing/zipball/8ec494a9e4847c1f4c2c1d87231390627419e798",
-                "reference": "8ec494a9e4847c1f4c2c1d87231390627419e798",
+                "url": "https://api.github.com/repos/illuminate/testing/zipball/51032a8f4d693403779f6c12db9475b8a782ada2",
+                "reference": "51032a8f4d693403779f6c12db9475b8a782ada2",
                 "shasum": ""
             },
             "require": {
@@ -1734,7 +1735,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-02-02T13:42:30+00:00"
+            "time": "2021-02-09T14:30:06+00:00"
         },
         {
             "name": "jolicode/jolinotif",
@@ -2178,16 +2179,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.44.0",
+            "version": "2.45.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "e6ef33cb1f67a4bed831ed6d0f7e156739a5d8cd"
+                "reference": "e2ba3174ce869da1713c38340dbb36572dfacd5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/e6ef33cb1f67a4bed831ed6d0f7e156739a5d8cd",
-                "reference": "e6ef33cb1f67a4bed831ed6d0f7e156739a5d8cd",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/e2ba3174ce869da1713c38340dbb36572dfacd5a",
+                "reference": "e2ba3174ce869da1713c38340dbb36572dfacd5a",
                 "shasum": ""
             },
             "require": {
@@ -2267,7 +2268,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-26T20:46:41+00:00"
+            "time": "2021-02-07T21:35:59+00:00"
         },
         {
             "name": "nunomaduro/collision",
