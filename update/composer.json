@@ -18,7 +18,6 @@
     "graham-campbell/github": "^10.0",
     "guzzlehttp/guzzle": "^7.2",
     "http-interop/http-factory-guzzle": "^1.0",
-    "illuminate/queue": "^8.0",
     "laravel-zero/framework": "^8.0"
   },
   "require-dev": {
