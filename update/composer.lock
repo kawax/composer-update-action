@@ -1893,16 +1893,16 @@
         },
         {
             "name": "laravel-zero/foundation",
-            "version": "v8.35.1",
+            "version": "v8.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-zero/foundation.git",
-                "reference": "50012f000dc650a3ebf0e6f3c5177a89fb64a8f4"
+                "reference": "f92750e050dca310bf0f0944b47bc3995f364908"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-zero/foundation/zipball/50012f000dc650a3ebf0e6f3c5177a89fb64a8f4",
-                "reference": "50012f000dc650a3ebf0e6f3c5177a89fb64a8f4",
+                "url": "https://api.github.com/repos/laravel-zero/foundation/zipball/f92750e050dca310bf0f0944b47bc3995f364908",
+                "reference": "f92750e050dca310bf0f0944b47bc3995f364908",
                 "shasum": ""
             },
             "require": {
@@ -1932,22 +1932,22 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/laravel-zero/foundation/tree/v8.35.1"
+                "source": "https://github.com/laravel-zero/foundation/tree/v8.37.0"
             },
-            "time": "2021-04-06T12:11:04+00:00"
+            "time": "2021-04-15T09:14:06+00:00"
         },
         {
             "name": "laravel-zero/framework",
-            "version": "v8.6.0",
+            "version": "v8.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-zero/framework.git",
-                "reference": "e2bf0de399a8128cc1382eed2b28a3c8199ccc56"
+                "reference": "548a5ab0b06c0afc29d2b33fc24da292fb1bea42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-zero/framework/zipball/e2bf0de399a8128cc1382eed2b28a3c8199ccc56",
-                "reference": "e2bf0de399a8128cc1382eed2b28a3c8199ccc56",
+                "url": "https://api.github.com/repos/laravel-zero/framework/zipball/548a5ab0b06c0afc29d2b33fc24da292fb1bea42",
+                "reference": "548a5ab0b06c0afc29d2b33fc24da292fb1bea42",
                 "shasum": ""
             },
             "require": {
@@ -2025,7 +2025,7 @@
                 "issues": "https://github.com/laravel-zero/laravel-zero/issues",
                 "source": "https://github.com/laravel-zero/laravel-zero"
             },
-            "time": "2021-01-20T12:44:10+00:00"
+            "time": "2021-04-15T09:30:58+00:00"
         },
         {
             "name": "league/flysystem",
