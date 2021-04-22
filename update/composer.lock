@@ -1893,16 +1893,16 @@
         },
         {
             "name": "laravel-zero/foundation",
-            "version": "v8.37.0",
+            "version": "v8.38.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-zero/foundation.git",
-                "reference": "f92750e050dca310bf0f0944b47bc3995f364908"
+                "reference": "0dfa59af9c766a0146f0c268ff7e7dd5ec160111"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-zero/foundation/zipball/f92750e050dca310bf0f0944b47bc3995f364908",
-                "reference": "f92750e050dca310bf0f0944b47bc3995f364908",
+                "url": "https://api.github.com/repos/laravel-zero/foundation/zipball/0dfa59af9c766a0146f0c268ff7e7dd5ec160111",
+                "reference": "0dfa59af9c766a0146f0c268ff7e7dd5ec160111",
                 "shasum": ""
             },
             "require": {
@@ -1932,9 +1932,9 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/laravel-zero/foundation/tree/v8.37.0"
+                "source": "https://github.com/laravel-zero/foundation/tree/v8.38.0"
             },
-            "time": "2021-04-15T09:14:06+00:00"
+            "time": "2021-04-21T08:25:58+00:00"
         },
         {
             "name": "laravel-zero/framework",
