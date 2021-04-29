@@ -10,16 +10,6 @@ use Symfony\Component\Process\Process;
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
-
-    /**
      * Register any application services.
      *
      * @return void
@@ -76,5 +66,15 @@ class AppServiceProvider extends ServiceProvider
             'github-oauth.github.com',
             env('GITHUB_TOKEN'),
         ];
+    }
+
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
     }
 }
