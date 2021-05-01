@@ -2,8 +2,7 @@
 
 namespace App\Providers;
 
-use Cz\Git\GitRepository;
-use Cz\Git\IGit;
+use CzProject\GitPhp\Git;
 use Illuminate\Support\ServiceProvider;
 use Symfony\Component\Process\Process;
 
@@ -17,8 +16,8 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(
-            IGit::class,
-            fn ($app) => new GitRepository(env('GITHUB_WORKSPACE'))
+            'git',
+            fn ($app) => (new Git())->open(env('GITHUB_WORKSPACE'))
         );
 
         $this->app->bind(
