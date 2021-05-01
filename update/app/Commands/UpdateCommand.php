@@ -3,6 +3,7 @@
 namespace App\Commands;
 
 use App\Facades\Git;
+use CzProject\GitPhp\GitException;
 use Github\Client;
 use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Support\Facades\File;
@@ -48,13 +49,15 @@ class UpdateCommand extends Command
 
     /**
      * Execute the console command.
+     *
+     * @throws GitException
      */
     public function handle()
     {
         $this->init();
 
         if (! $this->exists()) {
-            return;
+            return; // @codeCoverageIgnore
         }
 
         $this->process('install');
@@ -64,9 +67,9 @@ class UpdateCommand extends Command
         $this->output($output);
 
         if (! Git::hasChanges()) {
-            $this->info('no changes');
+            $this->info('no changes'); // @codeCoverageIgnore
 
-            return;
+            return; // @codeCoverageIgnore
         }
 
         $this->commitPush();
@@ -96,8 +99,8 @@ class UpdateCommand extends Command
             "https://{$token}@github.com/{$this->repo}.git"
         );
 
-        Git::execute(['config', '--local', 'user.name', env('GIT_NAME', 'cu')]);
-        Git::execute(['config', '--local', 'user.email', env('GIT_EMAIL', 'cu@composer-update')]);
+        Git::execute(...['config', '--local', 'user.name', env('GIT_NAME', 'cu')]);
+        Git::execute(...['config', '--local', 'user.email', env('GIT_EMAIL', 'cu@composer-update')]);
 
         Git::createBranch($this->new_branch, true);
 
@@ -137,7 +140,7 @@ class UpdateCommand extends Command
 
         $output = $process->getOutput();
         if (blank($output)) {
-            $output = $process->getErrorOutput();
+            $output = $process->getErrorOutput(); // @codeCoverageIgnore
         }
 
         return $output ?? '';
@@ -150,10 +153,7 @@ class UpdateCommand extends Command
      */
     protected function token(): void
     {
-        /**
-         * @var Process $process
-         */
-        $process = app('process.token')
+        app('process.token')
             ->setWorkingDirectory($this->base_path)
             ->setTimeout(60)
             ->mustRun();
@@ -178,6 +178,7 @@ class UpdateCommand extends Command
 
     /**
      * @return void
+     * @throws GitException
      */
     protected function commitPush(): void
     {
