@@ -528,16 +528,16 @@
         },
         {
             "name": "graham-campbell/github",
-            "version": "v10.0.2",
+            "version": "v10.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-GitHub.git",
-                "reference": "a2183f30fc9620cfa4b4848c3523b834690ed4fd"
+                "reference": "08f7be59300004a489e120b794a58db809e22cb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-GitHub/zipball/a2183f30fc9620cfa4b4848c3523b834690ed4fd",
-                "reference": "a2183f30fc9620cfa4b4848c3523b834690ed4fd",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-GitHub/zipball/08f7be59300004a489e120b794a58db809e22cb1",
+                "reference": "08f7be59300004a489e120b794a58db809e22cb1",
                 "shasum": ""
             },
             "require": {
@@ -545,13 +545,13 @@
                 "graham-campbell/manager": "^4.5",
                 "illuminate/contracts": "^6.0 || ^7.0 || ^8.0",
                 "illuminate/support": "^6.0 || ^7.0 || ^8.0",
-                "knplabs/github-api": "3.0.*",
+                "knplabs/github-api": "3.2.*",
                 "php": "^7.2.5 || ^8.0",
                 "symfony/cache": "^4.3 || ^5.0"
             },
             "require-dev": {
                 "graham-campbell/analyzer": "^3.0",
-                "graham-campbell/testbench": "^5.4",
+                "graham-campbell/testbench": "^5.6",
                 "guzzlehttp/guzzle": "^7.2",
                 "http-interop/http-factory-guzzle": "^1.0",
                 "lcobucci/jwt": "^3.4 || ^4.0",
@@ -600,7 +600,7 @@
             ],
             "support": {
                 "issues": "https://github.com/GrahamCampbell/Laravel-GitHub/issues",
-                "source": "https://github.com/GrahamCampbell/Laravel-GitHub/tree/v10.0.2"
+                "source": "https://github.com/GrahamCampbell/Laravel-GitHub/tree/v10.2.0"
             },
             "funding": [
                 {
@@ -612,7 +612,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-14T15:42:14+00:00"
+            "time": "2021-05-02T23:54:33+00:00"
         },
         {
             "name": "graham-campbell/manager",
@@ -1813,16 +1813,16 @@
         },
         {
             "name": "knplabs/github-api",
-            "version": "v3.0.0",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/php-github-api.git",
-                "reference": "adf4ecaafc96e2c7a43370e229b58d722f2ad97a"
+                "reference": "1dce0d33292eb2c4d33e2f9354b4043caf14588e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/adf4ecaafc96e2c7a43370e229b58d722f2ad97a",
-                "reference": "adf4ecaafc96e2c7a43370e229b58d722f2ad97a",
+                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/1dce0d33292eb2c4d33e2f9354b4043caf14588e",
+                "reference": "1dce0d33292eb2c4d33e2f9354b4043caf14588e",
                 "shasum": ""
             },
             "require": {
@@ -1837,6 +1837,7 @@
                 "psr/http-client-implementation": "^1.0",
                 "psr/http-factory-implementation": "^1.0",
                 "psr/http-message": "^1.0",
+                "symfony/deprecation-contracts": "^2.2",
                 "symfony/polyfill-php80": "^1.17"
             },
             "require-dev": {
@@ -1848,13 +1849,14 @@
                 "phpstan/phpstan": "^0.12.57",
                 "phpstan/phpstan-deprecation-rules": "^0.12.5",
                 "phpunit/phpunit": "^8.5 || ^9.4",
-                "symfony/cache": "^5.1.8"
+                "symfony/cache": "^5.1.8",
+                "symfony/phpunit-bridge": "^5.2"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-2.x": "2.19.x-dev",
-                    "dev-master": "3.0.x-dev"
+                    "dev-2.x": "2.20.x-dev",
+                    "dev-master": "3.2.x-dev"
                 }
             },
             "autoload": {
@@ -1887,7 +1889,7 @@
             ],
             "support": {
                 "issues": "https://github.com/KnpLabs/php-github-api/issues",
-                "source": "https://github.com/KnpLabs/php-github-api/tree/v3.0.0"
+                "source": "https://github.com/KnpLabs/php-github-api/tree/v3.2.0"
             },
             "funding": [
                 {
@@ -1895,7 +1897,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-12-21T18:38:02+00:00"
+            "time": "2021-04-28T18:12:19+00:00"
         },
         {
             "name": "laravel-zero/foundation",
@@ -2186,16 +2188,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.46.0",
+            "version": "2.47.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "2fd2c4a77d58a4e95234c8a61c5df1f157a91bf4"
+                "reference": "606262fd8888b75317ba9461825a24fc34001e1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/2fd2c4a77d58a4e95234c8a61c5df1f157a91bf4",
-                "reference": "2fd2c4a77d58a4e95234c8a61c5df1f157a91bf4",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/606262fd8888b75317ba9461825a24fc34001e1e",
+                "reference": "606262fd8888b75317ba9461825a24fc34001e1e",
                 "shasum": ""
             },
             "require": {
@@ -2275,7 +2277,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-24T17:30:44+00:00"
+            "time": "2021-04-13T21:54:02+00:00"
         },
         {
             "name": "nunomaduro/collision",
