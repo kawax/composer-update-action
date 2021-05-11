@@ -130,16 +130,16 @@
         },
         {
             "name": "czproject/git-php",
-            "version": "v4.0.0",
+            "version": "v4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/czproject/git-php.git",
-                "reference": "3d92b7e659b7959a987cddc27284e0d78b080304"
+                "reference": "dc084fc0cc9f01634f71241d19c4fe5ee588ae4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/czproject/git-php/zipball/3d92b7e659b7959a987cddc27284e0d78b080304",
-                "reference": "3d92b7e659b7959a987cddc27284e0d78b080304",
+                "url": "https://api.github.com/repos/czproject/git-php/zipball/dc084fc0cc9f01634f71241d19c4fe5ee588ae4e",
+                "reference": "dc084fc0cc9f01634f71241d19c4fe5ee588ae4e",
                 "shasum": ""
             },
             "require": {
@@ -170,7 +170,7 @@
             ],
             "support": {
                 "issues": "https://github.com/czproject/git-php/issues",
-                "source": "https://github.com/czproject/git-php/tree/v4.0.0"
+                "source": "https://github.com/czproject/git-php/tree/v4.0.1"
             },
             "funding": [
                 {
@@ -178,7 +178,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2021-04-29T18:19:38+00:00"
+            "time": "2021-05-10T15:04:25+00:00"
         },
         {
             "name": "doctrine/inflector",
