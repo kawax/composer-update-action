@@ -528,16 +528,16 @@
         },
         {
             "name": "graham-campbell/github",
-            "version": "v10.2.0",
+            "version": "v10.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-GitHub.git",
-                "reference": "08f7be59300004a489e120b794a58db809e22cb1"
+                "reference": "9f26c374e90b969ee1af519149d041e23ef96061"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-GitHub/zipball/08f7be59300004a489e120b794a58db809e22cb1",
-                "reference": "08f7be59300004a489e120b794a58db809e22cb1",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-GitHub/zipball/9f26c374e90b969ee1af519149d041e23ef96061",
+                "reference": "9f26c374e90b969ee1af519149d041e23ef96061",
                 "shasum": ""
             },
             "require": {
@@ -545,7 +545,7 @@
                 "graham-campbell/manager": "^4.5",
                 "illuminate/contracts": "^6.0 || ^7.0 || ^8.0",
                 "illuminate/support": "^6.0 || ^7.0 || ^8.0",
-                "knplabs/github-api": "3.2.*",
+                "knplabs/github-api": "3.3.*",
                 "php": "^7.2.5 || ^8.0",
                 "symfony/cache": "^4.3 || ^5.0"
             },
@@ -600,7 +600,7 @@
             ],
             "support": {
                 "issues": "https://github.com/GrahamCampbell/Laravel-GitHub/issues",
-                "source": "https://github.com/GrahamCampbell/Laravel-GitHub/tree/v10.2.0"
+                "source": "https://github.com/GrahamCampbell/Laravel-GitHub/tree/v10.3.0"
             },
             "funding": [
                 {
@@ -612,7 +612,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-02T23:54:33+00:00"
+            "time": "2021-05-23T10:42:49+00:00"
         },
         {
             "name": "graham-campbell/manager",
@@ -1813,16 +1813,16 @@
         },
         {
             "name": "knplabs/github-api",
-            "version": "v3.2.0",
+            "version": "v3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/php-github-api.git",
-                "reference": "1dce0d33292eb2c4d33e2f9354b4043caf14588e"
+                "reference": "0442abd1361956e3a87e71683154c5c33c5a0dad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/1dce0d33292eb2c4d33e2f9354b4043caf14588e",
-                "reference": "1dce0d33292eb2c4d33e2f9354b4043caf14588e",
+                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/0442abd1361956e3a87e71683154c5c33c5a0dad",
+                "reference": "0442abd1361956e3a87e71683154c5c33c5a0dad",
                 "shasum": ""
             },
             "require": {
@@ -1856,7 +1856,7 @@
             "extra": {
                 "branch-alias": {
                     "dev-2.x": "2.20.x-dev",
-                    "dev-master": "3.2.x-dev"
+                    "dev-master": "3.3.x-dev"
                 }
             },
             "autoload": {
@@ -1889,7 +1889,7 @@
             ],
             "support": {
                 "issues": "https://github.com/KnpLabs/php-github-api/issues",
-                "source": "https://github.com/KnpLabs/php-github-api/tree/v3.2.0"
+                "source": "https://github.com/KnpLabs/php-github-api/tree/v3.3.0"
             },
             "funding": [
                 {
@@ -1897,7 +1897,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-04-28T18:12:19+00:00"
+            "time": "2021-05-20T20:28:41+00:00"
         },
         {
             "name": "laravel-zero/foundation",
