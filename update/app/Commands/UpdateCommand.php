@@ -38,6 +38,11 @@ class UpdateCommand extends Command
     /**
      * @var string
      */
+    protected string $parent_branch;
+
+    /**
+     * @var string
+     */
     protected string $new_branch;
 
     /**
@@ -84,7 +89,12 @@ class UpdateCommand extends Command
 
         $this->base_path = env('GITHUB_WORKSPACE', '').env('COMPOSER_PATH', '');
 
+        $this->parent_branch = Git::getCurrentBranchName();
+
         $this->new_branch = 'cu/'.Str::random(8);
+        if (env('APP_SINGLE_BRANCH')) {
+            $this->new_branch = $this->parent_branch . env('APP_SINGLE_BRANCH_POSTFIX', '-updated');
+        }
 
         $token = env('GITHUB_TOKEN');
 
@@ -98,7 +108,14 @@ class UpdateCommand extends Command
         Git::execute(['config', '--local', 'user.name', env('GIT_NAME', 'cu')]);
         Git::execute(['config', '--local', 'user.email', env('GIT_EMAIL', 'cu@composer-update')]);
 
-        Git::createBranch($this->new_branch, true);
+        if (!env('APP_SINGLE_BRANCH') || !in_array($this->new_branch, Git::getBranches() ?? [])) {
+            Git::createBranch($this->new_branch, true);
+        } elseif (!env('APP_SINGLE_BRANCH')) {
+            Git::merge($this->parent_branch, [
+                '--strategy=theirs',
+                '--quiet',
+            ]);
+        }
 
         $this->token();
     }
@@ -183,7 +200,7 @@ class UpdateCommand extends Command
         $this->info('commit');
 
         Git::addAllChanges()
-           ->commit('composer update '.today()->toDateString().PHP_EOL.PHP_EOL.$this->out)
+           ->commit(env(GIT_COMMIT_PREFIX, '') . 'composer update ' . today()->toDateString() . PHP_EOL . PHP_EOL . $this->out)
            ->push('origin', [$this->new_branch]);
     }
 
@@ -194,17 +211,38 @@ class UpdateCommand extends Command
     {
         $this->info('Pull Request');
 
+        $date = env('APP_SINGLE_BRANCH') ? '' : today()->toDateString();
+
         $pullData = [
             'base'  => Str::afterLast(env('GITHUB_REF'), '/'),
             'head'  => $this->new_branch,
-            'title' => 'composer update '.today()->toDateString(),
+            'title' => env(GIT_COMMIT_PREFIX, '') . 'Composer update ' . $date,
             'body'  => $this->out,
         ];
 
-        GitHub::pullRequest()->create(
-            Str::before($this->repo, '/'),
-            Str::afterLast($this->repo, '/'),
-            $pullData
-        );
+        $createPullRequest = true;
+
+        if (env('APP_SINGLE_BRANCH')) {
+            $pullRequests = Github::pullRequest()->all(
+                Str::before($this->repo, '/'),
+                Str::afterLast($this->repo, '/'),
+                [
+                    'base' => $this->parent_branch,
+                    'state' => 'open'
+                ]
+            );
+
+            if (count($pullRequests) > 0) {
+                $createPullRequest = false;
+            }
+        }
+
+        if ($createPullRequest) {
+            GitHub::pullRequest()->create(
+                Str::before($this->repo, '/'),
+                Str::afterLast($this->repo, '/'),
+                $pullData
+            );
+        }
     }
 }
