@@ -252,7 +252,7 @@ class UpdateCommand extends Command
                 Str::before($this->repo, '/'),
                 Str::afterLast($this->repo, '/'),
                 [
-                    'base' => $this->parent_branch,
+                    'head' => Str::before($this->repo, '/') . ':' . $this->new_branch,
                     'state' => 'open'
                 ]
             );
