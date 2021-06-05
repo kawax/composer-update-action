@@ -1,6 +1,7 @@
 FROM php:7.4-cli
 
 # php
+RUN apt-get update
 RUN apt-get install -yq git
 
 # composer
