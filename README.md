@@ -42,6 +42,10 @@ jobs:
 - COMPOSER_PATH : Specify if using subdirectory. Where composer.json is located.
 - GIT_NAME : git user name
 - GIT_EMAIL : git email
+- APP_SINGLE_BRANCH : If set, the new functionality is enabled.
+- APP_SINGLE_BRANCH_POSTFIX : A postfix for the branch used for updates. Default value is "-updated". If the branch doesn't exist, a new branch will be created with the parent branch name plus the postfix, e.g. "master-updated".
+- GIT_COMMIT_PREFIX : Add a prefix to the commit message and pull request title. E.g. "[UPDATE] "
+- COMPOSER_PACKAGES : Specify which packages should be updated. E.g. "typo3/cms-*". Setting this variable will also run Composer with the `--with-dependencies` argument.
 
 ```yaml
       - name: composer update action
@@ -51,6 +55,10 @@ jobs:
           COMPOSER_PATH: /subdir
           GIT_NAME: cu
           GIT_EMAIL: cu@composer-update
+          APP_SINGLE_BRANCH: 1
+          APP_SINGLE_BRANCH_POSTFIX: -updated
+          GIT_COMMIT_PREFIX: '[UPDATE] '
+          COMPOSER_PACKAGES: 'typo3/cms-*'
 ```
 
 ## Troubleshooting
