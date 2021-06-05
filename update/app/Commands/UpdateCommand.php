@@ -63,7 +63,13 @@ class UpdateCommand extends Command
 
         $this->process('install');
 
-        $output = $this->process('update');
+        $output = $this->process(
+            'update',
+            [
+                env('COMPOSER_PACKAGES', ''),
+                env('COMPOSER_PACKAGES') ? '--with-dependencies' : '',
+            ]
+        );
 
         $this->output($output);
 
@@ -94,6 +100,8 @@ class UpdateCommand extends Command
         $this->new_branch = 'cu/'.Str::random(8);
         if (env('APP_SINGLE_BRANCH')) {
             $this->new_branch = $this->parent_branch . env('APP_SINGLE_BRANCH_POSTFIX', '-updated');
+
+            $this->info('Using single-branch approach. Branch name: ' . $this->new_branch);
         }
 
         $token = env('GITHUB_TOKEN');
@@ -109,8 +117,12 @@ class UpdateCommand extends Command
         Git::execute(['config', '--local', 'user.email', env('GIT_EMAIL', 'cu@composer-update')]);
 
         if (!env('APP_SINGLE_BRANCH') || !in_array($this->new_branch, Git::getBranches() ?? [])) {
+            $this->info('Creating branch ' . $this->new_branch);
+
             Git::createBranch($this->new_branch, true);
         } elseif (!env('APP_SINGLE_BRANCH')) {
+            $this->info('Merging from ' . $this->parent_branch);
+
             Git::merge($this->parent_branch, [
                 '--strategy=theirs',
                 '--quiet',
@@ -134,14 +146,14 @@ class UpdateCommand extends Command
      *
      * @return string
      */
-    protected function process(string $command): string
+    protected function process(string $command, array $arguments = []): string
     {
-        $this->info($command);
+        $this->info($command . ' ' . implode(' ', $arguments));
 
         /**
          * @var Process $process
          */
-        $process = app('process.'.$command)
+        $process = app('process.'.$command, $arguments)
             ->setWorkingDirectory($this->base_path)
             ->setTimeout(600)
             ->setEnv(
