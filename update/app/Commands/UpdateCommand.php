@@ -212,7 +212,7 @@ class UpdateCommand extends Command
         $this->info('commit');
 
         Git::addAllChanges()
-           ->commit(env(GIT_COMMIT_PREFIX, '') . 'composer update ' . today()->toDateString() . PHP_EOL . PHP_EOL . $this->out)
+           ->commit(env('GIT_COMMIT_PREFIX', '') . 'composer update ' . today()->toDateString() . PHP_EOL . PHP_EOL . $this->out)
            ->push('origin', [$this->new_branch]);
     }
 
@@ -228,7 +228,7 @@ class UpdateCommand extends Command
         $pullData = [
             'base'  => Str::afterLast(env('GITHUB_REF'), '/'),
             'head'  => $this->new_branch,
-            'title' => env(GIT_COMMIT_PREFIX, '') . 'Composer update ' . $date,
+            'title' => env('GIT_COMMIT_PREFIX', '') . 'Composer update ' . $date,
             'body'  => $this->out,
         ];
 
