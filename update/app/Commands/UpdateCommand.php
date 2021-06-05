@@ -101,7 +101,7 @@ class UpdateCommand extends Command
         if (env('APP_SINGLE_BRANCH')) {
             $this->new_branch = $this->parent_branch . env('APP_SINGLE_BRANCH_POSTFIX', '-updated');
 
-            $this->info('Using single-branch approach. Branch name: ' . $this->new_branch);
+            $this->info('Using single-branch approach. Branch name: "' . $this->new_branch . '"');
         }
 
         $token = env('GITHUB_TOKEN');
@@ -117,11 +117,13 @@ class UpdateCommand extends Command
         Git::execute(['config', '--local', 'user.email', env('GIT_EMAIL', 'cu@composer-update')]);
 
         if (!env('APP_SINGLE_BRANCH') || !in_array($this->new_branch, Git::getBranches() ?? [])) {
-            $this->info('Creating branch ' . $this->new_branch);
+            $this->info('Creating branch "' . $this->new_branch . '".');
 
             Git::createBranch($this->new_branch, true);
         } elseif (!env('APP_SINGLE_BRANCH')) {
-            $this->info('Merging from ' . $this->parent_branch);
+            $this->info('Merging from "' . $this->parent_branch . '".');
+
+            Git::checkout($this->new_branch);
 
             Git::merge($this->parent_branch, [
                 '--strategy=theirs',
@@ -213,7 +215,7 @@ class UpdateCommand extends Command
 
         Git::addAllChanges()
            ->commit(env('GIT_COMMIT_PREFIX', '') . 'composer update ' . today()->toDateString() . PHP_EOL . PHP_EOL . $this->out)
-           ->push('origin', [$this->new_branch, '--force']);
+           ->push('origin', [$this->new_branch]);
     }
 
     /**
