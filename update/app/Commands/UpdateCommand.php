@@ -113,20 +113,28 @@ class UpdateCommand extends Command
 
         Git::execute(['config', '--local', 'user.name', env('GIT_NAME', 'cu')]);
         Git::execute(['config', '--local', 'user.email', env('GIT_EMAIL', 'cu@composer-update')]);
+
+        $this->info('Fetching from remote.');
+
         Git::fetch('origin');
-        $this->info(var_export(Git::getBranches(), true));
-        if (!env('APP_SINGLE_BRANCH') || !in_array($this->new_branch, Git::getBranches() ?? [])) {
+
+        if (
+            !env('APP_SINGLE_BRANCH')
+            || !in_array('remotes/origin/' . $this->new_branch, Git::getBranches() ?? [])
+        ) {
             $this->info('Creating branch "' . $this->new_branch . '".');
 
             Git::createBranch($this->new_branch, true);
         } elseif (env('APP_SINGLE_BRANCH')) {
-            $this->info('Fetching from remote.');
-
-            Git::fetch('origin');
-
-            $this->info('Merging from "' . $this->parent_branch . '".');
+            $this->info('Checking out branch "' . $this->new_branch . '".');
 
             Git::checkout($this->new_branch);
+
+            $this->info('Pulling from origin.');
+
+            Git::pull('origin');
+
+            $this->info('Merging from "' . $this->parent_branch . '".');
 
             Git::merge($this->parent_branch, [
                 '--strategy-option=theirs',
