@@ -265,11 +265,15 @@ class UpdateCommand extends Command
         }
 
         if ($createPullRequest) {
-            GitHub::pullRequest()->create(
+            $result = GitHub::pullRequest()->create(
                 Str::before($this->repo, '/'),
                 Str::afterLast($this->repo, '/'),
                 $pullData
             );
+
+            $this->info('Pull request created for branch "' . $this->new_branch . '": ' . $result[0]['html_url']);
+        } else {
+            $this->info('Pull request already exists for branch "' . $this->new_branch . '": ' . $pullRequests[0]['html_url']);
         }
     }
 }
