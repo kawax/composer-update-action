@@ -113,7 +113,7 @@ class UpdateCommand extends Command
 
         Git::execute(['config', '--local', 'user.name', env('GIT_NAME', 'cu')]);
         Git::execute(['config', '--local', 'user.email', env('GIT_EMAIL', 'cu@composer-update')]);
-
+        $this->info(var_export(Git::getBranches(), true));
         if (!env('APP_SINGLE_BRANCH') || !in_array($this->new_branch, Git::getBranches() ?? [])) {
             $this->info('Creating branch "' . $this->new_branch . '".');
 
