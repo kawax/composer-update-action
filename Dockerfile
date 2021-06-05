@@ -12,7 +12,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /root
 COPY ./update /root
 
-RUN composer install --no-dev --no-interaction --no-progress
+RUN composer install --no-dev --no-interaction --no-progress --no-scripts
 
 COPY entrypoint.sh /entrypoint.sh
 
