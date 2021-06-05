@@ -259,8 +259,6 @@ class UpdateCommand extends Command
                 ]
             );
 
-            $this->info(var_export($pullRequests, true));
-
             if (count($pullRequests) > 0) {
                 $createPullRequest = false;
             }
