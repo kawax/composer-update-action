@@ -118,7 +118,7 @@ class UpdateCommand extends Command
             $this->info('Creating branch "' . $this->new_branch . '".');
 
             Git::createBranch($this->new_branch, true);
-        } elseif (!env('APP_SINGLE_BRANCH')) {
+        } elseif (env('APP_SINGLE_BRANCH')) {
             $this->info('Fetching from remote.');
 
             Git::fetch('origin');
