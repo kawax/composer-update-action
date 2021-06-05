@@ -61,8 +61,6 @@ class UpdateCommand extends Command
             return;
         }
 
-        $this->process('install');
-
         $output = $this->process(
             'update',
             [
@@ -74,7 +72,7 @@ class UpdateCommand extends Command
         $this->output($output);
 
         if (! Git::hasChanges()) {
-            $this->info('no changes');
+            $this->info('No changes after update.');
 
             return;
         }
@@ -89,7 +87,7 @@ class UpdateCommand extends Command
      */
     protected function init(): void
     {
-        $this->info('init');
+        $this->info('Initializing ...');
 
         $this->repo = env('GITHUB_REPOSITORY', '');
 
@@ -121,12 +119,16 @@ class UpdateCommand extends Command
 
             Git::createBranch($this->new_branch, true);
         } elseif (!env('APP_SINGLE_BRANCH')) {
+            $this->info('Fetching from remote.');
+
+            Git::fetch('origin');
+
             $this->info('Merging from "' . $this->parent_branch . '".');
 
             Git::checkout($this->new_branch);
 
             Git::merge($this->parent_branch, [
-                '--strategy=theirs',
+                '--strategy-option=theirs',
                 '--quiet',
             ]);
         }
@@ -211,7 +213,7 @@ class UpdateCommand extends Command
      */
     protected function commitPush(): void
     {
-        $this->info('commit');
+        $this->info('Committing changes ...');
 
         Git::addAllChanges()
            ->commit(env('GIT_COMMIT_PREFIX', '') . 'composer update ' . today()->toDateString() . PHP_EOL . PHP_EOL . $this->out)
