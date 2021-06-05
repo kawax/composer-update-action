@@ -236,12 +236,14 @@ class UpdateCommand extends Command
     {
         $this->info('Pull Request');
 
-        $date = env('APP_SINGLE_BRANCH') ? '' : today()->toDateString();
+        $date = env('APP_SINGLE_BRANCH') ? '' : ' ' . today()->toDateString();
 
         $pullData = [
             'base'  => Str::afterLast(env('GITHUB_REF'), '/'),
             'head'  => $this->new_branch,
-            'title' => env('GIT_COMMIT_PREFIX', '') . 'Composer update ' . $date,
+            'title' => env('GIT_COMMIT_PREFIX', '') . 'Composer update with '
+                . (count(explode(PHP_EOL, $this->out)) - 1) . ' changes'
+                . $date,
             'body'  => $this->out,
         ];
 
@@ -271,7 +273,7 @@ class UpdateCommand extends Command
                 $pullData
             );
 
-            $this->info('Pull request created for branch "' . $this->new_branch . '": ' . $result[0]['html_url']);
+            $this->info('Pull request created for branch "' . $this->new_branch . '": ' . $result['html_url']);
         } else {
             $this->info('Pull request already exists for branch "' . $this->new_branch . '": ' . $pullRequests[0]['html_url']);
         }
