@@ -31,6 +31,11 @@ class AppServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
+            'process.update-packages',
+            fn ($app) => new Process($this->packages())
+        );
+
+        $this->app->bind(
             'process.token',
             fn ($app) => new Process($this->token())
         );
@@ -46,6 +51,23 @@ class AppServiceProvider extends ServiceProvider
         return [
             'composer',
             $cmd,
+            '--no-interaction',
+            '--no-progress',
+            '--no-autoloader',
+            '--no-scripts',
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    private function packages(): array
+    {
+        return [
+            'composer',
+            'update',
+            env('COMPOSER_PACKAGES'),
+            '--with-dependencies',
             '--no-interaction',
             '--no-progress',
             '--no-autoloader',
