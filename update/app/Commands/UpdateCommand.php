@@ -3,6 +3,7 @@
 namespace App\Commands;
 
 use App\Facades\Git;
+use Github\Client;
 use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -58,7 +59,7 @@ class UpdateCommand extends Command
         $this->init();
 
         if (! $this->exists()) {
-            return;
+            return; // @codeCoverageIgnore
         }
 
         $output = $this->process(env('COMPOSER_PACKAGES') ? 'update-packages' : 'update');
@@ -66,9 +67,9 @@ class UpdateCommand extends Command
         $this->output($output);
 
         if (! Git::hasChanges()) {
-            $this->info('No changes after update.');
+            $this->info('No changes after update.'); // @codeCoverageIgnore
 
-            return;
+            return; // @codeCoverageIgnore
         }
 
         $this->commitPush();
@@ -98,15 +99,15 @@ class UpdateCommand extends Command
 
         $token = env('GITHUB_TOKEN');
 
-        GitHub::authenticate($token, 'http_token');
+        GitHub::authenticate($token, Client::AUTH_ACCESS_TOKEN);
 
         Git::setRemoteUrl(
             'origin',
             "https://{$token}@github.com/{$this->repo}.git"
         );
 
-        Git::execute(['config', '--local', 'user.name', env('GIT_NAME', 'cu')]);
-        Git::execute(['config', '--local', 'user.email', env('GIT_EMAIL', 'cu@composer-update')]);
+        Git::execute(...['config', '--local', 'user.name', env('GIT_NAME', 'cu')]);
+        Git::execute(...['config', '--local', 'user.email', env('GIT_EMAIL', 'cu@composer-update')]);
 
         $this->info('Fetching from remote.');
 
@@ -172,7 +173,7 @@ class UpdateCommand extends Command
 
         $output = $process->getOutput();
         if (blank($output)) {
-            $output = $process->getErrorOutput();
+            $output = $process->getErrorOutput(); // @codeCoverageIgnore
         }
 
         return $output ?? '';
@@ -185,10 +186,7 @@ class UpdateCommand extends Command
      */
     protected function token(): void
     {
-        /**
-         * @var Process $process
-         */
-        $process = app('process.token')
+        app('process.token')
             ->setWorkingDirectory($this->base_path)
             ->setTimeout(60)
             ->mustRun();
