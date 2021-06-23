@@ -58,7 +58,7 @@ class UpdateCommand extends Command
         $this->init();
 
         if (! $this->exists()) {
-            return;
+            return; // @codeCoverageIgnore
         }
 
         $output = $this->process(env('COMPOSER_PACKAGES') ? 'update-packages' : 'update');
@@ -66,9 +66,9 @@ class UpdateCommand extends Command
         $this->output($output);
 
         if (! Git::hasChanges()) {
-            $this->info('No changes after update.');
+            $this->info('No changes after update.'); // @codeCoverageIgnore
 
-            return;
+            return; // @codeCoverageIgnore
         }
 
         $this->commitPush();
@@ -105,8 +105,8 @@ class UpdateCommand extends Command
             "https://{$token}@github.com/{$this->repo}.git"
         );
 
-        Git::execute(['config', '--local', 'user.name', env('GIT_NAME', 'cu')]);
-        Git::execute(['config', '--local', 'user.email', env('GIT_EMAIL', 'cu@composer-update')]);
+        Git::execute(...['config', '--local', 'user.name', env('GIT_NAME', 'cu')]);
+        Git::execute(...['config', '--local', 'user.email', env('GIT_EMAIL', 'cu@composer-update')]);
 
         $this->info('Fetching from remote.');
 
@@ -172,7 +172,7 @@ class UpdateCommand extends Command
 
         $output = $process->getOutput();
         if (blank($output)) {
-            $output = $process->getErrorOutput();
+            $output = $process->getErrorOutput(); // @codeCoverageIgnore
         }
 
         return $output ?? '';

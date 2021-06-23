@@ -2,7 +2,6 @@
 
 namespace App\Facades;
 
-use Cz\Git\IGit;
 use Illuminate\Support\Facades\Facade;
 
 class Git extends Facade
@@ -14,6 +13,6 @@ class Git extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return IGit::class;
+        return 'git';
     }
 }

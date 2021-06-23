@@ -14,7 +14,7 @@
   ],
   "require": {
     "php": "^7.4",
-    "czproject/git-php": "^3.17",
+    "czproject/git-php": "^4.0.2",
     "graham-campbell/github": "^9.0",
     "laravel-zero/framework": "^8.0",
     "php-http/guzzle6-adapter": "^2.0"
