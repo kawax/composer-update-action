@@ -61,13 +61,7 @@ class UpdateCommand extends Command
             return;
         }
 
-        $output = $this->process(
-            'update',
-            [
-                env('COMPOSER_PACKAGES', ''),
-                env('COMPOSER_PACKAGES') ? '--with-dependencies' : '',
-            ]
-        );
+        $output = $this->process(env('COMPOSER_PACKAGES') ? 'update-packages' : 'update');
 
         $this->output($output);
 
@@ -97,9 +91,9 @@ class UpdateCommand extends Command
 
         $this->new_branch = 'cu/'.Str::random(8);
         if (env('APP_SINGLE_BRANCH')) {
-            $this->new_branch = $this->parent_branch . env('APP_SINGLE_BRANCH_POSTFIX', '-updated');
+            $this->new_branch = $this->parent_branch.env('APP_SINGLE_BRANCH_POSTFIX', '-updated');
 
-            $this->info('Using single-branch approach. Branch name: "' . $this->new_branch . '"');
+            $this->info('Using single-branch approach. Branch name: "'.$this->new_branch.'"');
         }
 
         $token = env('GITHUB_TOKEN');
@@ -119,14 +113,14 @@ class UpdateCommand extends Command
         Git::fetch('origin');
 
         if (
-            !env('APP_SINGLE_BRANCH')
-            || !in_array('remotes/origin/' . $this->new_branch, Git::getBranches() ?? [])
+            ! env('APP_SINGLE_BRANCH')
+            || ! in_array('remotes/origin/'.$this->new_branch, Git::getBranches() ?? [])
         ) {
-            $this->info('Creating branch "' . $this->new_branch . '".');
+            $this->info('Creating branch "'.$this->new_branch.'".');
 
             Git::createBranch($this->new_branch, true);
         } elseif (env('APP_SINGLE_BRANCH')) {
-            $this->info('Checking out branch "' . $this->new_branch . '".');
+            $this->info('Checking out branch "'.$this->new_branch.'".');
 
             Git::checkout($this->new_branch);
 
@@ -134,7 +128,7 @@ class UpdateCommand extends Command
 
             Git::pull('origin');
 
-            $this->info('Merging from "' . $this->parent_branch . '".');
+            $this->info('Merging from "'.$this->parent_branch.'".');
 
             Git::merge($this->parent_branch, [
                 '--strategy-option=theirs',
@@ -159,14 +153,14 @@ class UpdateCommand extends Command
      *
      * @return string
      */
-    protected function process(string $command, array $arguments = []): string
+    protected function process(string $command): string
     {
-        $this->info($command . ' ' . implode(' ', $arguments));
+        $this->info($command);
 
         /**
          * @var Process $process
          */
-        $process = app('process.'.$command, $arguments)
+        $process = app('process.'.$command)
             ->setWorkingDirectory($this->base_path)
             ->setTimeout(600)
             ->setEnv(
@@ -225,7 +219,7 @@ class UpdateCommand extends Command
         $this->info('Committing changes ...');
 
         Git::addAllChanges()
-           ->commit(env('GIT_COMMIT_PREFIX', '') . 'composer update ' . today()->toDateString() . PHP_EOL . PHP_EOL . $this->out)
+           ->commit(env('GIT_COMMIT_PREFIX', '').'composer update '.today()->toDateString().PHP_EOL.PHP_EOL.$this->out)
            ->push('origin', [$this->new_branch]);
     }
 
@@ -236,14 +230,14 @@ class UpdateCommand extends Command
     {
         $this->info('Pull Request');
 
-        $date = env('APP_SINGLE_BRANCH') ? '' : ' ' . today()->toDateString();
+        $date = env('APP_SINGLE_BRANCH') ? '' : ' '.today()->toDateString();
 
         $pullData = [
             'base'  => Str::afterLast(env('GITHUB_REF'), '/'),
             'head'  => $this->new_branch,
-            'title' => env('GIT_COMMIT_PREFIX', '') . 'Composer update with '
-                . (count(explode(PHP_EOL, $this->out)) - 1) . ' changes'
-                . $date,
+            'title' => env('GIT_COMMIT_PREFIX', '').'Composer update with '
+                .(count(explode(PHP_EOL, $this->out)) - 1).' changes'
+                .$date,
             'body'  => $this->out,
         ];
 
@@ -254,8 +248,8 @@ class UpdateCommand extends Command
                 Str::before($this->repo, '/'),
                 Str::afterLast($this->repo, '/'),
                 [
-                    'head' => Str::before($this->repo, '/') . ':' . $this->new_branch,
-                    'state' => 'open'
+                    'head'  => Str::before($this->repo, '/').':'.$this->new_branch,
+                    'state' => 'open',
                 ]
             );
 
@@ -271,9 +265,9 @@ class UpdateCommand extends Command
                 $pullData
             );
 
-            $this->info('Pull request created for branch "' . $this->new_branch . '": ' . $result['html_url']);
+            $this->info('Pull request created for branch "'.$this->new_branch.'": '.$result['html_url']);
         } else {
-            $this->info('Pull request already exists for branch "' . $this->new_branch . '": ' . $pullRequests[0]['html_url']);
+            $this->info('Pull request already exists for branch "'.$this->new_branch.'": '.$pullRequests[0]['html_url']);
         }
     }
 }

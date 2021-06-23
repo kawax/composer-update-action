@@ -12,30 +12,18 @@ use Tests\TestCase;
 
 class UpdateCommandTest extends TestCase
 {
-    /**
-     * @return void
-     */
     public function testUpdateCommand()
     {
+        Git::shouldReceive('getCurrentBranchName')->once()->andReturn('');
+
         GitHub::shouldReceive('authenticate')->once();
 
         Git::shouldReceive('setRemoteUrl')->once();
         Git::shouldReceive('execute')->twice();
+        Git::shouldReceive('fetch')->once();
         Git::shouldReceive('createBranch')->once();
 
         File::shouldReceive('exists')->twice()->andReturnTrue();
-
-        $this->instance(
-            'process.install',
-            m::mock(
-                Process::class,
-                function ($mock) {
-                    $mock->shouldReceive('setWorkingDirectory->setTimeout->setEnv->mustRun->getOutput')->once()->andReturn(
-                        'test'
-                    );
-                }
-            )
-        );
 
         $this->instance(
             'process.update',
@@ -62,10 +50,118 @@ class UpdateCommandTest extends TestCase
         Git::shouldReceive('hasChanges')->andReturnTrue();
         Git::shouldReceive('addAllChanges->commit->push')->once();
 
-        GitHub::shouldReceive('pullRequest->create')->once();
+        GitHub::shouldReceive('pullRequest->create')->once()->andReturn([
+            'html_url' => 'https://',
+        ]);
 
         $this->artisan('update')
-             ->expectsOutput('init')
+             ->expectsOutput('Initializing ...')
+             ->assertExitCode(0);
+    }
+
+    public function testUpdatePackagesCommand()
+    {
+        $_ENV['COMPOSER_PACKAGES'] = 'laravel/*';
+
+        Git::shouldReceive('getCurrentBranchName')->once()->andReturn('');
+
+        GitHub::shouldReceive('authenticate')->once();
+
+        Git::shouldReceive('setRemoteUrl')->once();
+        Git::shouldReceive('execute')->twice();
+        Git::shouldReceive('fetch')->once();
+        Git::shouldReceive('createBranch')->once();
+
+        File::shouldReceive('exists')->twice()->andReturnTrue();
+
+        $this->instance(
+            'process.update-packages',
+            m::mock(
+                Process::class,
+                function ($mock) {
+                    $mock->shouldReceive('setWorkingDirectory->setTimeout->setEnv->mustRun->getOutput')->once()->andReturn(
+                        'test'
+                    );
+                }
+            )
+        );
+
+        $this->instance(
+            'process.token',
+            m::mock(
+                Process::class,
+                function ($mock) {
+                    $mock->shouldReceive('setWorkingDirectory->setTimeout->mustRun')->once()->andReturnSelf();
+                }
+            )
+        );
+
+        Git::shouldReceive('hasChanges')->andReturnTrue();
+        Git::shouldReceive('addAllChanges->commit->push')->once();
+
+        GitHub::shouldReceive('pullRequest->create')->once()->andReturn([
+            'html_url' => 'https://',
+        ]);
+
+        $this->artisan('update')
+             ->expectsOutput('Initializing ...')
+             ->assertExitCode(0);
+    }
+
+    public function testUpdateSingleCommand()
+    {
+        $_ENV['APP_SINGLE_BRANCH'] = true;
+
+        Git::shouldReceive('getCurrentBranchName')->once()->andReturn('test');
+
+        GitHub::shouldReceive('authenticate')->once();
+
+        Git::shouldReceive('setRemoteUrl')->once();
+        Git::shouldReceive('execute')->twice();
+        Git::shouldReceive('fetch')->once();
+        Git::shouldReceive('getBranches')->once()->andReturn([
+            'remotes/origin/test-updated',
+        ]);
+
+        Git::shouldReceive('checkout')->once();
+        Git::shouldReceive('pull')->once();
+        Git::shouldReceive('merge')->once();
+
+        File::shouldReceive('exists')->twice()->andReturnTrue();
+
+        $this->instance(
+            'process.update',
+            m::mock(
+                Process::class,
+                function ($mock) {
+                    $mock->shouldReceive('setWorkingDirectory->setTimeout->setEnv->mustRun->getOutput')->once()->andReturn(
+                        'test'
+                    );
+                }
+            )
+        );
+
+        $this->instance(
+            'process.token',
+            m::mock(
+                Process::class,
+                function ($mock) {
+                    $mock->shouldReceive('setWorkingDirectory->setTimeout->mustRun')->once()->andReturnSelf();
+                }
+            )
+        );
+
+        Git::shouldReceive('hasChanges')->andReturnTrue();
+        Git::shouldReceive('addAllChanges->commit->push')->once();
+
+        GitHub::shouldReceive('pullRequest->all')->once()->andReturn([
+            [
+                'html_url' => 'https://',
+            ],
+        ]);
+
+        $this->artisan('update')
+             ->expectsOutput('Initializing ...')
              ->assertExitCode(0);
     }
 

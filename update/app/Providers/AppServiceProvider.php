@@ -10,16 +10,6 @@ use Symfony\Component\Process\Process;
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
-
-    /**
      * Register any application services.
      *
      * @return void
@@ -39,6 +29,11 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             'process.update',
             fn ($app) => new Process($this->command('update'))
+        );
+
+        $this->app->bind(
+            'process.update-packages',
+            fn ($app) => new Process($this->packages())
         );
 
         $this->app->bind(
@@ -67,6 +62,23 @@ class AppServiceProvider extends ServiceProvider
     /**
      * @return array
      */
+    private function packages(): array
+    {
+        return [
+            'composer',
+            'update',
+            env('COMPOSER_PACKAGES'),
+            '--with-dependencies',
+            '--no-interaction',
+            '--no-progress',
+            '--no-autoloader',
+            '--no-scripts',
+        ];
+    }
+
+    /**
+     * @return array
+     */
     private function token(): array
     {
         return [
@@ -76,5 +88,15 @@ class AppServiceProvider extends ServiceProvider
             'github-oauth.github.com',
             env('GITHUB_TOKEN'),
         ];
+    }
+
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
     }
 }
