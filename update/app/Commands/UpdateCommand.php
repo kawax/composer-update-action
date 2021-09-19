@@ -151,7 +151,6 @@ class UpdateCommand extends Command
 
     /**
      * @param  string  $command
-     *
      * @return string
      */
     protected function process(string $command): string
@@ -194,7 +193,6 @@ class UpdateCommand extends Command
 
     /**
      * @param  string  $output
-     *
      * @return void
      */
     protected function output(string $output): void

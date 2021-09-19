@@ -43,7 +43,6 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * @param  string  $cmd
-     *
      * @return array
      */
     private function command(string $cmd): array
