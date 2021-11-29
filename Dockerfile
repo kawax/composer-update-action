@@ -1,4 +1,4 @@
-FROM php:8.1-cli
+FROM php:8.1.0RC6-cli
 
 # php
 RUN apt-get update \
