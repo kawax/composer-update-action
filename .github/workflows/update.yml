@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: composer update action
-        uses: kawax/composer-update-action@master
+        uses: kawax/composer-update-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
           COMPOSER_PATH: /update
