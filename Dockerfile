@@ -1,4 +1,4 @@
-FROM php:8.1-cli
+FROM php:cli
 
 # php
 RUN apt-get update \
