@@ -277,16 +277,16 @@
         },
         {
             "name": "dragonmantank/cron-expression",
-            "version": "v3.2.1",
+            "version": "v3.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dragonmantank/cron-expression.git",
-                "reference": "13270fca99fc32d5e17c41b5efe0963256ffe5e2"
+                "reference": "c9e208317b0cf679097cf976ffbb0b0eec81d4df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dragonmantank/cron-expression/zipball/13270fca99fc32d5e17c41b5efe0963256ffe5e2",
-                "reference": "13270fca99fc32d5e17c41b5efe0963256ffe5e2",
+                "url": "https://api.github.com/repos/dragonmantank/cron-expression/zipball/c9e208317b0cf679097cf976ffbb0b0eec81d4df",
+                "reference": "c9e208317b0cf679097cf976ffbb0b0eec81d4df",
                 "shasum": ""
             },
             "require": {
@@ -326,7 +326,7 @@
             ],
             "support": {
                 "issues": "https://github.com/dragonmantank/cron-expression/issues",
-                "source": "https://github.com/dragonmantank/cron-expression/tree/v3.2.1"
+                "source": "https://github.com/dragonmantank/cron-expression/tree/v3.2.2"
             },
             "funding": [
                 {
@@ -334,7 +334,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-01-05T03:12:08+00:00"
+            "time": "2022-01-05T06:05:42+00:00"
         },
         {
             "name": "facade/ignition-contracts",
