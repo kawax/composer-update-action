@@ -2461,21 +2461,21 @@
         },
         {
             "name": "nunomaduro/laravel-console-summary",
-            "version": "v1.7.1",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/laravel-console-summary.git",
-                "reference": "b5a6b856aeaa2a0f69feb61a279ab4af4d6fecb1"
+                "reference": "1b32af3f39a744223c4ed6d2a5080fc5baa037da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/laravel-console-summary/zipball/b5a6b856aeaa2a0f69feb61a279ab4af4d6fecb1",
-                "reference": "b5a6b856aeaa2a0f69feb61a279ab4af4d6fecb1",
+                "url": "https://api.github.com/repos/nunomaduro/laravel-console-summary/zipball/1b32af3f39a744223c4ed6d2a5080fc5baa037da",
+                "reference": "1b32af3f39a744223c4ed6d2a5080fc5baa037da",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "^7.0|^8.0",
-                "illuminate/support": "^7.0|^8.0",
+                "illuminate/console": "^7.0|^8.0|^9.0",
+                "illuminate/support": "^7.0|^8.0|^9.0",
                 "php": "^7.2.5|^8.0"
             },
             "type": "library",
@@ -2516,29 +2516,29 @@
                 "issues": "https://github.com/nunomaduro/laravel-console-summary/issues",
                 "source": "https://github.com/nunomaduro/laravel-console-summary"
             },
-            "time": "2020-12-14T10:21:43+00:00"
+            "time": "2022-01-13T14:34:23+00:00"
         },
         {
             "name": "nunomaduro/laravel-console-task",
-            "version": "v1.6.1",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/laravel-console-task.git",
-                "reference": "de3062d80caa61be1dfde4ec3b84232871ef7f73"
+                "reference": "7613432d2eb77498d5c7bdce560a33b7d82d8eeb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/laravel-console-task/zipball/de3062d80caa61be1dfde4ec3b84232871ef7f73",
-                "reference": "de3062d80caa61be1dfde4ec3b84232871ef7f73",
+                "url": "https://api.github.com/repos/nunomaduro/laravel-console-task/zipball/7613432d2eb77498d5c7bdce560a33b7d82d8eeb",
+                "reference": "7613432d2eb77498d5c7bdce560a33b7d82d8eeb",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "^6.0|^7.0|^8.0",
-                "illuminate/support": "^6.0|^7.0|^8.0",
+                "illuminate/console": "^6.0|^7.0|^8.0|^9.0",
+                "illuminate/support": "^6.0|^7.0|^8.0|^9.0",
                 "php": "^7.2.5|^8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^8.5.21|^9.5.10"
+                "pestphp/pest": "^1.20"
             },
             "type": "library",
             "extra": {
@@ -2578,25 +2578,25 @@
                 "issues": "https://github.com/nunomaduro/laravel-console-task/issues",
                 "source": "https://github.com/nunomaduro/laravel-console-task"
             },
-            "time": "2021-10-19T11:33:38+00:00"
+            "time": "2022-01-13T14:40:41+00:00"
         },
         {
             "name": "nunomaduro/laravel-desktop-notifier",
-            "version": "v2.5.1",
+            "version": "v2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/laravel-desktop-notifier.git",
-                "reference": "ce17d71c934c42f2e53c308184ac1edf2d17a51a"
+                "reference": "f70febce1c6cc931bc71fd9c61049eb6b8d3c302"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/laravel-desktop-notifier/zipball/ce17d71c934c42f2e53c308184ac1edf2d17a51a",
-                "reference": "ce17d71c934c42f2e53c308184ac1edf2d17a51a",
+                "url": "https://api.github.com/repos/nunomaduro/laravel-desktop-notifier/zipball/f70febce1c6cc931bc71fd9c61049eb6b8d3c302",
+                "reference": "f70febce1c6cc931bc71fd9c61049eb6b8d3c302",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "^6.20|^7.29|^8.12",
-                "illuminate/support": "^6.20|^7.29|^8.12",
+                "illuminate/console": "^6.20|^7.29|^8.12|^9.0",
+                "illuminate/support": "^6.20|^7.29|^8.12|^9.0",
                 "jolicode/jolinotif": "^2.0",
                 "php": "^7.2.5|^8.0"
             },
@@ -2646,9 +2646,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nunomaduro/laravel-desktop-notifier/issues",
-                "source": "https://github.com/nunomaduro/laravel-desktop-notifier/tree/v2.5.1"
+                "source": "https://github.com/nunomaduro/laravel-desktop-notifier/tree/v2.6.0"
             },
-            "time": "2020-10-30T15:41:03+00:00"
+            "time": "2022-01-13T15:10:14+00:00"
         },
         {
             "name": "php-http/cache-plugin",
