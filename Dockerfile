@@ -14,7 +14,7 @@ RUN apt-get update \
         libpng-dev \
     && docker-php-ext-configure zip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) zip pdo_mysql bcmath pcntl gmp intl gd sockets
+    && docker-php-ext-install -j$(nproc) zip pdo_mysql bcmath pcntl gmp intl gd
 
 # composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
