@@ -28,7 +28,7 @@ class UpdateCommandTest extends TestCase
 
         $this->instance('process.update',
             m::mock(Process::class, function (MockInterface $mock) {
-                $mock->shouldReceive('setWorkingDirectory->setTimeout->setEnv->mustRun->getOutput')->once()->andReturn('test');
+                $mock->allows('setWorkingDirectory->setTimeout->setEnv->mustRun->getOutput')->once()->andReturn('test');
             })
         );
 
@@ -36,7 +36,7 @@ class UpdateCommandTest extends TestCase
             'process.token',
             m::mock(
                 Process::class,
-                function ($mock) {
+                function (MockInterface $mock) {
                     $mock->shouldReceive('setWorkingDirectory->setTimeout->mustRun')->once()->andReturnSelf();
                 }
             )

@@ -106,8 +106,8 @@ class UpdateCommand extends Command
             "https://{$token}@github.com/{$this->repo}.git"
         );
 
-        Git::execute(...['config', '--local', 'user.name', env('GIT_NAME', 'cu')]);
-        Git::execute(...['config', '--local', 'user.email', env('GIT_EMAIL', 'cu@composer-update')]);
+        Git::execute('config', '--local', 'user.name', env('GIT_NAME', 'cu'));
+        Git::execute('config', '--local', 'user.email', env('GIT_EMAIL', 'cu@composer-update'));
 
         $this->info('Fetching from remote.');
 
@@ -162,16 +162,16 @@ class UpdateCommand extends Command
          */
         $process = app('process.'.$command);
 
-        $process->setWorkingDirectory($this->base_path)
-                ->setTimeout(600)
-                ->setEnv(
-                    [
-                        'COMPOSER_MEMORY_LIMIT' => '-1',
-                    ]
-                )
-                ->mustRun();
+        $output = $process->setWorkingDirectory($this->base_path)
+                          ->setTimeout(600)
+                          ->setEnv(
+                              [
+                                  'COMPOSER_MEMORY_LIMIT' => '-1',
+                              ]
+                          )
+                          ->mustRun()
+                          ->getOutput();
 
-        $output = $process->getOutput();
         if (blank($output)) {
             $output = $process->getErrorOutput(); // @codeCoverageIgnore
         }
