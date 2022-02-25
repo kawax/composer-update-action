@@ -7,6 +7,7 @@ use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Mockery as m;
+use Mockery\MockInterface;
 use Symfony\Component\Process\Process;
 use Tests\TestCase;
 
@@ -25,16 +26,10 @@ class UpdateCommandTest extends TestCase
 
         File::shouldReceive('exists')->twice()->andReturnTrue();
 
-        $this->instance(
-            'process.update',
-            m::mock(
-                Process::class,
-                function ($mock) {
-                    $mock->shouldReceive('setWorkingDirectory->setTimeout->setEnv->mustRun->getOutput')->once()->andReturn(
-                        'test'
-                    );
-                }
-            )
+        $this->instance('process.update',
+            m::mock(Process::class, function (MockInterface $mock) {
+                $mock->shouldReceive('setWorkingDirectory->setTimeout->setEnv->mustRun->getOutput')->once()->andReturn('test');
+            })
         );
 
         $this->instance(

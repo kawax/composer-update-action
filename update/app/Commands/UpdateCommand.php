@@ -3,7 +3,7 @@
 namespace App\Commands;
 
 use App\Facades\Git;
-use Github\Client;
+use Github\AuthMethod;
 use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -99,7 +99,7 @@ class UpdateCommand extends Command
 
         $token = env('GITHUB_TOKEN');
 
-        GitHub::authenticate($token, Client::AUTH_ACCESS_TOKEN);
+        GitHub::authenticate($token, AuthMethod::ACCESS_TOKEN);
 
         Git::setRemoteUrl(
             'origin',
@@ -160,15 +160,16 @@ class UpdateCommand extends Command
         /**
          * @var Process $process
          */
-        $process = app('process.'.$command)
-            ->setWorkingDirectory($this->base_path)
-            ->setTimeout(600)
-            ->setEnv(
-                [
-                    'COMPOSER_MEMORY_LIMIT' => '-1',
-                ]
-            )
-            ->mustRun();
+        $process = app('process.'.$command);
+
+        $process->setWorkingDirectory($this->base_path)
+                ->setTimeout(600)
+                ->setEnv(
+                    [
+                        'COMPOSER_MEMORY_LIMIT' => '-1',
+                    ]
+                )
+                ->mustRun();
 
         $output = $process->getOutput();
         if (blank($output)) {
@@ -229,12 +230,12 @@ class UpdateCommand extends Command
         $date = env('APP_SINGLE_BRANCH') ? '' : ' '.today()->toDateString();
 
         $pullData = [
-            'base'  => Str::afterLast(env('GITHUB_REF'), '/'),
-            'head'  => $this->new_branch,
+            'base' => Str::afterLast(env('GITHUB_REF'), '/'),
+            'head' => $this->new_branch,
             'title' => env('GIT_COMMIT_PREFIX', '').'Composer update with '
                 .(count(explode(PHP_EOL, $this->out)) - 1).' changes'
                 .$date,
-            'body'  => $this->out,
+            'body' => $this->out,
         ];
 
         $createPullRequest = true;
@@ -244,7 +245,7 @@ class UpdateCommand extends Command
                 Str::before($this->repo, '/'),
                 Str::afterLast($this->repo, '/'),
                 [
-                    'head'  => Str::before($this->repo, '/').':'.$this->new_branch,
+                    'head' => Str::before($this->repo, '/').':'.$this->new_branch,
                     'state' => 'open',
                 ]
             );
