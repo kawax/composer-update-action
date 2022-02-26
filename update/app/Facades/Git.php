@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Facade;
  * @method static GitRepository setRemoteUrl(string $string, string $string1)
  * @method static GitRepository createBranch(string $new_branch, bool $true)
  * @method static GitRepository addAllChanges()
+ *
+ * @mixin GitRepository
  */
 class Git extends Facade
 {
