@@ -2,13 +2,14 @@
 
 namespace Tests\Feature;
 
+use App\Actions\PackagesUpdate;
+use App\Actions\Token;
+use App\Actions\Update;
 use App\Facades\Git;
 use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-use Mockery as m;
 use Mockery\MockInterface;
-use Symfony\Component\Process\Process;
 use Tests\TestCase;
 
 class UpdateCommandTest extends TestCase
@@ -26,21 +27,13 @@ class UpdateCommandTest extends TestCase
 
         File::shouldReceive('exists')->twice()->andReturnTrue();
 
-        $this->instance('process.update',
-            m::mock(Process::class, function (MockInterface $mock) {
-                $mock->allows('setWorkingDirectory->setTimeout->setEnv->mustRun->getOutput')->once()->andReturn('test');
-            })
-        );
+        $this->mock(Update::class, function (MockInterface $mock) {
+            $mock->allows('basePath->run')->once()->andReturn('test');
+        });
 
-        $this->instance(
-            'process.token',
-            m::mock(
-                Process::class,
-                function (MockInterface $mock) {
-                    $mock->shouldReceive('setWorkingDirectory->setTimeout->mustRun')->once()->andReturnSelf();
-                }
-            )
-        );
+        $this->mock(Token::class, function (MockInterface $mock) {
+            $mock->allows('basePath->run')->once()->andReturnSelf();
+        });
 
         Git::shouldReceive('hasChanges')->andReturnTrue();
         Git::shouldReceive('addAllChanges->commit->push')->once();
@@ -69,27 +62,13 @@ class UpdateCommandTest extends TestCase
 
         File::shouldReceive('exists')->twice()->andReturnTrue();
 
-        $this->instance(
-            'process.update-packages',
-            m::mock(
-                Process::class,
-                function ($mock) {
-                    $mock->shouldReceive('setWorkingDirectory->setTimeout->setEnv->mustRun->getOutput')->once()->andReturn(
-                        'test'
-                    );
-                }
-            )
-        );
+        $this->mock(PackagesUpdate::class, function (MockInterface $mock) {
+            $mock->allows('basePath->run')->once()->andReturn('test');
+        });
 
-        $this->instance(
-            'process.token',
-            m::mock(
-                Process::class,
-                function ($mock) {
-                    $mock->shouldReceive('setWorkingDirectory->setTimeout->mustRun')->once()->andReturnSelf();
-                }
-            )
-        );
+        $this->mock(Token::class, function (MockInterface $mock) {
+            $mock->allows('basePath->run')->once()->andReturnSelf();
+        });
 
         Git::shouldReceive('hasChanges')->andReturnTrue();
         Git::shouldReceive('addAllChanges->commit->push')->once();
@@ -124,27 +103,13 @@ class UpdateCommandTest extends TestCase
 
         File::shouldReceive('exists')->twice()->andReturnTrue();
 
-        $this->instance(
-            'process.update',
-            m::mock(
-                Process::class,
-                function ($mock) {
-                    $mock->shouldReceive('setWorkingDirectory->setTimeout->setEnv->mustRun->getOutput')->once()->andReturn(
-                        'test'
-                    );
-                }
-            )
-        );
+        $this->mock(Update::class, function (MockInterface $mock) {
+            $mock->allows('basePath->run')->once()->andReturn('test');
+        });
 
-        $this->instance(
-            'process.token',
-            m::mock(
-                Process::class,
-                function ($mock) {
-                    $mock->shouldReceive('setWorkingDirectory->setTimeout->mustRun')->once()->andReturnSelf();
-                }
-            )
-        );
+        $this->mock(Token::class, function (MockInterface $mock) {
+            $mock->allows('basePath->run')->once()->andReturnSelf();
+        });
 
         Git::shouldReceive('hasChanges')->andReturnTrue();
         Git::shouldReceive('addAllChanges->commit->push')->once();
@@ -162,9 +127,9 @@ class UpdateCommandTest extends TestCase
 
     public function testFluentStrings()
     {
-        $str = (string) Str::of(' - Updating laravel/framework (v7.0.0 => v7.1.0): Loading from cache')->beforeLast(
+        $str = Str::of(' - Updating laravel/framework (v7.0.0 => v7.1.0): Loading from cache')->beforeLast(
             ':'
-        )->trim();
+        )->trim()->value();
 
         $this->assertEquals('- Updating laravel/framework (v7.0.0 => v7.1.0)', $str);
     }

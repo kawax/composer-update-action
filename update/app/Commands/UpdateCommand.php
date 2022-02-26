@@ -2,13 +2,15 @@
 
 namespace App\Commands;
 
+use App\Actions\PackagesUpdate;
+use App\Actions\Token;
+use App\Actions\Update;
 use App\Facades\Git;
 use Github\AuthMethod;
 use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use LaravelZero\Framework\Commands\Command;
-use Symfony\Component\Process\Process;
 
 class UpdateCommand extends Command
 {
@@ -62,7 +64,11 @@ class UpdateCommand extends Command
             return; // @codeCoverageIgnore
         }
 
-        $output = $this->process(env('COMPOSER_PACKAGES') ? 'update-packages' : 'update');
+        if (filled(env('COMPOSER_PACKAGES'))) {
+            $output = app(PackagesUpdate::class)->basePath($this->base_path)->run();
+        } else {
+            $output = app(Update::class)->basePath($this->base_path)->run();
+        }
 
         $this->output($output);
 
@@ -150,46 +156,13 @@ class UpdateCommand extends Command
     }
 
     /**
-     * @param  string  $command
-     * @return string
-     */
-    protected function process(string $command): string
-    {
-        $this->info($command);
-
-        /**
-         * @var Process $process
-         */
-        $process = app('process.'.$command);
-
-        $output = $process->setWorkingDirectory($this->base_path)
-                          ->setTimeout(600)
-                          ->setEnv(
-                              [
-                                  'COMPOSER_MEMORY_LIMIT' => '-1',
-                              ]
-                          )
-                          ->mustRun()
-                          ->getOutput();
-
-        if (blank($output)) {
-            $output = $process->getErrorOutput(); // @codeCoverageIgnore
-        }
-
-        return $output ?? '';
-    }
-
-    /**
      * Set GitHub token for composer.
      *
      * @return void
      */
     protected function token(): void
     {
-        app('process.token')
-            ->setWorkingDirectory($this->base_path)
-            ->setTimeout(60)
-            ->mustRun();
+        app(Token::class)->basePath($this->base_path)->run();
     }
 
     /**
