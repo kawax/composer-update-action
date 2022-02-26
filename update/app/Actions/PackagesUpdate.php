@@ -16,4 +16,3 @@ class PackagesUpdate extends BaseAction
         return $this->getOutput($process);
     }
 }
-
