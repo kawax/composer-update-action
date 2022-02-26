@@ -11,23 +11,8 @@ class Update extends BaseAction
         /**
          * @var Process $process
          */
-        $process = app(Process::class, ['command' => $this->update()]);
+        $process = app('process.update');
 
         return $this->getOutput($process);
-    }
-
-    /**
-     * @return array
-     */
-    private function update(): array
-    {
-        return [
-            'composer',
-            'update',
-            '--no-interaction',
-            '--no-progress',
-            '--no-autoloader',
-            '--no-scripts',
-        ];
     }
 }

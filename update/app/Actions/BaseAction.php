@@ -36,7 +36,7 @@ abstract class BaseAction
                           ->getOutput();
 
         if (blank($output)) {
-            $output = $process->getErrorOutput(); // @codeCoverageIgnore
+            $output = $process->getErrorOutput();
         }
 
         return $output ?? '';
