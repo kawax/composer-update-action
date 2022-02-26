@@ -8,12 +8,12 @@
 `composer update` and create pull request.
 
 ## Version
-|ver|PHP|
-|---|---|
-|v1 |7.4|
-|v2 |8.0|
-|v3 |8.1|
-|master|latest|
+| ver    | PHP    |
+|--------|--------|
+| v1     | 7.4    |
+| v2     | 8.0    |
+| v3     | 8.1    |
+| master | latest |
 
 ## Usage
 
