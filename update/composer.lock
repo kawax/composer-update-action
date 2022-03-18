@@ -2704,16 +2704,16 @@
         },
         {
             "name": "nunomaduro/termwind",
-            "version": "v1.6.0",
+            "version": "v1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/termwind.git",
-                "reference": "2c3b308811d1f2a33d5305b18ef16d94359ba40d"
+                "reference": "778f0802826c1ed841b7778da2796aa836aec000"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/2c3b308811d1f2a33d5305b18ef16d94359ba40d",
-                "reference": "2c3b308811d1f2a33d5305b18ef16d94359ba40d",
+                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/778f0802826c1ed841b7778da2796aa836aec000",
+                "reference": "778f0802826c1ed841b7778da2796aa836aec000",
                 "shasum": ""
             },
             "require": {
@@ -2770,7 +2770,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nunomaduro/termwind/issues",
-                "source": "https://github.com/nunomaduro/termwind/tree/v1.6.0"
+                "source": "https://github.com/nunomaduro/termwind/tree/v1.6.1"
             },
             "funding": [
                 {
@@ -2786,7 +2786,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-02-24T17:35:42+00:00"
+            "time": "2022-03-17T18:45:55+00:00"
         },
         {
             "name": "php-http/cache-plugin",
