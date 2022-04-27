@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "86a162facc8288559bb9c5d52292b2c0",
+    "content-hash": "302f33d5f160aaa45f9280861200bda9",
     "packages": [
         {
             "name": "brick/math",
@@ -134,16 +134,16 @@
         },
         {
             "name": "czproject/git-php",
-            "version": "v4.0.2",
+            "version": "v4.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/czproject/git-php.git",
-                "reference": "32505124ef2a8651f10a5afebace58f85eff2f93"
+                "reference": "24f4e51cc536a723b7838686284d1c21c6de088b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/czproject/git-php/zipball/32505124ef2a8651f10a5afebace58f85eff2f93",
-                "reference": "32505124ef2a8651f10a5afebace58f85eff2f93",
+                "url": "https://api.github.com/repos/czproject/git-php/zipball/24f4e51cc536a723b7838686284d1c21c6de088b",
+                "reference": "24f4e51cc536a723b7838686284d1c21c6de088b",
                 "shasum": ""
             },
             "require": {
@@ -174,7 +174,7 @@
             ],
             "support": {
                 "issues": "https://github.com/czproject/git-php/issues",
-                "source": "https://github.com/czproject/git-php/tree/v4.0.2"
+                "source": "https://github.com/czproject/git-php/tree/v4.0.5"
             },
             "funding": [
                 {
@@ -182,7 +182,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2021-06-15T09:39:16+00:00"
+            "time": "2022-04-27T12:20:53+00:00"
         },
         {
             "name": "doctrine/inflector",
