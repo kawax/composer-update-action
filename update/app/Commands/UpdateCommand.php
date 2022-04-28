@@ -6,6 +6,7 @@ use App\Actions\PackagesUpdate;
 use App\Actions\Token;
 use App\Actions\Update;
 use App\Facades\Git;
+use CzProject\GitPhp\GitException;
 use Github\AuthMethod;
 use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Support\Facades\File;
@@ -85,6 +86,8 @@ class UpdateCommand extends Command
 
     /**
      * @return void
+     *
+     * @throws GitException
      */
     protected function init(): void
     {
@@ -183,6 +186,8 @@ class UpdateCommand extends Command
 
     /**
      * @return void
+     *
+     * @throws GitException
      */
     protected function commitPush(): void
     {
@@ -190,7 +195,7 @@ class UpdateCommand extends Command
 
         Git::addAllChanges()
            ->commit(env('GIT_COMMIT_PREFIX', '').'composer update '.today()->toDateString().PHP_EOL.PHP_EOL.$this->out)
-           ->push('origin', [$this->new_branch]);
+           ->push(['origin', $this->new_branch]);
     }
 
     /**
