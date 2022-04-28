@@ -14,7 +14,7 @@
   ],
   "require": {
     "php": "^8.0",
-    "czproject/git-php": "4.0.2",
+    "czproject/git-php": "^4.0.5",
     "graham-campbell/github": "^10.0",
     "guzzlehttp/guzzle": "^7.4",
     "http-interop/http-factory-guzzle": "^1.0",

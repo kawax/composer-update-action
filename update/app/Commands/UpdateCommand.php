@@ -190,7 +190,7 @@ class UpdateCommand extends Command
 
         Git::addAllChanges()
            ->commit(env('GIT_COMMIT_PREFIX', '').'composer update '.today()->toDateString().PHP_EOL.PHP_EOL.$this->out)
-           ->push('origin', [$this->new_branch]);
+           ->push(['origin', $this->new_branch]);
     }
 
     /**
