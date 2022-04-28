@@ -86,6 +86,7 @@ class UpdateCommand extends Command
 
     /**
      * @return void
+     *
      * @throws GitException
      */
     protected function init(): void
@@ -185,6 +186,7 @@ class UpdateCommand extends Command
 
     /**
      * @return void
+     *
      * @throws GitException
      */
     protected function commitPush(): void
