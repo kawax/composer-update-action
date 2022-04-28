@@ -6,6 +6,7 @@ use App\Actions\PackagesUpdate;
 use App\Actions\Token;
 use App\Actions\Update;
 use App\Facades\Git;
+use CzProject\GitPhp\GitException;
 use Github\AuthMethod;
 use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Support\Facades\File;
@@ -85,6 +86,7 @@ class UpdateCommand extends Command
 
     /**
      * @return void
+     * @throws GitException
      */
     protected function init(): void
     {
@@ -183,6 +185,7 @@ class UpdateCommand extends Command
 
     /**
      * @return void
+     * @throws GitException
      */
     protected function commitPush(): void
     {
