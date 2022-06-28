@@ -2427,16 +2427,16 @@
         },
         {
             "name": "nunomaduro/collision",
-            "version": "v6.2.0",
+            "version": "v6.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/collision.git",
-                "reference": "c379636dc50e829edb3a8bcb944a01aa1aed8f25"
+                "reference": "5f058f7e39278b701e455b3c82ec5298cf001d89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/c379636dc50e829edb3a8bcb944a01aa1aed8f25",
-                "reference": "c379636dc50e829edb3a8bcb944a01aa1aed8f25",
+                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/5f058f7e39278b701e455b3c82ec5298cf001d89",
+                "reference": "5f058f7e39278b701e455b3c82ec5298cf001d89",
                 "shasum": ""
             },
             "require": {
@@ -2448,6 +2448,7 @@
             "require-dev": {
                 "brianium/paratest": "^6.4.1",
                 "laravel/framework": "^9.7",
+                "laravel/pint": "^0.2.1",
                 "nunomaduro/larastan": "^1.0.2",
                 "nunomaduro/mock-final-classes": "^1.1.0",
                 "orchestra/testbench": "^7.3.0",
@@ -2510,7 +2511,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2022-04-05T15:31:38+00:00"
+            "time": "2022-06-27T16:11:16+00:00"
         },
         {
             "name": "nunomaduro/laravel-console-summary",
@@ -2705,16 +2706,16 @@
         },
         {
             "name": "nunomaduro/termwind",
-            "version": "v1.11.1",
+            "version": "v1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/termwind.git",
-                "reference": "8ae79be19eddeac25e6bf5b9e1696de87d4f1556"
+                "reference": "04b73b2fe447e0aba7545b670186c48fceb091b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/8ae79be19eddeac25e6bf5b9e1696de87d4f1556",
-                "reference": "8ae79be19eddeac25e6bf5b9e1696de87d4f1556",
+                "url": "https://api.github.com/repos/nunomaduro/termwind/zipball/04b73b2fe447e0aba7545b670186c48fceb091b6",
+                "reference": "04b73b2fe447e0aba7545b670186c48fceb091b6",
                 "shasum": ""
             },
             "require": {
@@ -2726,11 +2727,11 @@
                 "ergebnis/phpstan-rules": "^1.0.",
                 "illuminate/console": "^8.0|^9.0",
                 "illuminate/support": "^8.0|^9.0",
+                "laravel/pint": "^0.2.0",
                 "pestphp/pest": "^1.21.0",
                 "pestphp/pest-plugin-mock": "^1.0",
                 "phpstan/phpstan": "^1.4.6",
                 "phpstan/phpstan-strict-rules": "^1.1.0",
-                "styleci/cli": "^1.2.0",
                 "symfony/var-dumper": "^5.2.7|^6.0.0",
                 "thecodingmachine/phpstan-strict-rules": "^1.0.0"
             },
@@ -2771,7 +2772,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nunomaduro/termwind/issues",
-                "source": "https://github.com/nunomaduro/termwind/tree/v1.11.1"
+                "source": "https://github.com/nunomaduro/termwind/tree/v1.12.0"
             },
             "funding": [
                 {
@@ -2787,7 +2788,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-06-17T12:26:22+00:00"
+            "time": "2022-06-27T17:01:56+00:00"
         },
         {
             "name": "php-http/cache-plugin",
