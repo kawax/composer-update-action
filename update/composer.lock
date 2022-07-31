@@ -462,16 +462,16 @@
         },
         {
             "name": "graham-campbell/bounded-cache",
-            "version": "v2.0.0",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Bounded-Cache.git",
-                "reference": "4cfde7543d9e733c7644642fa0443574917d962f"
+                "reference": "ee07b861fbcc57706d4eb93ab23430d8b19db280"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Bounded-Cache/zipball/4cfde7543d9e733c7644642fa0443574917d962f",
-                "reference": "4cfde7543d9e733c7644642fa0443574917d962f",
+                "url": "https://api.github.com/repos/GrahamCampbell/Bounded-Cache/zipball/ee07b861fbcc57706d4eb93ab23430d8b19db280",
+                "reference": "ee07b861fbcc57706d4eb93ab23430d8b19db280",
                 "shasum": ""
             },
             "require": {
@@ -482,7 +482,7 @@
                 "graham-campbell/analyzer": "^3.1",
                 "graham-campbell/testbench-core": "^3.4",
                 "mockery/mockery": "^1.5",
-                "phpunit/phpunit": "^9.5"
+                "phpunit/phpunit": "^9.5.21"
             },
             "type": "library",
             "autoload": {
@@ -513,7 +513,7 @@
             ],
             "support": {
                 "issues": "https://github.com/GrahamCampbell/Bounded-Cache/issues",
-                "source": "https://github.com/GrahamCampbell/Bounded-Cache/tree/v2.0.0"
+                "source": "https://github.com/GrahamCampbell/Bounded-Cache/tree/v2.1.0"
             },
             "funding": [
                 {
@@ -525,7 +525,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-30T19:44:24+00:00"
+            "time": "2022-07-31T08:37:52+00:00"
         },
         {
             "name": "graham-campbell/github",
