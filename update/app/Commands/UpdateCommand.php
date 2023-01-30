@@ -12,6 +12,7 @@ use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use LaravelZero\Framework\Commands\Command;
+use Symfony\Component\Process\Process;
 
 class UpdateCommand extends Command
 {
@@ -96,6 +97,8 @@ class UpdateCommand extends Command
         $this->repo = env('GITHUB_REPOSITORY', '');
 
         $this->base_path = env('GITHUB_WORKSPACE', '').env('COMPOSER_PATH', '');
+
+        $this->info((new Process(['git', 'branch']))->run());
 
         $this->parent_branch = Git::getCurrentBranchName();
 
