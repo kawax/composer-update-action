@@ -98,8 +98,6 @@ class UpdateCommand extends Command
 
         $this->base_path = env('GITHUB_WORKSPACE', '').env('COMPOSER_PATH', '');
 
-        $this->info((new Process(['git', 'branch']))->run());
-
         $this->parent_branch = Git::getCurrentBranchName();
 
         $this->new_branch = 'cu/'.Str::random(8);
