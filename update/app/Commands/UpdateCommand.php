@@ -12,7 +12,6 @@ use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use LaravelZero\Framework\Commands\Command;
-use Symfony\Component\Process\Process;
 
 class UpdateCommand extends Command
 {
