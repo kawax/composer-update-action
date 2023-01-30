@@ -98,16 +98,15 @@ class UpdateCommand extends Command
 
         $this->base_path = env('GITHUB_WORKSPACE', '').env('COMPOSER_PATH', '');
 
-        $process = new Process(['git', 'branch']);
-        $output = $process->mustRun()->getOutput();
-        if(blank($output)){
-            $output = $process->getErrorOutput();
+        try {
+            $this->parent_branch = Git::getCurrentBranchName();
+        }catch (GitException $e){
+            $this->error($e->getMessage());
+            $this->parent_branch = 'master';
         }
-        $this->info($output);
-
-        $this->parent_branch = Git::getCurrentBranchName();
 
         $this->new_branch = 'cu/'.Str::random(8);
+
         if (env('APP_SINGLE_BRANCH')) {
             $this->new_branch = $this->parent_branch.env('APP_SINGLE_BRANCH_POSTFIX', '-updated');
 
