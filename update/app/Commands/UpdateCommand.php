@@ -12,7 +12,6 @@ use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use LaravelZero\Framework\Commands\Command;
-use Symfony\Component\Process\Process;
 
 class UpdateCommand extends Command
 {
@@ -100,7 +99,7 @@ class UpdateCommand extends Command
 
         try {
             $this->parent_branch = Git::getCurrentBranchName();
-        }catch (GitException $e){
+        } catch (GitException $e) {
             $this->error($e->getMessage());
             $this->parent_branch = 'master';
         }
