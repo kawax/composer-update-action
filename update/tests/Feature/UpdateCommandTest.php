@@ -21,7 +21,7 @@ class UpdateCommandTest extends TestCase
         GitHub::shouldReceive('authenticate')->once();
 
         Git::shouldReceive('setRemoteUrl')->once();
-        Git::shouldReceive('execute')->twice();
+        Git::shouldReceive('execute')->times(4);
         Git::shouldReceive('fetch')->once();
         Git::shouldReceive('createBranch')->once();
 
@@ -56,7 +56,7 @@ class UpdateCommandTest extends TestCase
         GitHub::shouldReceive('authenticate')->once();
 
         Git::shouldReceive('setRemoteUrl')->once();
-        Git::shouldReceive('execute')->twice();
+        Git::shouldReceive('execute')->times(4);
         Git::shouldReceive('fetch')->once();
         Git::shouldReceive('createBranch')->once();
 
@@ -91,7 +91,7 @@ class UpdateCommandTest extends TestCase
         GitHub::shouldReceive('authenticate')->once();
 
         Git::shouldReceive('setRemoteUrl')->once();
-        Git::shouldReceive('execute')->twice();
+        Git::shouldReceive('execute')->times(4);
         Git::shouldReceive('fetch')->once();
         Git::shouldReceive('getBranches')->once()->andReturn([
             'remotes/origin/test-updated',
