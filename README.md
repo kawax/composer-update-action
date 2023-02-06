@@ -7,12 +7,16 @@
 
 `composer update` and create pull request.
 
+## Reusable workflow version
+https://github.com/kawax/composer-workflow
+
 ## Version
 | ver    | PHP    |
 |--------|--------|
 | v1     | 7.4    |
 | v2     | 8.0    |
 | v3     | 8.1    |
+| v4     | 8.2    |
 | master | latest |
 
 ## Usage
