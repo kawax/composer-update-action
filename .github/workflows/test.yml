@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup PHP, with composer and extensions
         uses: shivammathur/setup-php@v2 #https://github.com/shivammathur/setup-php
         with:
@@ -21,7 +21,7 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --no-interaction --no-progress --prefer-dist --optimize-autoloader -d ./update
       - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v3.0.0
+        uses: paambaati/codeclimate-action@v3.2.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:

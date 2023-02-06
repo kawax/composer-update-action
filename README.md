@@ -54,7 +54,7 @@ jobs:
 
 ```yaml
       - name: composer update action
-        uses: kawax/composer-update-action@v2
+        uses: kawax/composer-update-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMPOSER_PATH: /subdir
