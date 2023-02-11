@@ -2952,16 +2952,16 @@
         },
         {
             "name": "php-http/discovery",
-            "version": "1.15.0",
+            "version": "1.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/discovery.git",
-                "reference": "ebf69e00f8c58c47bc1114e38d2cfd40b7fe9b1e"
+                "reference": "778b59fe5bc9a1df7b77a02306c9ea229ce32bbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/discovery/zipball/ebf69e00f8c58c47bc1114e38d2cfd40b7fe9b1e",
-                "reference": "ebf69e00f8c58c47bc1114e38d2cfd40b7fe9b1e",
+                "url": "https://api.github.com/repos/php-http/discovery/zipball/778b59fe5bc9a1df7b77a02306c9ea229ce32bbc",
+                "reference": "778b59fe5bc9a1df7b77a02306c9ea229ce32bbc",
                 "shasum": ""
             },
             "require": {
@@ -2988,7 +2988,8 @@
             },
             "type": "composer-plugin",
             "extra": {
-                "class": "Http\\Discovery\\Composer\\Plugin"
+                "class": "Http\\Discovery\\Composer\\Plugin",
+                "plugin-optional": true
             },
             "autoload": {
                 "psr-4": {
@@ -3019,9 +3020,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-http/discovery/issues",
-                "source": "https://github.com/php-http/discovery/tree/1.15.0"
+                "source": "https://github.com/php-http/discovery/tree/1.15.1"
             },
-            "time": "2023-02-09T12:05:45+00:00"
+            "time": "2023-02-10T10:24:17+00:00"
         },
         {
             "name": "php-http/httplug",
