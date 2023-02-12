@@ -2952,16 +2952,16 @@
         },
         {
             "name": "php-http/discovery",
-            "version": "1.15.1",
+            "version": "1.15.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/discovery.git",
-                "reference": "778b59fe5bc9a1df7b77a02306c9ea229ce32bbc"
+                "reference": "5cc428320191ac1d0b6520034c2dc0698628ced5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/discovery/zipball/778b59fe5bc9a1df7b77a02306c9ea229ce32bbc",
-                "reference": "778b59fe5bc9a1df7b77a02306c9ea229ce32bbc",
+                "url": "https://api.github.com/repos/php-http/discovery/zipball/5cc428320191ac1d0b6520034c2dc0698628ced5",
+                "reference": "5cc428320191ac1d0b6520034c2dc0698628ced5",
                 "shasum": ""
             },
             "require": {
@@ -3020,9 +3020,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-http/discovery/issues",
-                "source": "https://github.com/php-http/discovery/tree/1.15.1"
+                "source": "https://github.com/php-http/discovery/tree/1.15.2"
             },
-            "time": "2023-02-10T10:24:17+00:00"
+            "time": "2023-02-11T08:28:41+00:00"
         },
         {
             "name": "php-http/httplug",
