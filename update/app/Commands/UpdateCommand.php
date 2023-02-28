@@ -6,12 +6,12 @@ use App\Actions\PackagesUpdate;
 use App\Actions\Token;
 use App\Actions\Update;
 use App\Facades\Git;
+use App\Facades\GitHub;
 use CzProject\GitPhp\GitException;
 use Github\AuthMethod;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use LaravelZero\Framework\Commands\Command;
-use App\Facades\GitHub;
 
 class UpdateCommand extends Command
 {
