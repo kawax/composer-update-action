@@ -6,7 +6,7 @@ use App\Actions\PackagesUpdate;
 use App\Actions\Token;
 use App\Actions\Update;
 use App\Facades\Git;
-use GrahamCampbell\GitHub\Facades\GitHub;
+use App\Facades\GitHub;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Mockery\MockInterface;
@@ -28,17 +28,17 @@ class UpdateCommandTest extends TestCase
         File::shouldReceive('exists')->twice()->andReturnTrue();
 
         $this->mock(Update::class, function (MockInterface $mock) {
-            $mock->allows('basePath->run')->once()->andReturn('test');
+            $mock->allows('__invoke')->once()->andReturn('test');
         });
 
         $this->mock(Token::class, function (MockInterface $mock) {
-            $mock->allows('basePath->run')->once()->andReturnSelf();
+            $mock->allows('__invoke')->once()->andReturn('');
         });
 
         Git::shouldReceive('hasChanges')->andReturnTrue();
         Git::shouldReceive('addAllChanges->commit->push')->once();
 
-        GitHub::shouldReceive('pullRequest->create')->once()->andReturn([
+        GitHub::shouldReceive('api->create')->once()->andReturn([
             'html_url' => 'https://',
         ]);
 
@@ -63,17 +63,17 @@ class UpdateCommandTest extends TestCase
         File::shouldReceive('exists')->twice()->andReturnTrue();
 
         $this->mock(PackagesUpdate::class, function (MockInterface $mock) {
-            $mock->allows('basePath->run')->once()->andReturn('test');
+            $mock->allows('__invoke')->once()->andReturn('test');
         });
 
         $this->mock(Token::class, function (MockInterface $mock) {
-            $mock->allows('basePath->run')->once()->andReturnSelf();
+            $mock->allows('__invoke')->once()->andReturnSelf();
         });
 
         Git::shouldReceive('hasChanges')->andReturnTrue();
         Git::shouldReceive('addAllChanges->commit->push')->once();
 
-        GitHub::shouldReceive('pullRequest->create')->once()->andReturn([
+        GitHub::shouldReceive('api->create')->once()->andReturn([
             'html_url' => 'https://',
         ]);
 
@@ -104,17 +104,17 @@ class UpdateCommandTest extends TestCase
         File::shouldReceive('exists')->twice()->andReturnTrue();
 
         $this->mock(Update::class, function (MockInterface $mock) {
-            $mock->allows('basePath->run')->once()->andReturn('test');
+            $mock->allows('__invoke')->once()->andReturn('test');
         });
 
         $this->mock(Token::class, function (MockInterface $mock) {
-            $mock->allows('basePath->run')->once()->andReturnSelf();
+            $mock->allows('__invoke')->once()->andReturn('');
         });
 
         Git::shouldReceive('hasChanges')->andReturnTrue();
         Git::shouldReceive('addAllChanges->commit->push')->once();
 
-        GitHub::shouldReceive('pullRequest->all')->once()->andReturn([
+        GitHub::shouldReceive('api->all')->once()->andReturn([
             [
                 'html_url' => 'https://',
             ],

@@ -2,17 +2,29 @@
 
 namespace App\Actions;
 
-use Symfony\Component\Process\Process;
+use Illuminate\Process\ProcessResult;
+use Illuminate\Support\Facades\Process;
 
-class Update extends BaseAction
+class Update
 {
-    public function run(): string
+    public function __invoke(string $path): string
     {
-        /**
-         * @var Process $process
-         */
-        $process = app('process.update');
+        $cmd = [
+            'composer',
+            'update',
+            '--no-interaction',
+            '--no-progress',
+            '--no-autoloader',
+            '--no-scripts',
+        ];
 
-        return $this->getOutput($process);
+        /** @var ProcessResult $result */
+        $result = Process::composer($path)->run($cmd);
+
+        if (filled($result->output())) {
+            return trim($result->output()); // @codeCoverageIgnore
+        }
+
+        return trim($result->errorOutput());
     }
 }

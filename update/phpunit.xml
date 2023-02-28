@@ -5,7 +5,7 @@
          colors="true"
          backupGlobals="true"
 >
-  <coverage processUncoveredFiles="true">
+  <coverage>
     <include>
       <directory suffix=".php">./app</directory>
     </include>
@@ -26,6 +26,7 @@
     <env name="QUEUE_CONNECTION" value="sync"/>
     <env name="SESSION_DRIVER" value="array"/>
     <env name="DISCORD_BOT_TOKEN" value="test"/>
+    <env name="GITHUB_REF" value="user/sample"/>
   </php>
   <logging/>
 </phpunit>

@@ -8,10 +8,10 @@ use App\Actions\Update;
 use App\Facades\Git;
 use CzProject\GitPhp\GitException;
 use Github\AuthMethod;
-use GrahamCampbell\GitHub\Facades\GitHub;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use LaravelZero\Framework\Commands\Command;
+use App\Facades\GitHub;
 
 class UpdateCommand extends Command
 {
@@ -66,9 +66,9 @@ class UpdateCommand extends Command
         }
 
         if (filled(env('COMPOSER_PACKAGES'))) {
-            $output = app(PackagesUpdate::class)->basePath($this->base_path)->run();
+            $output = app()->call(PackagesUpdate::class, ['path' => $this->base_path]);
         } else {
-            $output = app(Update::class)->basePath($this->base_path)->run();
+            $output = app()->call(Update::class, ['path' => $this->base_path]);
         }
 
         $this->output($output);
@@ -84,11 +84,6 @@ class UpdateCommand extends Command
         $this->createPullRequest();
     }
 
-    /**
-     * @return void
-     *
-     * @throws GitException
-     */
     protected function init(): void
     {
         $this->info('Initializing ...');
@@ -153,9 +148,6 @@ class UpdateCommand extends Command
         $this->token();
     }
 
-    /**
-     * @return bool
-     */
     protected function exists(): bool
     {
         return File::exists($this->base_path.'/composer.json')
@@ -164,18 +156,12 @@ class UpdateCommand extends Command
 
     /**
      * Set GitHub token for composer.
-     *
-     * @return void
      */
     protected function token(): void
     {
-        app(Token::class)->basePath($this->base_path)->run();
+        app()->call(Token::class, ['path' => $this->base_path]);
     }
 
-    /**
-     * @param  string  $output
-     * @return void
-     */
     protected function output(string $output): void
     {
         $this->out = Str::of($output)
@@ -189,8 +175,6 @@ class UpdateCommand extends Command
     }
 
     /**
-     * @return void
-     *
      * @throws GitException
      */
     protected function commitPush(): void
@@ -202,9 +186,6 @@ class UpdateCommand extends Command
            ->push(['origin', $this->new_branch]);
     }
 
-    /**
-     * @return void
-     */
     protected function createPullRequest(): void
     {
         $this->info('Pull Request');
@@ -223,7 +204,7 @@ class UpdateCommand extends Command
         $createPullRequest = true;
 
         if (env('APP_SINGLE_BRANCH')) {
-            $pullRequests = Github::pullRequest()->all(
+            $pullRequests = GitHub::api('pullRequest')->all(
                 Str::before($this->repo, '/'),
                 Str::afterLast($this->repo, '/'),
                 [
@@ -237,8 +218,8 @@ class UpdateCommand extends Command
             }
         }
 
-        if ($createPullRequest) {
-            $result = GitHub::pullRequest()->create(
+        if ($createPullRequest || ! isset($pullRequests)) {
+            $result = GitHub::api('pullRequest')->create(
                 Str::before($this->repo, '/'),
                 Str::afterLast($this->repo, '/'),
                 $pullData

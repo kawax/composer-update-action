@@ -2,17 +2,28 @@
 
 namespace App\Actions;
 
-use Symfony\Component\Process\Process;
+use Illuminate\Process\ProcessResult;
+use Illuminate\Support\Facades\Process;
 
-class Token extends BaseAction
+class Token
 {
-    public function run(): string
+    public function __invoke(string $path): string
     {
-        /**
-         * @var Process $process
-         */
-        $process = app('process.token');
+        $cmd = [
+            'composer',
+            'config',
+            '-g',
+            'github-oauth.github.com',
+            env('GITHUB_TOKEN'),
+        ];
 
-        return $this->getOutput($process);
+        /** @var ProcessResult $result */
+        $result = Process::composer($path)->run($cmd);
+
+        if (filled($result->output())) {
+            return trim($result->output()); // @codeCoverageIgnore
+        }
+
+        return trim($result->errorOutput());
     }
 }
