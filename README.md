@@ -19,6 +19,8 @@ https://github.com/kawax/composer-workflow
 | v4     | 8.2    |
 | master | latest |
 
+> **Note:** Currently only the master version is available. v5 and later will not be released. If you need to specify the PHP version, use "Reusable workflow version" instead.
+
 ## Usage
 
 Create `.github/workflows/update.yml`
