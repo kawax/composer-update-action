@@ -679,16 +679,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.4.3",
+            "version": "2.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "67c26b443f348a51926030c83481b85718457d3d"
+                "reference": "3cf1b6d4f0c820a2cf8bcaec39fc698f3443b5cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/67c26b443f348a51926030c83481b85718457d3d",
-                "reference": "67c26b443f348a51926030c83481b85718457d3d",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/3cf1b6d4f0c820a2cf8bcaec39fc698f3443b5cf",
+                "reference": "3cf1b6d4f0c820a2cf8bcaec39fc698f3443b5cf",
                 "shasum": ""
             },
             "require": {
@@ -778,7 +778,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.4.3"
+                "source": "https://github.com/guzzle/psr7/tree/2.4.4"
             },
             "funding": [
                 {
@@ -794,7 +794,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-10-26T14:07:24+00:00"
+            "time": "2023-03-09T13:19:02+00:00"
         },
         {
             "name": "http-interop/http-factory-guzzle",
@@ -856,7 +856,7 @@
         },
         {
             "name": "illuminate/bus",
-            "version": "v10.3.2",
+            "version": "v10.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/bus.git",
@@ -909,7 +909,7 @@
         },
         {
             "name": "illuminate/cache",
-            "version": "v10.3.2",
+            "version": "v10.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/cache.git",
@@ -971,7 +971,7 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v10.3.2",
+            "version": "v10.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
@@ -1026,7 +1026,7 @@
         },
         {
             "name": "illuminate/conditionable",
-            "version": "v10.3.2",
+            "version": "v10.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/conditionable.git",
@@ -1072,7 +1072,7 @@
         },
         {
             "name": "illuminate/config",
-            "version": "v10.3.2",
+            "version": "v10.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
@@ -1120,7 +1120,7 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v10.3.2",
+            "version": "v10.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
@@ -1184,7 +1184,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v10.3.2",
+            "version": "v10.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -1235,7 +1235,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v10.3.2",
+            "version": "v10.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -1283,7 +1283,7 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v10.3.2",
+            "version": "v10.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -1338,7 +1338,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v10.3.2",
+            "version": "v10.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -1402,7 +1402,7 @@
         },
         {
             "name": "illuminate/macroable",
-            "version": "v10.3.2",
+            "version": "v10.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -1448,7 +1448,7 @@
         },
         {
             "name": "illuminate/pipeline",
-            "version": "v10.3.2",
+            "version": "v10.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/pipeline.git",
@@ -1496,7 +1496,7 @@
         },
         {
             "name": "illuminate/process",
-            "version": "v10.3.2",
+            "version": "v10.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/process.git",
@@ -1547,16 +1547,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v10.3.2",
+            "version": "v10.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "d64c44a2960742ddff150f9a8b22dd64236bc057"
+                "reference": "0ff7435b1b730cfd542b8c455dd7e3e4cd05a534"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/d64c44a2960742ddff150f9a8b22dd64236bc057",
-                "reference": "d64c44a2960742ddff150f9a8b22dd64236bc057",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/0ff7435b1b730cfd542b8c455dd7e3e4cd05a534",
+                "reference": "0ff7435b1b730cfd542b8c455dd7e3e4cd05a534",
                 "shasum": ""
             },
             "require": {
@@ -1614,11 +1614,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-03-06T01:15:38+00:00"
+            "time": "2023-03-09T12:03:24+00:00"
         },
         {
             "name": "illuminate/testing",
-            "version": "v10.3.2",
+            "version": "v10.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/testing.git",
@@ -1677,7 +1677,7 @@
         },
         {
             "name": "illuminate/view",
-            "version": "v10.3.2",
+            "version": "v10.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
@@ -1793,16 +1793,16 @@
         },
         {
             "name": "knplabs/github-api",
-            "version": "v3.9.0",
+            "version": "v3.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/php-github-api.git",
-                "reference": "665ba275dbf36f9e9ef78876f27ca87796e3599c"
+                "reference": "799aa2b8c9dd9b03e5c353339d083601407e3cc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/665ba275dbf36f9e9ef78876f27ca87796e3599c",
-                "reference": "665ba275dbf36f9e9ef78876f27ca87796e3599c",
+                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/799aa2b8c9dd9b03e5c353339d083601407e3cc4",
+                "reference": "799aa2b8c9dd9b03e5c353339d083601407e3cc4",
                 "shasum": ""
             },
             "require": {
@@ -1869,7 +1869,7 @@
             ],
             "support": {
                 "issues": "https://github.com/KnpLabs/php-github-api/issues",
-                "source": "https://github.com/KnpLabs/php-github-api/tree/v3.9.0"
+                "source": "https://github.com/KnpLabs/php-github-api/tree/v3.10.0"
             },
             "funding": [
                 {
@@ -1877,7 +1877,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-10-24T12:42:09+00:00"
+            "time": "2023-03-09T10:26:52+00:00"
         },
         {
             "name": "laravel-zero/foundation",
@@ -5986,16 +5986,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.0.14",
+            "version": "10.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "7065dbebcb0f66cf16a45fc9cfc28c2351e06169"
+                "reference": "9b0c2245ef173a3d9546f6a4393a85d60eabe071"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7065dbebcb0f66cf16a45fc9cfc28c2351e06169",
-                "reference": "7065dbebcb0f66cf16a45fc9cfc28c2351e06169",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9b0c2245ef173a3d9546f6a4393a85d60eabe071",
+                "reference": "9b0c2245ef173a3d9546f6a4393a85d60eabe071",
                 "shasum": ""
             },
             "require": {
@@ -6027,7 +6027,7 @@
                 "sebastian/version": "^4.0"
             },
             "suggest": {
-                "ext-soap": "*"
+                "ext-soap": "To be able to generate mocks based on WSDL files"
             },
             "bin": [
                 "phpunit"
@@ -6066,7 +6066,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.0.14"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.0.15"
             },
             "funding": [
                 {
@@ -6082,7 +6082,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-03-01T05:37:49+00:00"
+            "time": "2023-03-09T06:43:13+00:00"
         },
         {
             "name": "sebastian/cli-parser",
