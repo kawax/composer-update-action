@@ -1875,16 +1875,16 @@
         },
         {
             "name": "laravel-zero/foundation",
-            "version": "v10.26.2",
+            "version": "v10.28.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-zero/foundation.git",
-                "reference": "56ca23fbc8536a627b22593a87af001c2a5e837c"
+                "reference": "6ae732f1def1716de65cc07e1ee85701fdc5c9e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-zero/foundation/zipball/56ca23fbc8536a627b22593a87af001c2a5e837c",
-                "reference": "56ca23fbc8536a627b22593a87af001c2a5e837c",
+                "url": "https://api.github.com/repos/laravel-zero/foundation/zipball/6ae732f1def1716de65cc07e1ee85701fdc5c9e8",
+                "reference": "6ae732f1def1716de65cc07e1ee85701fdc5c9e8",
                 "shasum": ""
             },
             "require": {
@@ -1914,39 +1914,39 @@
                 "laravel"
             ],
             "support": {
-                "source": "https://github.com/laravel-zero/foundation/tree/v10.26.2"
+                "source": "https://github.com/laravel-zero/foundation/tree/v10.28.0"
             },
-            "time": "2023-10-06T09:46:41+00:00"
+            "time": "2023-10-12T08:25:43+00:00"
         },
         {
             "name": "laravel-zero/framework",
-            "version": "v10.1.2",
+            "version": "v10.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-zero/framework.git",
-                "reference": "7d04a0f9da330bb4fbc0e10ed0f5bd3056e981ba"
+                "reference": "af2f627ed12222d96c89fc441754f43dabdb4d21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-zero/framework/zipball/7d04a0f9da330bb4fbc0e10ed0f5bd3056e981ba",
-                "reference": "7d04a0f9da330bb4fbc0e10ed0f5bd3056e981ba",
+                "url": "https://api.github.com/repos/laravel-zero/framework/zipball/af2f627ed12222d96c89fc441754f43dabdb4d21",
+                "reference": "af2f627ed12222d96c89fc441754f43dabdb4d21",
                 "shasum": ""
             },
             "require": {
                 "dragonmantank/cron-expression": "^3.3.3",
                 "ext-json": "*",
-                "illuminate/cache": "^10.13.5",
-                "illuminate/collections": "^10.13.5",
-                "illuminate/config": "^10.13.5",
-                "illuminate/console": "^10.13.5",
-                "illuminate/container": "^10.13.5",
-                "illuminate/contracts": "^10.13.5",
-                "illuminate/events": "^10.13.5",
-                "illuminate/filesystem": "^10.13.5",
-                "illuminate/process": "^10.13.5",
-                "illuminate/support": "^10.13.5",
-                "illuminate/testing": "^10.13.5",
-                "laravel-zero/foundation": "^10.12",
+                "illuminate/cache": "^10.28",
+                "illuminate/collections": "^10.28",
+                "illuminate/config": "^10.28",
+                "illuminate/console": "^10.28",
+                "illuminate/container": "^10.28",
+                "illuminate/contracts": "^10.28",
+                "illuminate/events": "^10.28",
+                "illuminate/filesystem": "^10.28",
+                "illuminate/process": "^10.28",
+                "illuminate/support": "^10.28",
+                "illuminate/testing": "^10.28",
+                "laravel-zero/foundation": "^10.28",
                 "league/flysystem": "^3.15.1",
                 "nunomaduro/collision": "^6.4.0|^7.8.1",
                 "nunomaduro/laravel-console-summary": "^1.10.0",
@@ -1965,22 +1965,22 @@
             },
             "require-dev": {
                 "guzzlehttp/guzzle": "^7.7",
-                "illuminate/bus": "^10.13.5",
-                "illuminate/database": "^10.13.5",
-                "illuminate/http": "^10.13.5",
-                "illuminate/log": "^10.13.5",
-                "illuminate/queue": "^10.13.5",
-                "illuminate/redis": "^10.13.5",
-                "illuminate/view": "^10.13.5",
+                "illuminate/bus": "^10.28",
+                "illuminate/database": "^10.28",
+                "illuminate/http": "^10.28",
+                "illuminate/log": "^10.28",
+                "illuminate/queue": "^10.28",
+                "illuminate/redis": "^10.28",
+                "illuminate/view": "^10.28",
                 "laminas/laminas-text": "^2.10",
-                "laravel-zero/phar-updater": "^1.3",
-                "laravel/pint": "^1.11",
+                "laravel-zero/phar-updater": "^1.4",
+                "laravel/pint": "^1.13.3",
                 "nunomaduro/laravel-console-dusk": "^1.11",
                 "nunomaduro/laravel-console-menu": "^3.4",
                 "nunomaduro/termwind": "^1.15.1",
-                "pestphp/pest": "^2.13.0",
+                "pestphp/pest": "^2.22.1",
                 "pestphp/pest-plugin-laravel": "^2.2",
-                "phpstan/phpstan": "^1.10.28"
+                "phpstan/phpstan": "^1.10.38"
             },
             "suggest": {
                 "ext-pcntl": "Required to ensure that data is cleared when cancelling the build process."
@@ -2023,7 +2023,7 @@
                 "issues": "https://github.com/laravel-zero/laravel-zero/issues",
                 "source": "https://github.com/laravel-zero/laravel-zero"
             },
-            "time": "2023-08-29T16:08:16+00:00"
+            "time": "2023-10-12T08:38:49+00:00"
         },
         {
             "name": "laravel/prompts",
