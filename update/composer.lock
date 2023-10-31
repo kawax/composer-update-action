@@ -1920,16 +1920,16 @@
         },
         {
             "name": "laravel-zero/framework",
-            "version": "v10.2.0",
+            "version": "v10.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-zero/framework.git",
-                "reference": "af2f627ed12222d96c89fc441754f43dabdb4d21"
+                "reference": "517dddb90948f7c894440f54a726249e384f70e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-zero/framework/zipball/af2f627ed12222d96c89fc441754f43dabdb4d21",
-                "reference": "af2f627ed12222d96c89fc441754f43dabdb4d21",
+                "url": "https://api.github.com/repos/laravel-zero/framework/zipball/517dddb90948f7c894440f54a726249e384f70e1",
+                "reference": "517dddb90948f7c894440f54a726249e384f70e1",
                 "shasum": ""
             },
             "require": {
@@ -2023,7 +2023,7 @@
                 "issues": "https://github.com/laravel-zero/laravel-zero/issues",
                 "source": "https://github.com/laravel-zero/laravel-zero"
             },
-            "time": "2023-10-12T08:38:49+00:00"
+            "time": "2023-10-30T09:40:05+00:00"
         },
         {
             "name": "laravel/prompts",
