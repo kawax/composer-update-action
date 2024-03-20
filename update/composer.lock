@@ -1910,22 +1910,22 @@
         },
         {
             "name": "knplabs/github-api",
-            "version": "v3.13.0",
+            "version": "v3.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/php-github-api.git",
-                "reference": "47024f3483520c0fafdfc5c10d2a20d87b4c7ceb"
+                "reference": "16235d0eaffe5100492e6c788c58346100b2d734"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/47024f3483520c0fafdfc5c10d2a20d87b4c7ceb",
-                "reference": "47024f3483520c0fafdfc5c10d2a20d87b4c7ceb",
+                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/16235d0eaffe5100492e6c788c58346100b2d734",
+                "reference": "16235d0eaffe5100492e6c788c58346100b2d734",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "php": "^7.2.5 || ^8.0",
-                "php-http/cache-plugin": "^1.7.1",
+                "php-http/cache-plugin": "^1.7.1|^2.0",
                 "php-http/client-common": "^2.3",
                 "php-http/discovery": "^1.12",
                 "php-http/httplug": "^2.2",
@@ -1953,7 +1953,7 @@
             "extra": {
                 "branch-alias": {
                     "dev-2.x": "2.20.x-dev",
-                    "dev-master": "3.12-dev"
+                    "dev-master": "3.13-dev"
                 }
             },
             "autoload": {
@@ -1986,7 +1986,7 @@
             ],
             "support": {
                 "issues": "https://github.com/KnpLabs/php-github-api/issues",
-                "source": "https://github.com/KnpLabs/php-github-api/tree/v3.13.0"
+                "source": "https://github.com/KnpLabs/php-github-api/tree/v3.14.0"
             },
             "funding": [
                 {
@@ -1994,7 +1994,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-11-19T21:08:19+00:00"
+            "time": "2024-03-19T14:52:45+00:00"
         },
         {
             "name": "laravel-zero/foundation",
@@ -2895,26 +2895,27 @@
         },
         {
             "name": "php-http/cache-plugin",
-            "version": "1.8.1",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/cache-plugin.git",
-                "reference": "b3e6c25d89ee5e4ac82115ed23b21ba87986d614"
+                "reference": "539b2d1ea0dc1c2f141c8155f888197d4ac5635b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/cache-plugin/zipball/b3e6c25d89ee5e4ac82115ed23b21ba87986d614",
-                "reference": "b3e6c25d89ee5e4ac82115ed23b21ba87986d614",
+                "url": "https://api.github.com/repos/php-http/cache-plugin/zipball/539b2d1ea0dc1c2f141c8155f888197d4ac5635b",
+                "reference": "539b2d1ea0dc1c2f141c8155f888197d4ac5635b",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1 || ^8.0",
                 "php-http/client-common": "^1.9 || ^2.0",
-                "php-http/message-factory": "^1.0",
                 "psr/cache": "^1.0 || ^2.0 || ^3.0",
+                "psr/http-factory-implementation": "^1.0",
                 "symfony/options-resolver": "^2.6 || ^3.0 || ^4.0 || ^5.0 || ^6.0 || ^7.0"
             },
             "require-dev": {
+                "nyholm/psr7": "^1.6.1",
                 "phpspec/phpspec": "^5.1 || ^6.0 || ^7.0"
             },
             "type": "library",
@@ -2943,9 +2944,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-http/cache-plugin/issues",
-                "source": "https://github.com/php-http/cache-plugin/tree/1.8.1"
+                "source": "https://github.com/php-http/cache-plugin/tree/2.0.0"
             },
-            "time": "2023-11-21T08:52:56+00:00"
+            "time": "2024-02-19T17:02:14+00:00"
         },
         {
             "name": "php-http/client-common",
@@ -3219,61 +3220,6 @@
                 "source": "https://github.com/php-http/message/tree/1.16.1"
             },
             "time": "2024-03-07T13:22:09+00:00"
-        },
-        {
-            "name": "php-http/message-factory",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-http/message-factory.git",
-                "reference": "4d8778e1c7d405cbb471574821c1ff5b68cc8f57"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-http/message-factory/zipball/4d8778e1c7d405cbb471574821c1ff5b68cc8f57",
-                "reference": "4d8778e1c7d405cbb471574821c1ff5b68cc8f57",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4",
-                "psr/http-message": "^1.0 || ^2.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Http\\Message\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Márk Sági-Kazár",
-                    "email": "mark.sagikazar@gmail.com"
-                }
-            ],
-            "description": "Factory interfaces for PSR-7 HTTP Message",
-            "homepage": "http://php-http.org",
-            "keywords": [
-                "factory",
-                "http",
-                "message",
-                "stream",
-                "uri"
-            ],
-            "support": {
-                "issues": "https://github.com/php-http/message-factory/issues",
-                "source": "https://github.com/php-http/message-factory/tree/1.1.0"
-            },
-            "abandoned": "psr/http-factory",
-            "time": "2023-04-14T14:16:17+00:00"
         },
         {
             "name": "php-http/multipart-stream-builder",
@@ -5823,16 +5769,16 @@
         },
         {
             "name": "mockery/mockery",
-            "version": "1.6.9",
+            "version": "1.6.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mockery/mockery.git",
-                "reference": "0cc058854b3195ba21dc6b1f7b1f60f4ef3a9c06"
+                "reference": "47065d1be1fa05def58dc14c03cf831d3884ef0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mockery/mockery/zipball/0cc058854b3195ba21dc6b1f7b1f60f4ef3a9c06",
-                "reference": "0cc058854b3195ba21dc6b1f7b1f60f4ef3a9c06",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/47065d1be1fa05def58dc14c03cf831d3884ef0b",
+                "reference": "47065d1be1fa05def58dc14c03cf831d3884ef0b",
                 "shasum": ""
             },
             "require": {
@@ -5844,8 +5790,8 @@
                 "phpunit/phpunit": "<8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^8.5 || ^9.6.10",
-                "symplify/easy-coding-standard": "^12.0.8"
+                "phpunit/phpunit": "^8.5 || ^9.6.17",
+                "symplify/easy-coding-standard": "^12.1.14"
             },
             "type": "library",
             "autoload": {
@@ -5902,7 +5848,7 @@
                 "security": "https://github.com/mockery/mockery/security/advisories",
                 "source": "https://github.com/mockery/mockery"
             },
-            "time": "2023-12-10T02:24:34+00:00"
+            "time": "2024-03-19T16:15:45+00:00"
         },
         {
             "name": "myclabs/deep-copy",
