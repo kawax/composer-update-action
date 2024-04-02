@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Commands;
+namespace App\Console\Commands;
 
 use App\Actions\PackagesUpdate;
 use App\Actions\Token;
@@ -9,21 +9,21 @@ use App\Facades\Git;
 use App\Facades\GitHub;
 use CzProject\GitPhp\GitException;
 use Github\AuthMethod;
+use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-use LaravelZero\Framework\Commands\Command;
 
 class UpdateCommand extends Command
 {
     /**
-     * The signature of the command.
+     * The name and signature of the console command.
      *
      * @var string
      */
     protected $signature = 'update';
 
     /**
-     * The description of the command.
+     * The console command description.
      *
      * @var string
      */
@@ -57,12 +57,12 @@ class UpdateCommand extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function handle(): int
     {
         $this->init();
 
         if (! $this->exists()) {
-            return; // @codeCoverageIgnore
+            return 0; // @codeCoverageIgnore
         }
 
         if (filled(env('COMPOSER_PACKAGES'))) {
@@ -76,12 +76,14 @@ class UpdateCommand extends Command
         if (! Git::hasChanges()) {
             $this->info('No changes after update.'); // @codeCoverageIgnore
 
-            return; // @codeCoverageIgnore
+            return 0; // @codeCoverageIgnore
         }
 
         $this->commitPush();
 
         $this->createPullRequest();
+
+        return 0;
     }
 
     protected function init(): void
@@ -165,11 +167,11 @@ class UpdateCommand extends Command
     protected function output(string $output): void
     {
         $this->out = Str::of($output)
-                        ->explode(PHP_EOL)
-                        ->filter(fn ($item) => Str::contains($item, ' - '))
-                        ->reject(fn ($item) => Str::contains($item, 'Downloading '))
-                        ->takeUntil(fn ($item) => Str::contains($item, ':'))
-                        ->implode(PHP_EOL).PHP_EOL;
+                ->explode(PHP_EOL)
+                ->filter(fn ($item) => Str::contains($item, ' - '))
+                ->reject(fn ($item) => Str::contains($item, 'Downloading '))
+                ->takeUntil(fn ($item) => Str::contains($item, ':'))
+                ->implode(PHP_EOL).PHP_EOL;
 
         $this->line($this->out);
     }
@@ -182,8 +184,8 @@ class UpdateCommand extends Command
         $this->info('Committing changes ...');
 
         Git::addAllChanges()
-           ->commit(env('GIT_COMMIT_PREFIX', '').'composer update '.today()->toDateString().PHP_EOL.PHP_EOL.$this->out)
-           ->push(['origin', $this->new_branch]);
+            ->commit(env('GIT_COMMIT_PREFIX', '').'composer update '.today()->toDateString().PHP_EOL.PHP_EOL.$this->out)
+            ->push(['origin', $this->new_branch]);
     }
 
     protected function createPullRequest(): void

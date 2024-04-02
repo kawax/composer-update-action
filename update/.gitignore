@@ -1,4 +1,11 @@
+/.phpunit.cache
+/storage/*.key
 /vendor
 .env
-/storage
-/builds
+.env.backup
+.env.production
+.phpunit.result.cache
+auth.json
+/.fleet
+/.idea
+/.vscode

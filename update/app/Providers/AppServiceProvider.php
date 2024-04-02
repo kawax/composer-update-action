@@ -15,8 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton(
-            'git',
+        $this->app->singleton('git',
             fn ($app) => (new Git())->open(env('GITHUB_WORKSPACE'))
         );
 
@@ -30,10 +29,10 @@ class AppServiceProvider extends ServiceProvider
     {
         Process::macro('composer', function (string $path): PendingProcess {
             return Process::path($path)
-                          ->timeout(600)
-                          ->env([
-                              'COMPOSER_MEMORY_LIMIT' => '-1',
-                          ]);
+                ->timeout(600)
+                ->env([
+                    'COMPOSER_MEMORY_LIMIT' => '-1',
+                ]);
         });
     }
 }
