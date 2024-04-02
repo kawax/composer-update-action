@@ -1,3 +1,3 @@
 #!/bin/sh -l
 
-php /root/arty update
+php /root/artisan update

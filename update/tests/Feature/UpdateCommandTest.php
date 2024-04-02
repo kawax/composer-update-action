@@ -80,6 +80,8 @@ class UpdateCommandTest extends TestCase
         $this->artisan('update')
              ->expectsOutput('Initializing ...')
              ->assertExitCode(0);
+
+        $_ENV['COMPOSER_PACKAGES'] = null;
     }
 
     public function testUpdateSingleCommand()
@@ -123,6 +125,8 @@ class UpdateCommandTest extends TestCase
         $this->artisan('update')
              ->expectsOutput('Initializing ...')
              ->assertExitCode(0);
+
+        $_ENV['APP_SINGLE_BRANCH'] = null;
     }
 
     public function testFluentStrings()

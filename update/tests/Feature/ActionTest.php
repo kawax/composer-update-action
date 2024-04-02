@@ -58,5 +58,7 @@ class ActionTest extends TestCase
         $output = $action(base_path());
 
         $this->assertSame('test', $output);
+
+        $_ENV['GITHUB_TOKEN'] = null;
     }
 }
