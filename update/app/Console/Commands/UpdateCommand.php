@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-
 use App\Actions\PackagesUpdate;
 use App\Actions\Token;
 use App\Actions\Update;
