@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
+
 use App\Actions\PackagesUpdate;
 use App\Actions\Token;
 use App\Actions\Update;
@@ -10,6 +10,7 @@ use App\Facades\Git;
 use App\Facades\GitHub;
 use CzProject\GitPhp\GitException;
 use Github\AuthMethod;
+use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
