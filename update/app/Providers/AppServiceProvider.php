@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use CzProject\GitPhp\Git;
-use Github\Client;
+use Github\Client as GithubClient;
 use Illuminate\Process\PendingProcess;
 use Illuminate\Support\Facades\Process;
 use Illuminate\Support\ServiceProvider;
@@ -15,11 +15,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton('git',
-            fn ($app) => (new Git())->open(env('GITHUB_WORKSPACE'))
-        );
+        $this->app->singleton('git', fn ($app) => (new Git())->open(env('GITHUB_WORKSPACE')));
 
-        $this->app->singleton(Client::class, Client::class);
+        $this->app->singleton(GithubClient::class, GithubClient::class);
     }
 
     /**
