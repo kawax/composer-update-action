@@ -14,11 +14,11 @@ jobs:
     name: composer update
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: composer update action
         uses: kawax/composer-update-action@develop
         env:
           GITHUB_TOKEN: ${{ secrets.ACTION_TOKEN }}
           COMPOSER_PATH: /update
-          GIT_NAME: kawax
-          GIT_EMAIL: kawaxbiz@gmail.com
+          GIT_NAME: 'github-actions[bot]'
+          GIT_EMAIL: '41898282+github-actions[bot]@users.noreply.github.com'
