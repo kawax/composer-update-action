@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static GitRepository pull(?string $remote = null, ?array $options = null)
  * @method static GitRepository merge(string $branch, ?array $options = null)
  *
- * @mixin GitRepository
+ * @see GitRepository
  */
 class Git extends Facade
 {
