@@ -7,10 +7,10 @@ use Github\Client;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static void authenticate($tokenOrLogin, $password = null, $authMethod = null)
+ * @method static void authenticate(string $tokenOrLogin, ?string $password = null, ?string $authMethod = null)
  * @method static AbstractApi api(string $name)
  *
- * @see  Client
+ * @see Client
  */
 class GitHub extends Facade
 {
