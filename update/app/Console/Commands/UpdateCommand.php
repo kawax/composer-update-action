@@ -109,12 +109,9 @@ class UpdateCommand extends Command
 
         $token = env('GITHUB_TOKEN');
 
-        GitHub::authenticate($token, AuthMethod::ACCESS_TOKEN);
+        GitHub::authenticate($token, authMethod: AuthMethod::ACCESS_TOKEN);
 
-        Git::setRemoteUrl(
-            'origin',
-            "https://{$token}@github.com/{$this->repo}.git"
-        );
+        Git::setRemoteUrl(name: 'origin', url: "https://$token@github.com/$this->repo.git");
 
         Git::execute('config', '--local', 'user.name', env('GIT_NAME', 'cu'));
         Git::execute('config', '--local', 'user.email', env('GIT_EMAIL', 'cu@composer-update'));
@@ -129,7 +126,7 @@ class UpdateCommand extends Command
         ) {
             $this->info('Creating branch "'.$this->new_branch.'".');
 
-            Git::createBranch($this->new_branch, true);
+            Git::createBranch(name: $this->new_branch, checkout: true);
         } elseif (env('APP_SINGLE_BRANCH')) {
             $this->info('Checking out branch "'.$this->new_branch.'".');
 
@@ -212,7 +209,7 @@ class UpdateCommand extends Command
                 [
                     'head' => Str::before($this->repo, '/').':'.$this->new_branch,
                     'state' => 'open',
-                ]
+                ],
             );
 
             if (count($pullRequests) > 0) {
@@ -224,7 +221,7 @@ class UpdateCommand extends Command
             $result = GitHub::api('pullRequest')->create(
                 Str::before($this->repo, '/'),
                 Str::afterLast($this->repo, '/'),
-                $pullData
+                $pullData,
             );
 
             $this->info('Pull request created for branch "'.$this->new_branch.'": '.$result['html_url']);
