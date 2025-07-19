@@ -9,3 +9,4 @@ auth.json
 /.fleet
 /.idea
 /.vscode
+/build
