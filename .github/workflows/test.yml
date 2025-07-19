@@ -20,11 +20,6 @@ jobs:
           coverage: xdebug
       - name: Install Composer dependencies
         run: composer install --no-interaction --no-progress --prefer-dist --optimize-autoloader -d ./update
-      - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v9
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        with:
-          workingDirectory: update/
-          coverageCommand: vendor/bin/phpunit
-          coverageLocations: build/logs/clover.xml:clover
+      - name: Run PHPUnit tests
+        run: vendor/bin/phpunit
+        working-directory: update
