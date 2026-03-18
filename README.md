@@ -38,7 +38,7 @@ jobs:
     name: composer update
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
       - name: composer update action
         uses: kawax/composer-update-action@master
         env:
