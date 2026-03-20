@@ -15,9 +15,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton('git', fn ($app) => (new Git())->open(env('GITHUB_WORKSPACE', '')));
+        $this->app->scoped('git', fn ($app) => (new Git())->open(env('GITHUB_WORKSPACE', '')));
 
-        $this->app->singleton(GithubClient::class, GithubClient::class);
+        $this->app->scoped(GithubClient::class);
     }
 
     /**
