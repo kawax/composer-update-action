@@ -163,6 +163,8 @@ class UpdateCommand extends Command
 
     protected function output(string $output): void
     {
+        $this->line($output);
+
         $this->out = Str::of($output)
                 ->explode(PHP_EOL)
                 ->filter(fn ($item) => Str::contains($item, ' - '))
