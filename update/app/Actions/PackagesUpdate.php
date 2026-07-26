@@ -23,10 +23,10 @@ class PackagesUpdate
         /** @var ProcessResult $result */
         $result = Process::composer($path)->run($cmd);
 
-        if (filled($result->output())) {
-            return trim($result->output()); // @codeCoverageIgnore
+        if (filled($result->errorOutput())) {
+            return trim($result->errorOutput()); // @codeCoverageIgnore
         }
 
-        return trim($result->errorOutput());
+        return trim($result->output());
     }
 }

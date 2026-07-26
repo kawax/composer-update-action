@@ -169,7 +169,7 @@ class UpdateCommand extends Command
                 ->explode(PHP_EOL)
                 ->filter(fn ($item) => Str::contains($item, ' - '))
                 ->reject(fn ($item) => Str::contains($item, 'Downloading '))
-                // ->takeUntil(fn ($item) => Str::contains($item, ':'))
+                ->takeUntil(fn ($item) => Str::contains($item, ':'))
                 ->implode(PHP_EOL).PHP_EOL;
 
         $this->line($this->out);
